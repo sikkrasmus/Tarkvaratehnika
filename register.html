@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Register</title>
+    <title>Sign up</title>
 </head>
 <body>
 <!-- Navigation -->
@@ -17,40 +17,60 @@
         <a href="index.html" class="brand-logo center">cWATCH</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li><a href="login.html">LOG IN</a></li>
+            <li><a href="register.html">SIGN UP</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="login.html">LOG IN</a></li>
             <div class="divider"></div>
-            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">SIGN UP</a></li>
             <div class="divider"></div>
         </ul>
     </div>
 </nav>
 <main>
-    <div class="container">
-
+    <div class="valign-wrapper" style="width:100%;height:75%;position: absolute;">
+        <div class="valign" style="width:100%;">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m6 offset-m3">
+                        <div class="card">
+                            <div class="card-content">
+                                <span class="card-title black-text">Sign Up</span>
+                                <form>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input placeholder="Username" id="username" type="text" class="validate">
+                                            <label for="username" class="active">Username</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input placeholder="Password" id="password" type="text" class="validate">
+                                            <label for="password" class="active">Password</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input placeholder="E-mail" id="email" type="text" class="validate">
+                                            <label for="email" class="active">E-mail</label>
+                                        </div>
+                                </form>
+                            </div>
+                            <div class="card-action">
+                                <input type="submit" class="btn" value="Sign up">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </main>
 
 <!-- Footer -->
 <footer class="page-footer blue-grey darken-3">
     <div class="container">
-        <div class="row">
-            <div class="col l6 s12">
-                <h5 class="white-text">coinWatch</h5>
-                <p class="grey-text text-lighten-4">Cryptocurrency tracker </p>
-            </div>
-            <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Developers</h5>
-                <ul>
-                    <li>Rasmus Sikk</li>
-                    <li>Reio Sedrik</li>
-                    <li>Saamuel Starke</li>
-                </ul>
-            </div>
-        </div>
     </div>
     <div class="footer-copyright">
         <div class="container">
