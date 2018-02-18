@@ -2,108 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c724ac56-37b0-4875-8b79-346f4364f01b" name="Default" comment="fixed project structure">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/controllers/MainController.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__antlr_antlr_2_7_7.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__aopalliance_aopalliance_1_0.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__dom4j_dom4j_1_6_1.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_transaction_javax_transaction_api_1_2.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_tomcat_tomcat_jdbc_8_5_27.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_tomcat_tomcat_juli_8_5_27.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_aspectj_aspectjweaver_1_8_13.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hibernate_common_hibernate_commons_annotations_5_0_1_Final.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hibernate_hibernate_core_5_0_12_Final.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hibernate_hibernate_entitymanager_5_0_12_Final.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_0_Final.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_javassist_javassist_3_21_0_GA.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jboss_jandex_2_0_0_Final.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_aop_1_5_10_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_data_jpa_1_5_10_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_jdbc_1_5_10_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_data_spring_data_commons_1_13_10_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_data_spring_data_jpa_1_11_10_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_security_spring_security_core_4_2_4_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_security_spring_security_web_5_0_1_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_aspects_4_3_14_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_jdbc_4_3_14_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_orm_4_3_14_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_tx_4_3_14_RELEASE.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/config/SecurityConfig.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/repository/UsersRepository.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/service/CustomUserDetailsService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/users/CustomUserDetails.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/users/Users.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/backend/out/production/classes/com/portfolio/backend/BackendApplication.class" afterPath="$PROJECT_DIR$/backend/out/production/classes/com/portfolio/backend/BackendApplication.class" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/BackendApplication.java" afterPath="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/BackendApplication.java" />
-      <change beforePath="$PROJECT_DIR$/home.html" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/home.html" />
-      <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/index.html" />
-      <change beforePath="$PROJECT_DIR$/login.html" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/login.html" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/LICENSE" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/LICENSE" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/README.md" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/README.md" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/fonts/roboto/Roboto-Bold.woff" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/fonts/roboto/Roboto-Bold.woff" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/fonts/roboto/Roboto-Bold.woff2" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/fonts/roboto/Roboto-Bold.woff2" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/fonts/roboto/Roboto-Light.woff" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/fonts/roboto/Roboto-Light.woff" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/fonts/roboto/Roboto-Light.woff2" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/fonts/roboto/Roboto-Light.woff2" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/fonts/roboto/Roboto-Medium.woff" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/fonts/roboto/Roboto-Medium.woff" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/fonts/roboto/Roboto-Medium.woff2" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/fonts/roboto/Roboto-Medium.woff2" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/fonts/roboto/Roboto-Regular.woff" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/fonts/roboto/Roboto-Regular.woff" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/fonts/roboto/Roboto-Regular.woff2" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/fonts/roboto/Roboto-Regular.woff2" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/fonts/roboto/Roboto-Thin.woff" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/fonts/roboto/Roboto-Thin.woff" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/fonts/roboto/Roboto-Thin.woff2" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/fonts/roboto/Roboto-Thin.woff2" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/js/animation.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/js/animation.js" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/js/bin/materialize.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/js/bin/materialize.js" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/js/bin/materialize.min.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/js/bin/materialize.min.js" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/js/buttons.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/js/buttons.js" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/js/cards.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/js/cards.js" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/js/carousel.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/js/carousel.js" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/js/character_counter.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/js/character_counter.js" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/js/chips.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/js/chips.js" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/js/collapsible.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/js/collapsible.js" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/js/date_picker/picker.date.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/js/date_picker/picker.date.js" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/js/date_picker/picker.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/js/date_picker/picker.js" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/js/date_picker/picker.time.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/js/date_picker/picker.time.js" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/js/dropdown.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/js/dropdown.js" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/js/forms.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/js/forms.js" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/js/global.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/js/global.js" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/js/hammer.min.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/js/hammer.min.js" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/js/initial.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/js/initial.js" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/js/jquery.easing.1.4.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/js/jquery.easing.1.4.js" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/js/jquery.hammer.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/js/jquery.hammer.js" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/js/materialbox.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/js/materialbox.js" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/js/modal.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/js/modal.js" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/js/parallax.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/js/parallax.js" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/js/pushpin.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/js/pushpin.js" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/js/scrollFire.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/js/scrollFire.js" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/js/scrollspy.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/js/scrollspy.js" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/js/sideNav.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/js/sideNav.js" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/js/slider.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/js/slider.js" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/js/tabs.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/js/tabs.js" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/js/tapTarget.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/js/tapTarget.js" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/js/toasts.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/js/toasts.js" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/js/tooltip.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/js/tooltip.js" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/js/transitions.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/js/transitions.js" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/js/velocity.min.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/js/velocity.min.js" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/js/waves.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/js/waves.js" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/_badges.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/_badges.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/_buttons.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/_buttons.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/_cards.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/_cards.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/_carousel.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/_carousel.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/_chips.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/_chips.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/_collapsible.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/_collapsible.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/_color.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/_color.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/_dropdown.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/_dropdown.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/_global.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/_global.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/_grid.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/_grid.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/_icons-material-design.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/_icons-material-design.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/_materialbox.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/_materialbox.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/_modal.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/_modal.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/_navbar.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/_navbar.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/_normalize.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/_normalize.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/_preloader.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/_preloader.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/_pulse.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/_pulse.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/_roboto.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/_roboto.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/_sideNav.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/_sideNav.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/_slider.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/_slider.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/_table_of_contents.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/_table_of_contents.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/_tabs.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/_tabs.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/_tapTarget.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/_tapTarget.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/_toast.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/_toast.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/_tooltip.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/_tooltip.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/_transitions.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/_transitions.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/_typography.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/_typography.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/_variables.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/_variables.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/_waves.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/_waves.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/date_picker/_default.date.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/date_picker/_default.date.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/date_picker/_default.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/date_picker/_default.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/date_picker/_default.time.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/date_picker/_default.time.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/forms/_checkboxes.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/forms/_checkboxes.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/forms/_file-input.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/forms/_file-input.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/forms/_forms.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/forms/_forms.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/forms/_input-fields.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/forms/_input-fields.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/forms/_radio-buttons.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/forms/_radio-buttons.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/forms/_range.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/forms/_range.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/forms/_select.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/forms/_select.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/components/forms/_switches.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/components/forms/_switches.scss" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/materialize.css" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/materialize.css" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/materialize.css.map" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/materialize.css.map" />
-      <change beforePath="$PROJECT_DIR$/materialize-src/sass/materialize.scss" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/materialize-src/sass/materialize.scss" />
-      <change beforePath="$PROJECT_DIR$/register.html" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/register.html" />
-      <change beforePath="$PROJECT_DIR$/styles.css" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/styles.css" />
-      <change beforePath="$PROJECT_DIR$/test" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/vue/app.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/vue/app.js" />
-      <change beforePath="$PROJECT_DIR$/vue/vue.js" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/vue/vue.js" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/controllers/MainController.java" afterPath="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/controllers/MainController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -146,15 +75,136 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Users.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/users/Users.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="554">
+              <caret line="27" column="44" lean-forward="false" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
+              <folding>
+                <element signature="e#646#647#0" expanded="true" />
+                <element signature="e#671#672#0" expanded="true" />
+                <element signature="e#704#705#0" expanded="true" />
+                <element signature="e#732#733#0" expanded="true" />
+                <element signature="e#764#765#0" expanded="true" />
+                <element signature="e#792#793#0" expanded="true" />
+                <element signature="e#834#835#0" expanded="true" />
+                <element signature="e#868#869#0" expanded="true" />
+                <element signature="e#903#904#0" expanded="true" />
+                <element signature="e#934#935#0" expanded="true" />
+                <element signature="e#982#983#0" expanded="true" />
+                <element signature="e#1022#1023#0" expanded="true" />
+                <element signature="e#1052#1053#0" expanded="true" />
+                <element signature="e#1081#1082#0" expanded="true" />
+                <element signature="e#1122#1123#0" expanded="true" />
+                <element signature="e#1158#1159#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UsersRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/repository/UsersRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SecurityConfig.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/config/SecurityConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="554">
+              <caret line="45" column="13" lean-forward="true" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2064#2065#0" expanded="true" />
+                <element signature="e#2125#2126#0" expanded="true" />
+                <element signature="e#2235#2236#0" expanded="true" />
+                <element signature="e#2278#2279#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="588">
+              <caret line="28" column="63" lean-forward="true" selection-start-line="28" selection-start-column="63" selection-end-line="28" selection-end-column="63" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomUserDetailsService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/service/CustomUserDetailsService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomUserDetails.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/users/CustomUserDetails.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#313#314#0" expanded="true" />
+                <element signature="e#341#342#0" expanded="true" />
+                <element signature="e#425#426#0" expanded="true" />
+                <element signature="e#452#453#0" expanded="true" />
+                <element signature="e#501#502#0" expanded="true" />
+                <element signature="e#543#544#0" expanded="true" />
+                <element signature="e#592#593#0" expanded="true" />
+                <element signature="e#631#632#0" expanded="true" />
+                <element signature="e#689#690#0" expanded="true" />
+                <element signature="e#716#717#0" expanded="true" />
+                <element signature="e#773#774#0" expanded="true" />
+                <element signature="e#800#801#0" expanded="true" />
+                <element signature="e#862#863#0" expanded="true" />
+                <element signature="e#889#890#0" expanded="true" />
+                <element signature="e#937#938#0" expanded="true" />
+                <element signature="e#964#965#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/controllers/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="13" column="27" lean-forward="false" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+            <state relative-caret-position="420">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#423#424#0" expanded="true" />
                 <element signature="e#458#459#0" expanded="true" />
+                <element signature="e#515#516#0" expanded="true" />
+                <element signature="e#549#550#0" expanded="true" />
+                <element signature="e#608#609#0" expanded="true" />
+                <element signature="e#643#644#0" expanded="true" />
+                <element signature="e#708#709#0" expanded="true" />
+                <element signature="e#746#747#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -165,8 +215,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -407,8 +458,8 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$/backend" value="3037936082948" />
-        <entry key="$PROJECT_DIR$/backend/build.gradle" value="3664618217" />
+        <entry key="$PROJECT_DIR$/backend" value="3037946503708" />
+        <entry key="$PROJECT_DIR$/backend/build.gradle" value="876459361" />
         <entry key="$PROJECT_DIR$/backend/gradle/wrapper/gradle-wrapper.properties" value="3603921981" />
       </map>
     </option>
@@ -529,7 +580,7 @@
     </option>
     <option name="projectSyncType">
       <map>
-        <entry key="$PROJECT_DIR$/backend" value="IMPORT" />
+        <entry key="$PROJECT_DIR$/backend" value="RE_IMPORT" />
       </map>
     </option>
   </component>
@@ -540,6 +591,13 @@
         <option value="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/controllers/Controller.java" />
         <option value="$PROJECT_DIR$/backend/src/main/resources/templates/index.html" />
         <option value="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/controllers/MainController.java" />
+        <option value="$PROJECT_DIR$/backend/build.gradle" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/users/CustomUserDetails.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/users/Users.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/repository/UsersRepository.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/service/CustomUserDetailsService.java" />
+        <option value="$PROJECT_DIR$/backend/.gitignore" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/config/SecurityConfig.java" />
       </list>
     </option>
   </component>
@@ -633,6 +691,16 @@
               <item name="backend" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="users" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tarkvaratehnika" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tarkvaratehnika" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -653,6 +721,10 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="vue" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tarkvaratehnika" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
@@ -677,6 +749,9 @@
     <property name="RequestMappingsPanelOrder2" value="2" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -808,12 +883,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1518967866753</updated>
-      <workItem from="1518967867950" duration="5404000" />
+      <workItem from="1518967867950" duration="11060000" />
     </task>
+    <task id="LOCAL-00001" summary="iml and build.gradle">
+      <created>1518981035357</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1518981035357</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5404000" />
+    <option name="totallyTimeSpent" value="11060000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
@@ -838,7 +921,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26208377" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -861,6 +944,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="iml and build.gradle" />
+    <option name="LAST_COMMIT_MESSAGE" value="iml and build.gradle" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
@@ -882,14 +969,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/main/resources/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -903,18 +982,6 @@
         <state relative-caret-position="189">
           <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/BackendApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#317#318#0" expanded="true" />
-            <element signature="e#386#387#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -944,14 +1011,133 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/BackendApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#317#318#0" expanded="true" />
+            <element signature="e#386#387#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/users/CustomUserDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#313#314#0" expanded="true" />
+            <element signature="e#341#342#0" expanded="true" />
+            <element signature="e#425#426#0" expanded="true" />
+            <element signature="e#452#453#0" expanded="true" />
+            <element signature="e#501#502#0" expanded="true" />
+            <element signature="e#543#544#0" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#631#632#0" expanded="true" />
+            <element signature="e#689#690#0" expanded="true" />
+            <element signature="e#716#717#0" expanded="true" />
+            <element signature="e#773#774#0" expanded="true" />
+            <element signature="e#800#801#0" expanded="true" />
+            <element signature="e#862#863#0" expanded="true" />
+            <element signature="e#889#890#0" expanded="true" />
+            <element signature="e#937#938#0" expanded="true" />
+            <element signature="e#964#965#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/users/Users.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="554">
+          <caret line="27" column="44" lean-forward="false" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
+          <folding>
+            <element signature="e#646#647#0" expanded="true" />
+            <element signature="e#671#672#0" expanded="true" />
+            <element signature="e#704#705#0" expanded="true" />
+            <element signature="e#732#733#0" expanded="true" />
+            <element signature="e#764#765#0" expanded="true" />
+            <element signature="e#792#793#0" expanded="true" />
+            <element signature="e#834#835#0" expanded="true" />
+            <element signature="e#868#869#0" expanded="true" />
+            <element signature="e#903#904#0" expanded="true" />
+            <element signature="e#934#935#0" expanded="true" />
+            <element signature="e#982#983#0" expanded="true" />
+            <element signature="e#1022#1023#0" expanded="true" />
+            <element signature="e#1052#1053#0" expanded="true" />
+            <element signature="e#1081#1082#0" expanded="true" />
+            <element signature="e#1122#1123#0" expanded="true" />
+            <element signature="e#1158#1159#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/repository/UsersRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/service/CustomUserDetailsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/controllers/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="27" lean-forward="false" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+        <state relative-caret-position="420">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#423#424#0" expanded="true" />
             <element signature="e#458#459#0" expanded="true" />
+            <element signature="e#515#516#0" expanded="true" />
+            <element signature="e#549#550#0" expanded="true" />
+            <element signature="e#608#609#0" expanded="true" />
+            <element signature="e#643#644#0" expanded="true" />
+            <element signature="e#708#709#0" expanded="true" />
+            <element signature="e#746#747#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="28" column="63" lean-forward="true" selection-start-line="28" selection-start-column="63" selection-end-line="28" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/config/SecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="554">
+          <caret line="45" column="13" lean-forward="true" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2064#2065#0" expanded="true" />
+            <element signature="e#2125#2126#0" expanded="true" />
+            <element signature="e#2235#2236#0" expanded="true" />
+            <element signature="e#2278#2279#0" expanded="true" />
           </folding>
         </state>
       </provider>
