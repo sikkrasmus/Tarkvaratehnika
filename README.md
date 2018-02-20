@@ -7,6 +7,7 @@ Saamuel Starke
  - Vue.js
  - Java
  - Gradle456
+ - Gradle123
  - Spring Boot
  - MySQL/PostgreSQL
 
