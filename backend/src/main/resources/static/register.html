@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:v-on="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <!--Import Google Icon Font-->
@@ -46,8 +46,10 @@
                                 <span class="card-title black-text">Sign Up</span>
                                 <form>
                                     <div class="row">
-                                        <div class="input-field col s12">
-                                            <input placeholder="E-mail" id="email" type="email" class="validate">
+                                        <div id="enter-email" class="input-field col s12">
+                                            <!--/*@thymesVar id="user" type="com.portfolio.backend.user.User"*/-->
+                                            <input placeholder="E-mail" id="email" type="email" class="validate"
+                                                   th:action="@{/register}" th:object="${user}">
                                             <label for="email" class="active">E-mail</label>
                                         </div>
                                     </div>
@@ -60,7 +62,7 @@
                                 </form>
                             </div>
                             <div class="card-action">
-                                <input type="submit" class="btn" value="Sign up">
+                                <input v-on:click="register" type="submit" class="btn" value="Sign up">
                             </div>
                         </div>
                     </div>
@@ -86,6 +88,7 @@
 <script src="vue/app.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="materialize-src/js/bin/materialize.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.in.js"></script>
 <script>
     $( document ).ready(function(){
         $(".button-collapse").sideNav();

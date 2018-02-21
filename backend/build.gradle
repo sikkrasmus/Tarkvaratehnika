@@ -30,4 +30,10 @@ dependencies {
     runtime('org.springframework.boot:spring-boot-devtools')
     runtime('mysql:mysql-connector-java')
     testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile ("org.springframework.boot:spring-boot-starter-thymeleaf")
+//    compile("org.thymeleaf.extras:thymeleaf-extras-springsecurity4")
+    compile("org.springframework.boot:spring-boot-starter-security")
+//    compile("net.sourceforge.nekohtml:nekohtml:1.9.22")
+//    compile("org.springframework.boot:spring-boot-starter-mail")
+//    compile 'com.nulab-inc:zxcvbn:1.2.3'
 }
