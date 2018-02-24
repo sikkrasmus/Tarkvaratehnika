@@ -8,8 +8,8 @@ new Vue({
 
     methods: {
         register: function() {
-            console.log(this.email);
-            console.log(this.password);
+            // console.log(this.email);
+            // console.log(this.password);
 
             axios({
                 method: 'post',

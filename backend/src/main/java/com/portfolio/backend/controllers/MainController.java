@@ -1,5 +1,6 @@
 package com.portfolio.backend.controllers;
 
+import com.portfolio.backend.pojos.UserRegistration;
 import com.portfolio.backend.repository.UserRepository;
 import com.portfolio.backend.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,13 +39,12 @@ public class MainController {
 
     @PostMapping(value="/register")
     public @ResponseBody
-    String register(@RequestParam String email,
-                       @RequestParam String password) {
+    String register(@RequestBody UserRegistration userRegistration) {
         User n = new User();
-        System.out.println(email);
-        System.out.println(password);
-        n.setEmail(email);
-        n.setPassword(passwordEncoder.encode(password));
+        System.out.println(userRegistration.getEmail());
+        System.out.println(userRegistration.getPassword());
+        n.setEmail(userRegistration.getEmail());
+        n.setPassword(passwordEncoder.encode(userRegistration.getPassword()));
         userRepository.save(n);
         return "User created";
     }
