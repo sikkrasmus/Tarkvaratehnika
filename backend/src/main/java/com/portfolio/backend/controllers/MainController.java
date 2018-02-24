@@ -1,15 +1,12 @@
 package com.portfolio.backend.controllers;
 
-import com.portfolio.backend.pojos.UserRegistration;
+import com.portfolio.backend.pojos.UserFields;
 import com.portfolio.backend.repository.UserRepository;
 import com.portfolio.backend.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @Controller
 public class MainController {
@@ -24,11 +21,11 @@ public class MainController {
     public String register() {
         return "register";
     }
-//
-//    @RequestMapping(path = "/login")
-//    public String login() {
-//        return "login";
-//    }
+
+    @RequestMapping(path = "/login")
+    public String login() {
+        return "login";
+    }
 //
 //    @RequestMapping(path = "/home")
 //    public String home() {
@@ -39,18 +36,26 @@ public class MainController {
 
     @PostMapping(value="/register")
     public @ResponseBody
-    String register(@RequestBody UserRegistration userRegistration) {
+    String register(@RequestBody UserFields userFields) {
         User n = new User();
-        System.out.println(userRegistration.getEmail());
-        System.out.println(userRegistration.getPassword());
-        n.setEmail(userRegistration.getEmail());
-        n.setPassword(passwordEncoder.encode(userRegistration.getPassword()));
+//        System.out.println(userFields.getEmail());
+//        System.out.println(userFields.getPassword());
+        n.setEmail(userFields.getEmail());
+        n.setPassword(passwordEncoder.encode(userFields.getPassword()));
         userRepository.save(n);
         return "User created";
     }
 
-//    @GetMapping(path="/all")
-//    public @ResponseBody Iterable<User> getAllUsers() {
-//        return userRepository.findAll();
-//    }
+    @PostMapping(value="/login")
+    public @ResponseBody
+    String login(@RequestBody UserFields userFields) {
+        User existing = userRepository.findByEmail(userFields.getEmail());
+        if (passwordEncoder.matches(userFields.getPassword(), existing.getPassword())) {
+            System.out.println("logged in as: " + existing.getEmail());
+            return "Logged in";
+        } else {
+            System.out.println("Invalid email or password");
+            return "Invalid email or password";
+        }
+    }
 }

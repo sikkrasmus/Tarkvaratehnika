@@ -1,14 +1,14 @@
 package com.portfolio.backend.pojos;
 
-public class UserRegistration {
+public class UserFields {
 
     private String email;
     private String password;
 
-    public UserRegistration() {
+    public UserFields() {
     }
 
-    public UserRegistration(String email, String password) {
+    public UserFields(String email, String password) {
         this.email = email;
         this.password = password;
     }
