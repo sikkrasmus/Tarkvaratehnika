@@ -1,11 +1,15 @@
-var app = new Vue({
-    el: '#enter-email',
+new Vue({
+    el: '#app',
     data: {
-        email: ""
+        email: "",
+        password: ""
     },
 
+
     methods: {
-        register() {
+        register: function() {
+            console.log(this.email);
+            console.log(this.password);
 
             axios({
                 method: 'post',

@@ -26,12 +26,14 @@ repositories {
 dependencies {
     compile 'org.springframework.security:spring-security-web:5.0.1.RELEASE'
     compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
     runtime('org.springframework.boot:spring-boot-devtools')
     testCompile('org.springframework.boot:spring-boot-starter-test')
     compile ("org.springframework.boot:spring-boot-starter-thymeleaf")
-//    compile("org.thymeleaf.extras:thymeleaf-extras-springsecurity4")
+    compile 'mysql:mysql-connector-java'
+    compile("org.thymeleaf.extras:thymeleaf-extras-springsecurity4")
     compile("org.springframework.boot:spring-boot-starter-security")
-//    compile("net.sourceforge.nekohtml:nekohtml:1.9.22")
+    compile("net.sourceforge.nekohtml:nekohtml:1.9.22")
 //    compile("org.springframework.boot:spring-boot-starter-mail")
 //    compile 'com.nulab-inc:zxcvbn:1.2.3'
 }
