@@ -2,6 +2,7 @@ package com.portfolio.backend.controllers;
 
 import com.portfolio.backend.pojos.UserFields;
 import com.portfolio.backend.repository.UserRepository;
+import com.portfolio.backend.service.UserService;
 import com.portfolio.backend.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -11,11 +12,7 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class MainController {
 
-    @Autowired
-    private UserRepository userRepository;
-
-    private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-
+    private UserService userService = new UserService();
 
     @RequestMapping(path = "/register")
     public String register() {
@@ -32,30 +29,22 @@ public class MainController {
 //        return "home";
 //    }
 
+    @RequestMapping(path = "/")
+    public String landing() {
+        return "index";
+    }
 
 
     @PostMapping(value="/register")
     public @ResponseBody
     String register(@RequestBody UserFields userFields) {
-        User n = new User();
-//        System.out.println(userFields.getEmail());
-//        System.out.println(userFields.getPassword());
-        n.setEmail(userFields.getEmail());
-        n.setPassword(passwordEncoder.encode(userFields.getPassword()));
-        userRepository.save(n);
+        userService.createAndSaveUser(userFields);
         return "User created";
     }
 
     @PostMapping(value="/login")
     public @ResponseBody
     String login(@RequestBody UserFields userFields) {
-        User existing = userRepository.findByEmail(userFields.getEmail());
-        if (passwordEncoder.matches(userFields.getPassword(), existing.getPassword())) {
-            System.out.println("logged in as: " + existing.getEmail());
-            return "Logged in";
-        } else {
-            System.out.println("Invalid email or password");
-            return "Invalid email or password";
-        }
+        return userService.validateUser(userFields);
     }
 }

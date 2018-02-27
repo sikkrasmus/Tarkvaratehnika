@@ -1,0 +1,12 @@
+# Created by .ignore support plugin (hsz.mobi)
+.gitignore
+backend/out/production/resources/static/axios/
+backend/out/production/resources/static/css/
+backend/out/production/resources/static/vue/test.html
+backend/out/production/resources/templates/home.html
+backend/out/production/resources/templates/index.html
+backend/out/production/resources/templates/login.html
+backend/src/test/resources/
+/backend/src/main/resources/application.properties
+.idea/dataSources.local.xml
+.idea/dataSources/
