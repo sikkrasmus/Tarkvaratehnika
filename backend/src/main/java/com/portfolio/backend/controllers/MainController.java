@@ -27,10 +27,10 @@ public class MainController {
         return "login";
     }
 //
-//    @RequestMapping(path = "/home")
-//    public String home() {
-//        return "home";
-//    }
+    @RequestMapping(path = "/home")
+    public String home() {
+        return "home";
+    }
 
 
 
@@ -38,8 +38,6 @@ public class MainController {
     public @ResponseBody
     String register(@RequestBody UserFields userFields) {
         User n = new User();
-//        System.out.println(userFields.getEmail());
-//        System.out.println(userFields.getPassword());
         n.setEmail(userFields.getEmail());
         n.setPassword(passwordEncoder.encode(userFields.getPassword()));
         userRepository.save(n);
