@@ -1,18 +1,16 @@
 package com.portfolio.backend.controllers;
 
 import com.portfolio.backend.pojos.UserFields;
-import com.portfolio.backend.repository.UserRepository;
 import com.portfolio.backend.service.UserService;
-import com.portfolio.backend.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class MainController {
 
-    private UserService userService = new UserService();
+    @Autowired
+    private UserService userService;
 
     @RequestMapping(path = "/register")
     public String register() {

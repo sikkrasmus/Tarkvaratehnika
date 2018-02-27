@@ -1,5 +1,7 @@
 package com.portfolio.backend.pojos;
 
+import javax.persistence.Entity;
+
 public class UserFields {
 
     private String email;
