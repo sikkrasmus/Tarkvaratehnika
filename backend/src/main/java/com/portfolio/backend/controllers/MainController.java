@@ -3,9 +3,12 @@ package com.portfolio.backend.controllers;
 import com.portfolio.backend.pojos.UserFields;
 import com.portfolio.backend.service.RequestService;
 import com.portfolio.backend.service.UserService;
+import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import java.io.IOException;
 
 @Controller
 public class MainController {
@@ -27,8 +30,8 @@ public class MainController {
     }
 
     @RequestMapping(path = "/home")
-    public String home() {
-        requestService.getMarketSummary();
+    public String home() throws IOException, JSONException {
+//        requestService.getMarketSummary();
         return "home";
     }
 

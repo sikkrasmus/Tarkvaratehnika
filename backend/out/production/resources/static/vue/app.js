@@ -23,7 +23,7 @@ new Vue({
                 url: 'login',
                 data: {email: this.log_email, password: this.log_password}
             }).then(function (response) {
-                document.location.replace("/")
+                document.location.replace("/home")
             })
         }
     }

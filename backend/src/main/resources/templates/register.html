@@ -5,7 +5,7 @@
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <link type="text/css" rel="stylesheet" href="/materialize-src/sass/materialize.css" media="screen,projection"/>
-    <link rel="stylesheet" href="/static/css/styles.css"/>
+    <link rel="stylesheet" href="/css/styles.css"/>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Sign up</title>
@@ -50,13 +50,15 @@
                                     <form>
                                         <div class="row">
                                             <div id="enter-email" class="input-field col s12">
-                                                <input  v-model="reg_email" placeholder="E-mail" id="email" type="email" class="validate"/>
+                                                <input v-model="reg_email" placeholder="E-mail" id="email" type="email"
+                                                       class="validate"/>
                                                 <label for="email" class="active">E-mail</label>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="input-field col s12">
-                                                <input v-model="reg_password" placeholder="Password" id="password" type="password"
+                                                <input v-model="reg_password" placeholder="Password" id="password"
+                                                       type="password"
                                                        class="validate"/>
                                                 <label for="password" class="active">Password</label>
                                             </div>
@@ -89,6 +91,8 @@
 
 
 </div>
+
+
 <script src="vue/vue.js"></script>
 <script src="vue/app.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
