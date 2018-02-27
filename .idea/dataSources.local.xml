@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="tarkvaratehnika@localhost" uuid="a78d23b8-7c95-4a3e-87c1-337e257026d1">
+    <data-source name="tarkvaratehnika@coinwatchdb.ctkmbhxwhnsr.us-east-2.rds.amazonaws.com" uuid="3d796fc7-1bad-4109-a535-a1e2420f70d7">
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <introspection-schemas>*:tarkvaratehnika</introspection-schemas>
     </data-source>
   </component>
 </project>

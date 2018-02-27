@@ -2,3 +2,6 @@
 .idea/workspace.xml
 .idea/modules/backend_test.iml
 .idea/modules/backend_main.iml
+.idea/dataSources.local.xml
+.idea/workspace.xml
+backend/out/production/classes/com/portfolio/backend/service/RequestService.class
