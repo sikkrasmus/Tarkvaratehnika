@@ -1,7 +1,10 @@
 package com.portfolio.backend.service;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.introspect.VisibilityChecker;
 import com.portfolio.backend.coins.CoinSummary;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,14 +25,20 @@ public class RequestService {
         ResponseEntity<String> response = restTemplate.getForEntity(
                 "https://bittrex.com/api/v1.1/public/getmarketsummaries",
                 String.class);
-//        JSONObject jsonObject = new JSONObject(response.toString());
-//        coinSummaries = getSummaryInstancesFromJSON(jsonObject.getString("result"));
-//
+        JSONObject jsonObject = new JSONObject(response.getBody());
+        coinSummaries = getSummaryInstancesFromJSON(jsonObject.getString("result"));
+
+//        System.out.println(coinSummaries.get(0).getHigh());
+//        System.out.println(coinSummaries.get(0).getLow());
+//        System.out.println(coinSummaries.get(0).getVolume());
 //        System.out.println(coinSummaries);
     }
 
     private List<CoinSummary> getSummaryInstancesFromJSON(String json) throws IOException {
-        ObjectMapper objectMapper = new ObjectMapper();
-        return objectMapper.readValue(json, new TypeReference<List<CoinSummary>>(){});
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
+        mapper.setVisibilityChecker(VisibilityChecker.Std.defaultInstance().withFieldVisibility(JsonAutoDetect.Visibility.ANY));
+//        ObjectMapper objectMapper = new ObjectMapper();
+        return mapper.readValue(json, new TypeReference<List<CoinSummary>>(){});
     }
 }

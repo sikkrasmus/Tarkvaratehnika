@@ -2,32 +2,65 @@ package com.portfolio.backend.coins;
 
 public class CoinSummary {
 
-    private String marketName;
-    private String high;
-    private String low;
-    private String volume;
-    private String last;
-    private String baseVolume;
-    private String timeStamp;
-    private String bid;
-    private String openBuyOrders;
-    private String openSellOrders;
-    private String prevDay;
-    private String created;
+    private String MarketName;
+    private String High;
+    private String Low;
+    private String Volume;
+    private String Last;
+    private String BaseVolume;
+    private String TimeStamp;
+    private String Bid;
+    private String OpenBuyOrders;
+    private String OpenSellOrders;
+    private String PrevDay;
+    private String Created;
 
+    public String getMarketName() {
+        return MarketName;
+    }
 
+    public String getHigh() {
+        return High;
+    }
 
+    public String getLow() {
+        return Low;
+    }
 
-//    {"MarketName":"BTC-1ST",
-//            "High":0.00003090,
-//            "Low":0.00002690,
-//            "Volume":1788912.30621303,
-//            "Last":0.00002766,
-//            "BaseVolume":51.06205661,
-//            "TimeStamp":"2018-02-27T12:31:54.56",
-//            "Bid":0.00002766,"Ask":0.00002818,
-//            "OpenBuyOrders":168,
-//            "OpenSellOrders":2716,
-//            "PrevDay":0.00002825,
-//            "Created":"2017-06-06T01:22:35.727"}
+    public String getVolume() {
+        return Volume;
+    }
+
+    public String getLast() {
+        return Last;
+    }
+
+    public String getBaseVolume() {
+        return BaseVolume;
+    }
+
+    public String getTimeStamp() {
+        return TimeStamp;
+    }
+
+    public String getBid() {
+        return Bid;
+    }
+
+    public String getOpenBuyOrders() {
+        return OpenBuyOrders;
+    }
+
+    public String getOpenSellOrders() {
+        return OpenSellOrders;
+    }
+
+    public String getPrevDay() {
+        return PrevDay;
+    }
+
+    public String getCreated() {
+        return Created;
+    }
+
 }
