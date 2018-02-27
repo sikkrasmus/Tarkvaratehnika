@@ -23,11 +23,16 @@ public class MainController {
     public String login() {
         return "login";
     }
-//
-//    @RequestMapping(path = "/home")
-//    public String home() {
-//        return "home";
-//    }
+
+    @RequestMapping(path = "/home")
+    public String home() {
+        return "home";
+    }
+
+    @RequestMapping(path = "/index")
+    public String index() {
+        return "index";
+    }
 
     @RequestMapping(path = "/")
     public String landing() {
