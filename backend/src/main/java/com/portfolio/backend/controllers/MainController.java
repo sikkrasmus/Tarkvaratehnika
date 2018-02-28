@@ -37,6 +37,12 @@ public class MainController {
 
     @RequestMapping(path = "/index")
     public String index() {
+        try {
+            requestService.getMarketSummary();
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
+        }
+
         return "index";
     }
 

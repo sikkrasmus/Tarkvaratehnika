@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="tarkvaratehnika@coinwatchdb.ctkmbhxwhnsr.us-east-2.rds.amazonaws.com" uuid="3d796fc7-1bad-4109-a535-a1e2420f70d7">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+    <data-source name="tarkvaratehnika@coinwatchdatabase.ciuvskv8vfdh.eu-central-1.rds.amazonaws.com" uuid="3d796fc7-1bad-4109-a535-a1e2420f70d7">
+      <database-info product="MySQL" version="5.6.37" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.45 ( Revision: 9131eefa398531c7dc98776e8a3fe839e544c5b2 )">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
+      <user-name>cwdev</user-name>
       <introspection-schemas>*:tarkvaratehnika</introspection-schemas>
+    </data-source>
+    <data-source name="db_example@localhost" uuid="b6c5589d-2fde-4cdc-b238-5547a13b6b11">
+      <database-info product="MySQL" version="5.7.21-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.45 ( Revision: 9131eefa398531c7dc98776e8a3fe839e544c5b2 )">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>springuser</user-name>
+      <introspection-schemas>*:db_example</introspection-schemas>
     </data-source>
   </component>
 </project>
