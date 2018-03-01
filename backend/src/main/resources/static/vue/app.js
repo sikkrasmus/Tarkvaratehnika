@@ -12,7 +12,7 @@ new Vue({
     },
 
     methods: {
-        register: function() {
+        register: function () {
             axios({
                 method: 'post',
                 url: 'register',
@@ -33,8 +33,16 @@ new Vue({
     },
 
     mounted() {
-        axios.get('/').then(response => this.coin_data = response.data);
+        axios.get('/').then(response =>
+
+            this.coin_data = response.data);
         console.log(this.coin_data)
+    },
+
+    computed: {
+        sorted_coins: function () {
+            return _.orderBy(this.coin_data, 'marketCap')
+        }
     }
 
 

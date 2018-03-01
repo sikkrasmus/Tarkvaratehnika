@@ -2,7 +2,7 @@ package com.portfolio.backend.coins;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class APIFormat {
+public class APIFormatBittrex {
 
     private CoinMarketInfo Market;
     private CoinSummary Summary;

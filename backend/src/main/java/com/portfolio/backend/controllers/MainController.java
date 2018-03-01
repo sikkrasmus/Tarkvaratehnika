@@ -1,6 +1,6 @@
 package com.portfolio.backend.controllers;
 
-import com.portfolio.backend.coins.APIFormat;
+import com.portfolio.backend.coins.CoinListElement;
 import com.portfolio.backend.pojos.UserFields;
 import com.portfolio.backend.service.RequestService;
 import com.portfolio.backend.service.UserService;
@@ -33,14 +33,14 @@ public class MainController {
 
     @RequestMapping(path = "/home")
     public String home() throws IOException, JSONException {
-//        requestService.getMarketSummary();
+//        requestService.getMarketSummaryFromBittrex();
         return "home";
     }
 
     @RequestMapping(path = "/index")
     public String index() {
         try {
-            requestService.getMarketSummary();
+            requestService.makeAllRequests();
         } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
@@ -55,8 +55,8 @@ public class MainController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET, produces = "application/json")
     @ResponseBody
-    public List<APIFormat> helloRest() {
-        return requestService.getCoinRepository().getApiFormatList();
+    public List<CoinListElement> indexPageCoinList() {
+        return requestService.getCoinList();
     }
 
 
