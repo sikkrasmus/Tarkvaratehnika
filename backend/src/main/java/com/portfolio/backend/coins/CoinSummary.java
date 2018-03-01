@@ -10,6 +10,7 @@ public class CoinSummary {
     private String BaseVolume;
     private String TimeStamp;
     private String Bid;
+    private String Ask;
     private String OpenBuyOrders;
     private String OpenSellOrders;
     private String PrevDay;
@@ -45,6 +46,10 @@ public class CoinSummary {
 
     public String getBid() {
         return Bid;
+    }
+
+    public String getAsk() {
+        return Ask;
     }
 
     public String getOpenBuyOrders() {
