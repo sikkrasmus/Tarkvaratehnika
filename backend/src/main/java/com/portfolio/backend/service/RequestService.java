@@ -28,7 +28,7 @@ public class RequestService {
                 "https://bittrex.com/api/v2.0/pub/markets/GetMarketSummaries",
                 String.class);
         JSONObject jsonObject = new JSONObject(response.getBody());
-        System.out.println(jsonObject.getString("result"));
+//        System.out.println(jsonObject.getString("result"));
         List<APIFormat> result = getFormatFromRequest(jsonObject.getString("result"));
         coinRepository.setApiFormatList(result);
     }
@@ -42,4 +42,9 @@ public class RequestService {
         });
     }
 
+//    public List<>
+
+    public CoinRepository getCoinRepository() {
+        return coinRepository;
+    }
 }

@@ -1,5 +1,6 @@
 package com.portfolio.backend.controllers;
 
+import com.portfolio.backend.coins.APIFormat;
 import com.portfolio.backend.pojos.UserFields;
 import com.portfolio.backend.service.RequestService;
 import com.portfolio.backend.service.UserService;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.util.List;
 
 @Controller
 public class MainController {
@@ -49,6 +51,12 @@ public class MainController {
     @RequestMapping(path = "/")
     public String landing() {
         return "index";
+    }
+
+    @RequestMapping(value = "/", method = RequestMethod.GET, produces = "application/json")
+    @ResponseBody
+    public List<APIFormat> helloRest() {
+        return requestService.getCoinRepository().getApiFormatList();
     }
 
 

@@ -40,4 +40,8 @@ public class CoinRepository {
     public void setApiFormatList(List<APIFormat> apiFormatList) {
         this.apiFormatList = apiFormatList;
     }
+
+    public List<APIFormat> getApiFormatList() {
+        return apiFormatList;
+    }
 }
