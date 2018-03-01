@@ -1,11 +1,12 @@
 package com.portfolio.backend.service;
 
-import com.portfolio.backend.pojos.UserFields;
+import com.portfolio.backend.pojos.UserDTO;
 import com.portfolio.backend.repository.UserRepository;
 import com.portfolio.backend.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+
 
 @Service
 public class UserService {
@@ -20,16 +21,16 @@ public class UserService {
     }
 
 
-    public void createAndSaveUser(UserFields userFields){
-        User user = new User();
-        user.setEmail(userFields.getEmail());
-        user.setPassword(passwordEncoder.encode(userFields.getPassword()));
-        userRepository.save(user);
+    public void createAndSaveUser(UserDTO userDTO){
+        User u = new User();
+        u.setEmail(userDTO.getEmail());
+        u.setPassword(passwordEncoder.encode(userDTO.getPassword()));
+        userRepository.save(u);
     }
 
-    public String validateUser(UserFields userFields){
-        User existing = userRepository.findByEmail(userFields.getEmail());
-        if (passwordEncoder.matches(userFields.getPassword(), existing.getPassword())) {
+    public String validateUser(UserDTO userDTO){
+        User existing = userRepository.findByEmail(userDTO.getEmail());
+        if (passwordEncoder.matches(userDTO.getPassword(), existing.getPassword())) {
             return "Logged in!";
         } else {
             return "Invalid email or password!";

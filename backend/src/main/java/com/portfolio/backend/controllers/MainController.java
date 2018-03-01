@@ -1,13 +1,17 @@
 package com.portfolio.backend.controllers;
 
-import com.portfolio.backend.pojos.UserFields;
+import com.portfolio.backend.pojos.UserDTO;
 import com.portfolio.backend.service.RequestService;
 import com.portfolio.backend.service.UserService;
+import com.portfolio.backend.user.User;
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.io.IOException;
 
 @Controller
@@ -19,8 +23,8 @@ public class MainController {
     @Autowired
     private RequestService requestService;
 
-    @RequestMapping(path = "/register")
-    public String register() {
+    @GetMapping(path = "/register")
+    public String register(UserDTO userDTO) {
         return "register";
     }
 
@@ -47,15 +51,18 @@ public class MainController {
 
 
     @PostMapping(value="/register")
-    public @ResponseBody
-    String register(@RequestBody UserFields userFields) {
-        userService.createAndSaveUser(userFields);
-        return "User created";
+    public String registerValidation(@Valid UserDTO userDTO, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()){
+            return "register";
+        }
+
+        userService.createAndSaveUser(userDTO);
+        return "redirect:/home";
     }
 
     @PostMapping(value="/login")
     public @ResponseBody
-    String login(@RequestBody UserFields userFields) {
-        return userService.validateUser(userFields);
+    String login(@RequestBody UserDTO userDTO) {
+        return userService.validateUser(userDTO);
     }
 }

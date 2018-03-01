@@ -8,15 +8,6 @@ new Vue({
     },
 
     methods: {
-        register: function() {
-            axios({
-                method: 'post',
-                url: 'register',
-                data: {email: this.reg_email, password: this.reg_password}
-            }).then(function (response) {
-                // document.location.replace("/");
-            });
-        },
         login: function () {
             axios({
                 method: 'post',

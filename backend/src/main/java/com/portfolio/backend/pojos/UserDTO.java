@@ -1,16 +1,20 @@
 package com.portfolio.backend.pojos;
 
-import javax.persistence.Entity;
+import com.portfolio.backend.validations.ValidEmail;
+import com.portfolio.backend.validations.ValidPassword;
 
-public class UserFields {
 
+public class UserDTO {
+
+    @ValidEmail
     private String email;
+    @ValidPassword
     private String password;
 
-    public UserFields() {
+    public UserDTO() {
     }
 
-    public UserFields(String email, String password) {
+    public UserDTO(String email, String password) {
         this.email = email;
         this.password = password;
     }
