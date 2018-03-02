@@ -1,20 +1,20 @@
 package com.portfolio.backend.repository;
 
-import com.portfolio.backend.coins.APIFormatBittrex;
-import com.portfolio.backend.coins.APIFormatCMC;
+import com.portfolio.backend.coins.bittrex.APIFormatBittrex;
+import com.portfolio.backend.coins.coinmarketcap.APIFormatCMC;
 import com.portfolio.backend.coins.CoinListElement;
+import com.portfolio.backend.coins.coinmarketcap.CMCItem;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class CoinRepository {
 
     private List<APIFormatBittrex> apiFormatBittrexList;
     private List<APIFormatCMC> apiFormatCMCList;
-    private Map<String, String> nameMarketCapMap = new HashMap<>();
+    private Map<String, CMCItem> nameMarketCapMap = new HashMap<>();
 
     private List<CoinListElement> coinList = new ArrayList<>();
     private float BTCPrice = -1;
@@ -31,6 +31,7 @@ public class CoinRepository {
     }
 
     public void createCoinList() {
+        coinList.clear();
         mapNameToMarketCap();
         float price;
 
@@ -43,19 +44,22 @@ public class CoinRepository {
                     price = Float.parseFloat(a.getSummary().getLast());
                 }
 
-                coinList.add(new CoinListElement(
-                        a.getMarket().getLogoUrl(),
-                        a.getMarket().getMarketCurrency(),
-                        a.getMarket().getMarketCurrencyLong(),
-                        String.valueOf(price),
-                        nameMarketCapMap.get(a.getMarket().getMarketCurrency())));
+                if (nameMarketCapMap.get(a.getMarket().getMarketCurrency()) != null) {
+                    coinList.add(new CoinListElement(
+                            a.getMarket().getLogoUrl(),
+                            a.getMarket().getMarketCurrency(),
+                            a.getMarket().getMarketCurrencyLong(),
+                            String.valueOf(price),
+                            nameMarketCapMap.get(a.getMarket().getMarketCurrency()).getMarketCap(),
+                            nameMarketCapMap.get(a.getMarket().getMarketCurrency()).getChange24h()));
+                }
             }
         }
     }
 
     private void mapNameToMarketCap() {
         for (APIFormatCMC coin : apiFormatCMCList) {
-            nameMarketCapMap.put(coin.getSymbol(), coin.getMarket_cap_usd());
+            nameMarketCapMap.put(coin.getSymbol(), new CMCItem(coin.getMarket_cap_usd(), coin.getPercent_change_24h()));
         }
     }
 

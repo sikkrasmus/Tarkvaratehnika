@@ -1,4 +1,4 @@
-package com.portfolio.backend.coins;
+package com.portfolio.backend.coins.coinmarketcap;
 
 public class APIFormatCMC {
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:v-on="http://www.w3.org/1999/xhtml"
+      xmlns:v-bind="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="UTF-8"/>
@@ -79,13 +80,22 @@
             <!--</p>-->
 
 
-            <ul class="collection">
+            <ul class="collection with-header">
+                <li class="collection-header"><b>
+                    Name
+                    <span style="display: inline-block; left: 300px; position: absolute">Marketcap</span>
+                    <span style="display: inline-block; left: 600px; position: absolute">Price</span>
+                    <span style="display: inline-block; left: 800px; position: absolute">Change(24h)</span>
+
+                </b></li>
                 <li class="collection-item avatar" v-for="c in sorted_coins">
                     <img :src="c.logoUrl" alt="" class="circle"/>
                     <span class="title">{{c.nameLong}}</span><br/>
                     <span>{{c.nameShort}}</span>
-                    <span style="display: inline-block; left: 400px; position: absolute">Price: {{c.price}}$</span>
-                    <span style="display: inline-block; left: 800px; position: absolute">Marketcap: {{c.marketCap}}$</span>
+                    <span style="display: inline-block; left: 300px; position: absolute">{{c.marketCap}}$</span>
+                    <span style="display: inline-block; left: 600px; position: absolute">{{c.price}}$</span>
+                    <span :class="c.percentColor"
+                          style="display: inline-block; left: 800px; position: absolute">{{c.change24h}}%</span>
                 </li>
             </ul>
         </div>
