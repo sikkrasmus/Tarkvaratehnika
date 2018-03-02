@@ -5,3 +5,17 @@
 .idea/dataSources.local.xml
 .idea/workspace.xml
 backend/out/production/classes/com/portfolio/backend/service/RequestService.class
+.idea/dataSources.local.xml
+.idea/dataSources.local.xml
+.idea/dataSources.xml
+.idea/dataSources/3d796fc7-1bad-4109-a535-a1e2420f70d7.xml
+.idea/dataSources/d002021a-fa6d-4284-a1ec-6c9789fcb7c8.xml
+.idea/modules.xml
+.idea/Tarkvaratehnika.iml
+.idea/workspace.xml
+backend/out/production/resources/application.properties
+backend/out/production/resources/templates/home.html
+backend/out/production/resources/templates/index.html
+backend/out/production/resources/templates/login.html
+backend/out/production/resources/templates/register.html
+backend/src/main/resources/application.properties

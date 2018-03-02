@@ -7,3 +7,13 @@ body {
 main {
     flex: 1 0 auto;
 }
+
+
+
+.green_text {
+    color: #00dc5b;
+}
+
+.red_text {
+    color: #b9151b;
+}

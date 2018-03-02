@@ -1,5 +1,3 @@
-Vue.use(axios);
-
 new Vue({
     el: '#app',
     data: {
@@ -12,7 +10,7 @@ new Vue({
     },
 
     methods: {
-        register: function () {
+        register: function() {
             axios({
                 method: 'post',
                 url: 'register',
