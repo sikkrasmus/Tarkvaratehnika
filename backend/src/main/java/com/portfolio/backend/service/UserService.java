@@ -1,6 +1,6 @@
 package com.portfolio.backend.service;
 
-import com.portfolio.backend.pojos.UserDTO;
+import com.portfolio.backend.DTO.UserDTO;
 import com.portfolio.backend.repository.UserRepository;
 import com.portfolio.backend.user.User;
 import org.springframework.beans.factory.annotation.Autowired;

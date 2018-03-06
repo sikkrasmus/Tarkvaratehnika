@@ -1,4 +1,4 @@
-package com.portfolio.backend.pojos;
+package com.portfolio.backend.DTO;
 
 import com.portfolio.backend.validations.ValidEmail;
 import com.portfolio.backend.validations.ValidPassword;
