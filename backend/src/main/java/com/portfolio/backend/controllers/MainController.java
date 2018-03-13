@@ -62,9 +62,9 @@ public class MainController {
     }
 
 
-    @PostMapping(value="/register")
+    @PostMapping(value = "/register")
     public String registerValidation(@Valid UserDTO userDTO, BindingResult bindingResult) {
-        if (bindingResult.hasErrors()){
+        if (bindingResult.hasErrors()) {
             return "register";
         }
 
@@ -72,7 +72,7 @@ public class MainController {
         return "redirect:/home";
     }
 
-    @PostMapping(value="/login")
+    @PostMapping(value = "/login")
     public @ResponseBody
     String login(@RequestBody UserDTO userDTO) {
         return userService.validateUser(userDTO);

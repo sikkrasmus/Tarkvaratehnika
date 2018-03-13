@@ -49,11 +49,12 @@
                             <div class="card">
                                 <div class="card-content">
                                     <span class="card-title black-text">Sign Up</span>
-                                    <form>
+                                    <form action="#" th:action="@{/register}" th:object="${userDTO}" method="post">
                                         <div class="row">
                                             <div id="enter-email" class="input-field col s12">
                                                 <input v-model="reg_email" placeholder="E-mail" id="email" type="email"
-                                                       class="validate"/>
+                                                       class="validate" th:field="*{email}"/>
+                                                <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="error">Email Error</span>
                                                 <label for="email" class="active">E-mail</label>
                                             </div>
                                         </div>
@@ -61,15 +62,17 @@
                                             <div class="input-field col s12">
                                                 <input v-model="reg_password" placeholder="Password" id="password"
                                                        type="password"
-                                                       class="validate"/>
+                                                       class="validate" th:field="*{password}"/>
+                                                <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="error">Password Error</span>
                                                 <label for="password" class="active">Password</label>
                                             </div>
                                         </div>
+                                        <div class="card-action">
+                                            <input type="submit" class="btn" value="Sign up"/>
+                                        </div>
                                     </form>
                                 </div>
-                                <div class="card-action">
-                                    <input v-on:click="register" type="submit" class="btn" value="Sign up"/>
-                                </div>
+
                             </div>
                         </div>
                     </div>

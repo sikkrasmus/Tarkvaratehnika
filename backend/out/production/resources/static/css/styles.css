@@ -7,3 +7,9 @@ body {
 main {
     flex: 1 0 auto;
 }
+
+.error {
+    color: red;
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+}
