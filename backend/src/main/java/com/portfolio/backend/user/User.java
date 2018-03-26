@@ -1,13 +1,9 @@
 package com.portfolio.backend.user;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class User {
@@ -16,6 +12,17 @@ public class User {
     private Long id;
 
     private String email;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Portfolio> portfolios;
+
+    public List<Portfolio> getPortfolios() {
+        return portfolios;
+    }
+
+    public void setPortfolios(List<Portfolio> portfolios) {
+        this.portfolios = portfolios;
+    }
 
     @JsonIgnore
     private String password;

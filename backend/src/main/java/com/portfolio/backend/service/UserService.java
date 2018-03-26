@@ -21,19 +21,31 @@ public class UserService {
     }
 
 
-    public void createAndSaveUser(UserDTO userDTO){
+    public void createAndSaveUser(UserDTO userDTO) {
         User u = new User();
         u.setEmail(userDTO.getEmail());
         u.setPassword(passwordEncoder.encode(userDTO.getPassword()));
         userRepository.save(u);
     }
 
-    public String validateUser(UserDTO userDTO){
-        User existing = userRepository.findByEmail(userDTO.getEmail());
-        if (passwordEncoder.matches(userDTO.getPassword(), existing.getPassword())) {
-            return "Logged in!";
-        } else {
-            return "Invalid email or password!";
+    public boolean validateUser(UserDTO userDTO) {
+        try {
+
+            User existing = userRepository.findByEmail(userDTO.getEmail());
+            return passwordEncoder.matches(userDTO.getPassword(), existing.getPassword());
+        } catch (NullPointerException e) {
+            return false;
         }
+    }
+
+    /**
+     * Method to check, if current email is already in use.
+     *
+     * @param UserDTO User object.
+     * @return True if email is in use. False if email is free to use.
+     */
+    public boolean isUserEmailExisting(UserDTO UserDTO) {
+        User existing = userRepository.findByEmail(UserDTO.getEmail());
+        return existing != null;
     }
 }

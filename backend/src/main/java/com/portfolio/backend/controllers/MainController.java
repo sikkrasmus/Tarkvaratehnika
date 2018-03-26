@@ -1,7 +1,9 @@
 package com.portfolio.backend.controllers;
 
-import com.portfolio.backend.coins.APIFormat;
+import com.portfolio.backend.DTO.PortfolioDTO;
 import com.portfolio.backend.DTO.UserDTO;
+import com.portfolio.backend.coins.APIFormat;
+import com.portfolio.backend.service.PortfolioService;
 import com.portfolio.backend.service.RequestService;
 import com.portfolio.backend.service.UserService;
 import org.json.JSONException;
@@ -10,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.io.IOException;
 import java.util.List;
@@ -23,13 +26,16 @@ public class MainController {
     @Autowired
     private RequestService requestService;
 
+    @Autowired
+    private PortfolioService portfolioService;
+
     @GetMapping(path = "/register")
     public String register(UserDTO userDTO) {
         return "register";
     }
 
-    @RequestMapping(path = "/login")
-    public String login() {
+    @GetMapping(path = "/login")
+    public String login(UserDTO userDTO) {
         return "login";
     }
 
@@ -37,6 +43,11 @@ public class MainController {
     public String home() throws IOException, JSONException {
 //        requestService.getMarketSummary();
         return "home";
+    }
+
+    @RequestMapping(path = "/addPortfolio")
+    public String addPortfolio(PortfolioDTO portfolioDTO){
+        return "addPortfolio";
     }
 
     @RequestMapping(path = "/index")
@@ -61,20 +72,39 @@ public class MainController {
         return requestService.getCoinRepository().getApiFormatList();
     }
 
-
     @PostMapping(value = "/register")
     public String registerValidation(@Valid UserDTO userDTO, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "register";
         }
-
-        userService.createAndSaveUser(userDTO);
-        return "redirect:/home";
+        if (!userService.isUserEmailExisting(userDTO)){
+            userService.createAndSaveUser(userDTO);
+            return "redirect:/login";
+        }
+        return "register";
     }
 
     @PostMapping(value = "/login")
-    public @ResponseBody
-    String login(@RequestBody UserDTO userDTO) {
-        return userService.validateUser(userDTO);
+    public String login(@Valid UserDTO userDTO, BindingResult bindingResult, HttpSession session) {
+        if (bindingResult.hasErrors()){
+            return "login";
+        }
+        if (userService.validateUser(userDTO)){
+            session.setAttribute("name", userDTO.getEmail());
+            return "redirect:/home";
+        }
+
+        return "login";
+    }
+
+    @PostMapping(value = "/addPortfolio")
+    public String addPortfolio(@Valid PortfolioDTO portfolioDTO, HttpSession session, BindingResult bindingResult){
+        if (bindingResult.hasErrors()){
+            return "addPortfolio";
+        }
+
+        System.out.println(session.getAttribute("name").toString());
+        portfolioService.createAndSavePortfolio(portfolioDTO, session);
+        return "redirect:/home";
     }
 }
