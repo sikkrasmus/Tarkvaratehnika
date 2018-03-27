@@ -20,7 +20,7 @@ public class PwValidator implements ConstraintValidator<ValidPassword, String> {
 
         Properties props = new Properties();
         try {
-            props.load(new FileInputStream("C:\\Users\\rasmuss\\IdeaProjects\\Tarkvaratehnika\\backend\\src\\main\\resources\\messages.properties"));
+            props.load(new FileInputStream("/Users/Sam/IdeaProjects/Tarkvaratehnika3/backend/src/main/resources/messages.properties"));
         } catch (IOException e) {
             e.printStackTrace();
         }
