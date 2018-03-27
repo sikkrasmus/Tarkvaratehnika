@@ -3,6 +3,7 @@ package com.portfolio.backend.user;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "Portfolio")
 public class Portfolio {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

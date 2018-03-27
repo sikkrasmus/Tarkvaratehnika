@@ -40,24 +40,32 @@ public class MainController {
     }
 
     @RequestMapping(path = "/home")
-    public String home() throws IOException, JSONException {
+    public String home(HttpSession session) throws IOException, JSONException {
 //        requestService.getMarketSummary();
-        return "home";
+        if (!session.isNew()){
+            return "home";
+        }
+        return "login";
     }
 
     @RequestMapping(path = "/addPortfolio")
-    public String addPortfolio(PortfolioDTO portfolioDTO){
+    public String addPortfolio(PortfolioDTO portfolioDTO) {
         return "addPortfolio";
+    }
+    @RequestMapping(path = "/portfolioView")
+    public String portfolioView() {
+        return "portfolioView";
     }
 
     @RequestMapping(path = "/index")
-    public String index() {
+    public String index(HttpSession session) {
         try {
             requestService.getMarketSummary();
         } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
 
+        session.invalidate();
         return "index";
     }
 
@@ -77,7 +85,7 @@ public class MainController {
         if (bindingResult.hasErrors()) {
             return "register";
         }
-        if (!userService.isUserEmailExisting(userDTO)){
+        if (!userService.isUserEmailExisting(userDTO)) {
             userService.createAndSaveUser(userDTO);
             return "redirect:/login";
         }
@@ -86,10 +94,10 @@ public class MainController {
 
     @PostMapping(value = "/login")
     public String login(@Valid UserDTO userDTO, BindingResult bindingResult, HttpSession session) {
-        if (bindingResult.hasErrors()){
+        if (bindingResult.hasErrors()) {
             return "login";
         }
-        if (userService.validateUser(userDTO)){
+        if (userService.validateUser(userDTO)) {
             session.setAttribute("name", userDTO.getEmail());
             return "redirect:/home";
         }
@@ -98,13 +106,23 @@ public class MainController {
     }
 
     @PostMapping(value = "/addPortfolio")
-    public String addPortfolio(@Valid PortfolioDTO portfolioDTO, HttpSession session, BindingResult bindingResult){
-        if (bindingResult.hasErrors()){
+    public String addPortfolio(@Valid PortfolioDTO portfolioDTO, HttpSession session, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
             return "addPortfolio";
         }
-
-        System.out.println(session.getAttribute("name").toString());
         portfolioService.createAndSavePortfolio(portfolioDTO, session);
         return "redirect:/home";
     }
+
+
+    @ModelAttribute(name = "portfolios")
+    public List<String> portfolios(HttpSession session) {
+        try {
+
+            return portfolioService.getAllUserPortfolios(session.getAttribute("name").toString());
+        } catch (NullPointerException e) {
+            return null;
+        }
+    }
+
 }
