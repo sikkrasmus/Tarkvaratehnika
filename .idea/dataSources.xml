@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="tarkvaratehnika@coinwatchdb.ctkmbhxwhnsr.us-east-2.rds.amazonaws.com" uuid="3d796fc7-1bad-4109-a535-a1e2420f70d7">
+    <data-source source="LOCAL" name="tarkvaratehnika@coinwatchdatabase.ciuvskv8vfdh.eu-central-1.rds.amazonaws.com" uuid="3d796fc7-1bad-4109-a535-a1e2420f70d7">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://coinwatchdb.ctkmbhxwhnsr.us-east-2.rds.amazonaws.com:3306/tarkvaratehnika</jdbc-url>
+      <jdbc-url>jdbc:mysql://coinwatchdatabase.ciuvskv8vfdh.eu-central-1.rds.amazonaws.com:3306/tarkvaratehnika</jdbc-url>
+      <driver-properties>
+        <property name="autoReconnect" value="true" />
+        <property name="zeroDateTimeBehavior" value="convertToNull" />
+        <property name="tinyInt1isBit" value="false" />
+        <property name="characterEncoding" value="utf8" />
+        <property name="characterSetResults" value="utf8" />
+        <property name="yearIsDateType" value="false" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="db_example@localhost" uuid="b6c5589d-2fde-4cdc-b238-5547a13b6b11">
+      <driver-ref>mysql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/db_example</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="convertToNull" />

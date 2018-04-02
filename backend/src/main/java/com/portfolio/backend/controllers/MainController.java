@@ -1,5 +1,6 @@
 package com.portfolio.backend.controllers;
 
+import com.portfolio.backend.coins.CoinListElement;
 import com.portfolio.backend.pojos.UserFields;
 import com.portfolio.backend.service.RequestService;
 import com.portfolio.backend.service.UserService;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.util.List;
 
 @Controller
 public class MainController {
@@ -31,18 +33,30 @@ public class MainController {
 
     @RequestMapping(path = "/home")
     public String home() throws IOException, JSONException {
-//        requestService.getMarketSummary();
+//        requestService.getMarketSummaryFromBittrex();
         return "home";
     }
 
     @RequestMapping(path = "/index")
     public String index() {
+        try {
+            requestService.makeAllRequests();
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
+        }
+
         return "index";
     }
 
     @RequestMapping(path = "/")
     public String landing() {
         return "index";
+    }
+
+    @RequestMapping(value = "/", method = RequestMethod.GET, produces = "application/json")
+    @ResponseBody
+    public List<CoinListElement> indexPageCoinList() {
+        return requestService.getCoinList();
     }
 
 

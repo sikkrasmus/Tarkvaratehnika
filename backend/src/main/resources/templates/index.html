@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:v-on="http://www.w3.org/1999/xhtml"
+      xmlns:v-bind="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="UTF-8"/>
@@ -12,65 +13,92 @@
     <title>coinWatch</title>
 </head>
 <body>
-<div id="app">
 <!-- Navigation -->
-<nav>
-    <div class="nav-wrapper">
-        <a href="index.html" class="brand-logo center">cWATCH</a>
-        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-            <li><a href="login.html">LOG IN</a></li>
-            <li><a href="register.html">SIGN UP</a></li>
-        </ul>
-        <ul class="side-nav" id="mobile-demo">
-            <li><div class="user-view">
-                <div class="background" style="background-image: linear-gradient(to bottom right,#396afc,#2948ff);
+<header>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="index.html" class="brand-logo center">cWATCH</a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="login.html">LOG IN</a></li>
+                <li><a href="register.html">SIGN UP</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li>
+                    <div class="user-view">
+                        <div class="background" style="background-image: linear-gradient(to bottom right,#396afc,#2948ff);
 	opacity: 1; ">
-                </div>
-                <a href="#!name"><span class="white-text name">coinWatch</span></a>
-                <a href="#!email"><span class="white-text email">Track your crypto portfolio</span></a>
-            </div></li>
-            <li><a href="login.html">LOG IN</a></li>
-            <div class="divider"></div>
-            <li><a href="register.html">SIGN UP</a></li>
-            <div class="divider"></div>
-        </ul>
-    </div>
-</nav>
+                        </div>
+                        <a href="#!name"><span class="white-text name">coinWatch</span></a>
+                        <a href="#!email"><span class="white-text email">Track your crypto portfolio</span></a>
+                    </div>
+                </li>
+                <li><a href="login.html">LOG IN</a></li>
+                <div class="divider"></div>
+                <li><a href="register.html">SIGN UP</a></li>
+                <div class="divider"></div>
+            </ul>
+        </div>
+    </nav>
+</header>
 <main>
-    <div class="carousel carousel-slider center" data-indicators="true">
-        <div class="carousel-fixed-item center">
-            <a class="btn waves-effect indigo accent-4 white-text darken-text-2 hide-on-med-and-down" href="register.html">Try now!</a>
+    <div id="app">
+        <div class="carousel carousel-slider center" data-indicators="true">
+            <div class="carousel-fixed-item center">
+                <a class="btn waves-effect indigo accent-4 white-text darken-text-2 hide-on-med-and-down"
+                   href="register.html">Try now!</a>
+            </div>
+            <div class="carousel-item red white-text" href="#one!">
+                <h2>FEATURES</h2>
+                <p class="white-text">Landing page - Ränk reklaam</p>
+            </div>
+            <div class="carousel-item amber white-text" href="#two!">
+                <h2>FEATURES2</h2>
+                <p class="white-text">Ränk reklaam 2</p>
+            </div>
+            <div class="carousel-item green white-text" href="#three!">
+                <h2>FEATURES3</h2>
+                <p class="white-text">Palun rega!</p>
+            </div>
         </div>
-        <div class="carousel-item red white-text" href="#one!">
-            <h2>FEATURES</h2>
-            <p class="white-text">Landing page - Ränk reklaam</p>
+        <div class="container">
+            <div class="center show-on-medium-and-down hide-on-large-only">
+                <br/>
+                <a class="btn waves-effect indigo accent-4 white-text darken-text-2 center" href="register.html">Try
+                    now!</a>
+            </div>
+            <!--<p>-->
+            <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Blandit volutpat maecenas volutpat blandit aliquam etiam erat. A diam maecenas sed enim. Cras sed felis eget velit aliquet. Ornare arcu odio ut sem nulla. Eleifend quam adipiscing vitae proin. Quis enim lobortis scelerisque fermentum dui faucibus. Cursus in hac habitasse platea. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Habitant morbi tristique senectus et netus et. Sit amet tellus cras adipiscing enim eu turpis egestas. Pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu.-->
+            <!--</p>-->
+            <!--<br/>-->
+            <!--<p>-->
+            <!--Natoque penatibus et magnis dis. Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Aliquet nec ullamcorper sit amet risus nullam eget. Porta non pulvinar neque laoreet. Arcu bibendum at varius vel pharetra vel. Lorem dolor sed viverra ipsum nunc aliquet. Eget duis at tellus at. Sed viverra ipsum nunc aliquet. Congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque. Sed viverra tellus in hac habitasse. Facilisi morbi tempus iaculis urna id. Sed arcu non odio euismod. Ultrices gravida dictum fusce ut placerat. Nec ullamcorper sit amet risus nullam eget felis eget nunc.-->
+            <!--</p>-->
+            <!--<br/>-->
+            <!--<p>-->
+            <!--Tempus iaculis urna id volutpat lacus laoreet non. Metus aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices. Diam vel quam elementum pulvinar etiam non quam lacus. Ac tortor dignissim convallis aenean. Ut consequat semper viverra nam libero justo laoreet sit amet. Faucibus nisl tincidunt eget nullam. In ornare quam viverra orci. Facilisi etiam dignissim diam quis enim. Eros in cursus turpis massa tincidunt dui ut ornare lectus. Gravida in fermentum et sollicitudin. Tempor nec feugiat nisl pretium fusce id velit ut tortor. Nunc faucibus a pellentesque sit amet porttitor eget. Nibh tortor id aliquet lectus proin nibh nisl. Tincidunt lobortis feugiat vivamus at augue eget. Malesuada pellentesque elit eget gravida cum sociis. Ultricies lacus sed turpis tincidunt id aliquet. Neque aliquam vestibulum morbi blandit cursus risus. Venenatis urna cursus eget nunc scelerisque viverra.-->
+            <!--</p>-->
+
+
+            <ul class="collection with-header">
+                <li class="collection-header"><b>
+                    Name
+                    <span style="display: inline-block; left: 300px; position: absolute">Marketcap</span>
+                    <span style="display: inline-block; left: 600px; position: absolute">Price</span>
+                    <span style="display: inline-block; left: 800px; position: absolute">Change(24h)</span>
+
+                </b></li>
+                <li class="collection-item avatar" v-for="c in sorted_coins">
+                    <img :src="c.logoUrl" alt="" class="circle"/>
+                    <span class="title">{{c.nameLong}}</span><br/>
+                    <span>{{c.nameShort}}</span>
+                    <span style="display: inline-block; left: 300px; position: absolute">{{c.marketCap}}$</span>
+                    <span style="display: inline-block; left: 600px; position: absolute">{{c.price}}$</span>
+                    <span :class="c.percentColor"
+                          style="display: inline-block; left: 800px; position: absolute">{{c.change24h}}%</span>
+                </li>
+            </ul>
         </div>
-        <div class="carousel-item amber white-text" href="#two!">
-            <h2>FEATURES2</h2>
-            <p class="white-text">Ränk reklaam 2</p>
-        </div>
-        <div class="carousel-item green white-text" href="#three!">
-            <h2>FEATURES3</h2>
-            <p class="white-text">Palun rega!</p>
-        </div>
-    </div>
-    <div class="container">
-        <div class="center show-on-medium-and-down hide-on-large-only">
-            <br/>
-            <a class="btn waves-effect indigo accent-4 white-text darken-text-2 center" href="register.html">Try now!</a>
-        </div>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Blandit volutpat maecenas volutpat blandit aliquam etiam erat. A diam maecenas sed enim. Cras sed felis eget velit aliquet. Ornare arcu odio ut sem nulla. Eleifend quam adipiscing vitae proin. Quis enim lobortis scelerisque fermentum dui faucibus. Cursus in hac habitasse platea. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Habitant morbi tristique senectus et netus et. Sit amet tellus cras adipiscing enim eu turpis egestas. Pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu.
-        </p>
-        <br/>
-        <p>
-            Natoque penatibus et magnis dis. Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Aliquet nec ullamcorper sit amet risus nullam eget. Porta non pulvinar neque laoreet. Arcu bibendum at varius vel pharetra vel. Lorem dolor sed viverra ipsum nunc aliquet. Eget duis at tellus at. Sed viverra ipsum nunc aliquet. Congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque. Sed viverra tellus in hac habitasse. Facilisi morbi tempus iaculis urna id. Sed arcu non odio euismod. Ultrices gravida dictum fusce ut placerat. Nec ullamcorper sit amet risus nullam eget felis eget nunc.
-        </p>
-        <br/>
-        <p>
-            Tempus iaculis urna id volutpat lacus laoreet non. Metus aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices. Diam vel quam elementum pulvinar etiam non quam lacus. Ac tortor dignissim convallis aenean. Ut consequat semper viverra nam libero justo laoreet sit amet. Faucibus nisl tincidunt eget nullam. In ornare quam viverra orci. Facilisi etiam dignissim diam quis enim. Eros in cursus turpis massa tincidunt dui ut ornare lectus. Gravida in fermentum et sollicitudin. Tempor nec feugiat nisl pretium fusce id velit ut tortor. Nunc faucibus a pellentesque sit amet porttitor eget. Nibh tortor id aliquet lectus proin nibh nisl. Tincidunt lobortis feugiat vivamus at augue eget. Malesuada pellentesque elit eget gravida cum sociis. Ultricies lacus sed turpis tincidunt id aliquet. Neque aliquam vestibulum morbi blandit cursus risus. Venenatis urna cursus eget nunc scelerisque viverra.
-        </p>
     </div>
 </main>
 
@@ -100,15 +128,15 @@
     </div>
 </footer>
 
-</div>
-
+<script src="axios/axios.js"></script>
 <script src="vue/vue.js"></script>
+<script src="lodash/lodash.js"></script>
 <script src="vue/app.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="materialize-src/js/bin/materialize.min.js"></script>
-<script src="axios/axios.js"></script>
+
 <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
         $(".button-collapse").sideNav();
         $('.carousel.carousel-slider').carousel({fullWidth: true});
     })
