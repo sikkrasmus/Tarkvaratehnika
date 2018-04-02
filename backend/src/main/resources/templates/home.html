@@ -17,12 +17,24 @@
 <nav>
     <div class="nav-wrapper">
         <a href="home.html" class="brand-logo center">cWATCH</a>
-        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class= "material-icons">menu</i></a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
+            <li><a href="" th:text="${#httpSession.getValue('name')}" th:unless="${session==null}"></a></li>
+            <li>
+                <ul id="dropdown" class="dropdown-content" >
+                    <li><a href="addPortfolio.html">Add New</a></li>
+                    <li class="divider"></li>
+                    <li><a href="portfolioView.html" th:each="portfolio : ${portfolios}" th:text="*{portfolio}"></a></li>
+                </ul>
+                <a class="btn dropdown-button" href="#" data-activates="dropdown">MANAGE</a>
+            </li>
             <li><a href="">MANAGE</a></li>
             <li><a href="">SETTINGS</a></li>
+            <li><a href="index.html">LOG OUT</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
+            <li><a href="addPortfolio.html">ADD PORTFOLIO</a></li>
+            <div class="divider"></div>
             <li><a href="">MANAGE</a></li>
             <div class="divider"></div>
             <li><a href="">SETTINGS</a></li>
@@ -32,23 +44,27 @@
 </nav>
 <main>
     <div id="app">
-    <div class="container">
-        <br/>
-        <div class="row">
-            <div class="col s12">
-                <ul class="tabs">
-                    <li class="tab col s4"><a href="#test1">Overview</a></li>
-                    <li class="tab col s4"><a class="active" href="#test2">Coins</a></li>
-                    <li class="tab col s4"><a href="#test4">Watchlist</a></li>
-                </ul>
-            </div>
-            <br id="test1" class="col s12"/>
+        <div class="container">
             <br/>
-            Content
+            <div class="row">
+                <div class="col s12">
+                    <ul class="tabs">
+                        <li class="tab col s4"><a href="#test1">Overview</a></li>
+                        <li class="tab col s4"><a class="active" href="#test2">Coins</a></li>
+                        <li class="tab col s4"><a href="#test4">Watchlist</a></li>
+                    </ul>
+                </div>
+                <br id="test1" class="col s12"/>
+                <br/>
+                <table>
+                    <tr th:each="portfolio : ${portfolios}">
+                        <td th:text="*{portfolio}"></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="test2" class="col s12">Test 2</div>
+            <div id="test4" class="col s12">Test 4</div>
         </div>
-        <div id="test2" class="col s12">Test 2</div>
-        <div id="test4" class="col s12">Test 4</div>
-    </div>
     </div>
 </main>
 <!-- Footer -->

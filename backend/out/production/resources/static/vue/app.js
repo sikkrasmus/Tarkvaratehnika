@@ -1,14 +1,18 @@
+Vue.use(axios);
+
 new Vue({
     el: '#app',
     data: {
         reg_email: "",
         reg_password: "",
         log_email: "",
-        log_password: ""
+        log_password: "",
+
+        coin_data: [],
     },
 
     methods: {
-        register: function() {
+        register: function () {
             axios({
                 method: 'post',
                 url: 'register',
@@ -25,6 +29,18 @@ new Vue({
             }).then(function (response) {
                 document.location.replace("/home")
             })
+        }
+    },
+
+    mounted() {
+        axios.get('/').then(response =>
+            this.coin_data = response.data);
+        // console.log(this.coin_data)
+    },
+
+    computed: {
+        sorted_coins: function () {
+            return _.orderBy(this.coin_data, ['marketCap'], ['desc'])
         }
     }
 

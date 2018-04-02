@@ -7,3 +7,19 @@ body {
 main {
     flex: 1 0 auto;
 }
+
+
+
+.green_text {
+    color: #00dc5b;
+}
+
+.red_text {
+    color: #b9151b;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+}

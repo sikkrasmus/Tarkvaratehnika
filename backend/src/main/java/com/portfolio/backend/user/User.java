@@ -2,10 +2,8 @@ package com.portfolio.backend.user;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "User")
@@ -13,7 +11,19 @@ public class User {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
+
     private String email;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Portfolio> portfolios;
+
+    public List<Portfolio> getPortfolios() {
+        return portfolios;
+    }
+
+    public void setPortfolios(List<Portfolio> portfolios) {
+        this.portfolios = portfolios;
+    }
 
     @JsonIgnore
     private String password;
