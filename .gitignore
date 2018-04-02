@@ -5,3 +5,14 @@
 .idea/dataSources.local.xml
 .idea/workspace.xml
 backend/out/production/classes/com/portfolio/backend/service/RequestService.class
+backend/out/production/classes/com/portfolio/backend/DTO/
+backend/out/production/classes/com/portfolio/backend/repository/CoinRepository.class
+backend/out/production/classes/com/portfolio/backend/repository/PortfolioRepository.class
+backend/out/production/classes/com/portfolio/backend/service/PortfolioService.class
+backend/out/production/classes/com/portfolio/backend/user/Portfolio.class
+backend/out/production/classes/com/portfolio/backend/validations/
+backend/out/production/resources/static/messages.properties
+backend/out/production/resources/templates/addPortfolio.html
+backend/out/production/resources/templates/portfolioView.html
+backend/out/test/
+backend/src/test/resources/
