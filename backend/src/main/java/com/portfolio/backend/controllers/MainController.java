@@ -2,7 +2,7 @@ package com.portfolio.backend.controllers;
 
 import com.portfolio.backend.DTO.PortfolioDTO;
 import com.portfolio.backend.DTO.UserDTO;
-import com.portfolio.backend.coins.APIFormat;
+import com.portfolio.backend.coins.CoinListElement;
 import com.portfolio.backend.service.PortfolioService;
 import com.portfolio.backend.service.RequestService;
 import com.portfolio.backend.service.UserService;
