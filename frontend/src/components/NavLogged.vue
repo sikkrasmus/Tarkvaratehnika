@@ -3,7 +3,7 @@
     <v-toolbar color="teal lighten-3" dark tabs>
       <v-toolbar-side-icon :to="'/home'"><img src='../assets/cwlogo.png' style="width: 36px; height: 36px;">
       </v-toolbar-side-icon>
-      <v-toolbar-title>coin<strong>Watch</strong></v-toolbar-title>
+      <v-toolbar-title class="hidden-md-and-down">coin<strong>Watch</strong></v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
         <v-btn class="white--text" flat>{{username}}</v-btn>
