@@ -4,9 +4,6 @@
     <navlogged class="white--text"></navlogged>
     <v-container>
       <br><br>
-      <template>
-
-      </template>
     </v-container>
     <materialfootermin class="hidden-lg-and-up"></materialfootermin>
     <materialfooterlogged class="hidden-md-and-down"></materialfooterlogged>
@@ -29,8 +26,6 @@ export default {
   name: 'home',
   data () {
     return {
-      model: 'tab-2',
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
     }
   }
 }
