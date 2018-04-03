@@ -10,20 +10,19 @@
 </template>
 
 <script>
-  import Navunlogged from "./NavUnLogged.vue";
-  import Materialfooter from "./Footer.vue";
-  import Materialfootermin from "./FooterMin.vue";
-  import Loginform from "./LoginForm.vue";
+import Navunlogged from './NavUnLogged.vue'
+import Materialfooter from './Footer.vue'
+import Materialfootermin from './FooterMin.vue'
+import Loginform from './LoginForm.vue'
 
-
-  export default {
-    components: {
-      Loginform,
-      Materialfootermin,
-      Materialfooter,
-      Navunlogged},
-    name: 'login',
-  }
+export default {
+  components: {
+    Loginform,
+    Materialfootermin,
+    Materialfooter,
+    Navunlogged},
+  name: 'login'
+}
 </script>
 
 <style scoped>

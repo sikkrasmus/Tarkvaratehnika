@@ -6,7 +6,7 @@
       <v-toolbar-title>coin<strong>Watch</strong></v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
-        <v-btn class="white--text" flat>Username</v-btn>
+        <v-btn class="white--text" flat>{{username}}</v-btn>
         <v-btn class="white--text" flat>Manage</v-btn>
         <v-btn class="white--text" flat>Log out</v-btn>
       </v-toolbar-items>
@@ -33,15 +33,20 @@
 </template>
 
 <script>
-  export default {
-    name: 'navlogged',
-    data () {
-      return {
-        model: 'tab-2',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-      }
+export default {
+  name: 'navlogged',
+  data () {
+    return {
+      model: 'tab-2',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    }
+  },
+  computed: {
+    username () {
+      return this.$store.state.username
     }
   }
+}
 </script>
 
 <style scoped>

@@ -13,10 +13,10 @@
 </template>
 
 <script>
-import Navunlogged from "./NavUnLogged.vue";
-import Materialfooter from "./Footer.vue";
-import Landingtext from "./Landingtext.vue";
-import Materialfootermin from "./FooterMin.vue";
+import Navunlogged from './NavUnLogged.vue'
+import Materialfooter from './Footer.vue'
+import Landingtext from './Landingtext.vue'
+import Materialfootermin from './FooterMin.vue'
 
 export default {
   components: {

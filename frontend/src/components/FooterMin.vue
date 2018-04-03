@@ -9,14 +9,14 @@
 </template>
 
 <script>
-  export default {
-    name: 'materialfootermin',
-    data () {
-      return {
-        app: true,
-      }
+export default {
+  name: 'materialfootermin',
+  data () {
+    return {
+      app: true
     }
   }
+}
 </script>
 
 <style>

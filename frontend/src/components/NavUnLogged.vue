@@ -12,9 +12,9 @@
 </template>
 
 <script>
-  export default {
-    name: 'navunlogged',
-  }
+export default {
+  name: 'navunlogged'
+}
 </script>
 
 <style scoped>

@@ -43,9 +43,9 @@
 </template>
 
 <script>
-  export default {
-    name: 'registerform',
-  }
+export default {
+  name: 'registerform'
+}
 </script>
 
 <style scoped>

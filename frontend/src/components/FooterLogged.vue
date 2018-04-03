@@ -10,14 +10,14 @@
 </template>
 
 <script>
-  export default {
-    name: 'materialfooterlogged',
-    data () {
-      return {
-        app: true
-      }
+export default {
+  name: 'materialfooterlogged',
+  data () {
+    return {
+      app: true
     }
   }
+}
 </script>
 
 <style>

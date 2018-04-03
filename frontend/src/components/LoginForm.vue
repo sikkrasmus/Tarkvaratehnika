@@ -34,9 +34,9 @@
 </template>
 
 <script>
-  export default {
-    name: 'loginform',
-  }
+export default {
+  name: 'loginform'
+}
 </script>
 
 <style scoped>

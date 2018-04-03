@@ -14,14 +14,14 @@
 </template>
 
 <script>
-  export default {
-    name: 'materialfooter',
-    data () {
-      return {
-        app: true
-      }
+export default {
+  name: 'materialfooter',
+  data () {
+    return {
+      app: true
     }
   }
+}
 </script>
 
 <style>
