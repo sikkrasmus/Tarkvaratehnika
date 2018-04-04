@@ -36,3 +36,7 @@ Saamuel Starke
 - Frontendi lihvimine
 - Mitu portfooliot
 - Mingi lisa data vms
+
+## Application flow
+
+CLIENT <=> VUE <=> AXIOS(http) <=> SPRING(restful app) <=> DATABASE(mysql)
