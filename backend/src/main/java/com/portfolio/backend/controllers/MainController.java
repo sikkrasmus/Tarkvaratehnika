@@ -39,6 +39,11 @@ public class MainController {
         return "login";
     }
 
+    @RequestMapping(path = "/index2")
+    public String index2() {
+        return "index2";
+    }
+
     @RequestMapping(path = "/home")
     public String home(HttpSession session) throws IOException, JSONException {
 //        requestService.getMarketSummary();
