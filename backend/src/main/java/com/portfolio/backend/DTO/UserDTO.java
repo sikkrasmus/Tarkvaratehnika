@@ -11,8 +11,6 @@ public class UserDTO {
     @ValidPassword
     private String password;
 
-    private Long id;
-
     public UserDTO() {
     }
 
@@ -35,9 +33,5 @@ public class UserDTO {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public Long getId() {
-        return id;
     }
 }

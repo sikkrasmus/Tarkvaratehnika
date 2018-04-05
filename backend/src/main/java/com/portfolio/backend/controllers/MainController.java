@@ -17,7 +17,7 @@ import javax.validation.Valid;
 import java.io.IOException;
 import java.util.List;
 
-@Controller
+@RestController
 public class MainController {
 
     @Autowired
@@ -28,16 +28,6 @@ public class MainController {
 
     @Autowired
     private PortfolioService portfolioService;
-
-    @GetMapping(path = "/register")
-    public String register(UserDTO userDTO) {
-        return "register";
-    }
-
-    @GetMapping(path = "/login")
-    public String login(UserDTO userDTO) {
-        return "login";
-    }
 
     @RequestMapping(path = "/index2")
     public String index2() {
@@ -83,31 +73,6 @@ public class MainController {
     @ResponseBody
     public List<CoinListElement> indexPageCoinList() {
         return requestService.getCoinList();
-    }
-
-    @PostMapping(value = "/register")
-    public String registerValidation(@Valid UserDTO userDTO, BindingResult bindingResult) {
-        if (bindingResult.hasErrors()) {
-            return "register";
-        }
-        if (!userService.isUserEmailExisting(userDTO)) {
-            userService.createAndSaveUser(userDTO);
-            return "redirect:/login";
-        }
-        return "register";
-    }
-
-    @PostMapping(value = "/login")
-    public String login(@Valid UserDTO userDTO, BindingResult bindingResult, HttpSession session) {
-        if (bindingResult.hasErrors()) {
-            return "login";
-        }
-        if (userService.validateUser(userDTO)) {
-            session.setAttribute("name", userDTO.getEmail());
-            return "redirect:/home";
-        }
-
-        return "login";
     }
 
     @PostMapping(value = "/addPortfolio")

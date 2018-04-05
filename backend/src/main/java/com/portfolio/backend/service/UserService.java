@@ -21,17 +21,19 @@ public class UserService {
     }
 
 
-    public void createAndSaveUser(UserDTO userDTO) {
+    public UserDTO createAndSaveUser(UserDTO userDTO) {
         User u = new User();
         u.setEmail(userDTO.getEmail());
+        System.out.println(userDTO);
         u.setPassword(passwordEncoder.encode(userDTO.getPassword()));
         userRepository.save(u);
+        return userDTO;
     }
 
     public boolean validateUser(UserDTO userDTO) {
         try {
-
             User existing = userRepository.findByEmail(userDTO.getEmail());
+            System.out.println(existing.getEmail() + " " + existing.getPassword());
             return passwordEncoder.matches(userDTO.getPassword(), existing.getPassword());
         } catch (NullPointerException e) {
             return false;
