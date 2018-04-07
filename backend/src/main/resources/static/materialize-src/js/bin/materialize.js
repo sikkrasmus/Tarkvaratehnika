@@ -3343,7 +3343,7 @@ if (Vel) {
    * Attach Waves to an input element (or any element which doesn't
    * bubble mouseup/mousedown events).
    *   Intended to be used with dynamically loaded forms/inputs, or
-   * where the user doesn't want a delegated click handler.
+   * where the entities doesn't want a delegated click handler.
    */
   Waves.attach = function (element) {
     //FUTURE: automatically add waves classes and allow users
@@ -3774,7 +3774,7 @@ if (Vel) {
         if (menu.hasClass('fixed')) {
           $(window).resize(function () {
             if (window.innerWidth > 992) {
-              // Close menu if window is resized bigger than 992 and user has fixed sidenav
+              // Close menu if window is resized bigger than 992 and entities has fixed sidenav
               if ($('#sidenav-overlay').length !== 0 && menuOut) {
                 removeMenu(true);
               } else {
@@ -3964,7 +3964,7 @@ if (Vel) {
               panning = false;
 
               if (options.edge === 'left') {
-                // If velocityX <= 0.3 then the user is flinging the menu closed so ignore menuOut
+                // If velocityX <= 0.3 then the entities is flinging the menu closed so ignore menuOut
                 if (menuOut && velocityX <= 0.3 || velocityX < -0.5) {
                   // Return menu to open
                   if (leftPos !== 0) {
@@ -4166,7 +4166,7 @@ if (Vel) {
   }
 
   /**
-   * Called when the user scrolls the window
+   * Called when the entities scrolls the window
    */
   function onScroll(scrollOffset) {
     // unique tick id
@@ -5031,7 +5031,7 @@ if (Vel) {
         }
       };
 
-      // Allow user to search by typing
+      // Allow entities to search by typing
       // this array is cleared after 1 second
       var filterQuery = [],
           onKeyDown = function (e) {
@@ -5102,7 +5102,7 @@ if (Vel) {
           if (newOption) activateOption(options, newOption);
         }
 
-        // Automaticaly clean filter query so user can search again by starting letters
+        // Automaticaly clean filter query so entities can search again by starting letters
         setTimeout(function () {
           filterQuery = [];
         }, 1000);

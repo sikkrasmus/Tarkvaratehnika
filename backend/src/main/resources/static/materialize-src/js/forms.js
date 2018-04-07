@@ -693,7 +693,7 @@
         }
       };
 
-      // Allow user to search by typing
+      // Allow entities to search by typing
       // this array is cleared after 1 second
       var filterQuery = [],
           onKeyDown = function(e){
@@ -765,7 +765,7 @@
                 activateOption(options, newOption);
             }
 
-            // Automaticaly clean filter query so user can search again by starting letters
+            // Automaticaly clean filter query so entities can search again by starting letters
             setTimeout(function(){ filterQuery = []; }, 1000);
           };
 

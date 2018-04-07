@@ -57,7 +57,7 @@
         if (menu.hasClass('fixed')) {
           $(window).resize( function() {
             if (window.innerWidth > 992) {
-              // Close menu if window is resized bigger than 992 and user has fixed sidenav
+              // Close menu if window is resized bigger than 992 and entities has fixed sidenav
               if ($('#sidenav-overlay').length !== 0 && menuOut) {
                 removeMenu(true);
               }
@@ -255,7 +255,7 @@
               panning = false;
 
               if (options.edge === 'left') {
-                // If velocityX <= 0.3 then the user is flinging the menu closed so ignore menuOut
+                // If velocityX <= 0.3 then the entities is flinging the menu closed so ignore menuOut
                 if ((menuOut && velocityX <= 0.3) || velocityX < -0.5) {
                   // Return menu to open
                   if (leftPos !== 0) {

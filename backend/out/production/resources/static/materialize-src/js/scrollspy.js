@@ -58,7 +58,7 @@
 
 
 	/**
-	 * Called when the user scrolls the window
+	 * Called when the entities scrolls the window
 	 */
 	function onScroll(scrollOffset) {
 		// unique tick id

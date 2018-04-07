@@ -326,7 +326,7 @@
     }, function (e, t, n) {
         "use strict";
         var r = n(2),
-            o = ["age", "authorization", "content-length", "content-type", "etag", "expires", "from", "host", "if-modified-since", "if-unmodified-since", "last-modified", "location", "max-forwards", "proxy-authorization", "referer", "retry-after", "user-agent"];
+            o = ["age", "authorization", "content-length", "content-type", "etag", "expires", "from", "host", "if-modified-since", "if-unmodified-since", "last-modified", "location", "max-forwards", "proxy-authorization", "referer", "retry-after", "entities-agent"];
         e.exports = function (e) {
             var t, n, i, s = {};
             return e ? (r.forEach(e.split("\n"), function (e) {
