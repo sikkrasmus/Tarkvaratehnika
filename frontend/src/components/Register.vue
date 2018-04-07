@@ -5,24 +5,23 @@
       <registerform></registerform>
     </v-container>
     <materialfooter class="hidden-md-and-down"></materialfooter>
-    <materialfootermin class="hidden-lg-and-up"></materialfootermin>
   </v-app>
 </template>
 
 <script>
-  import Navunlogged from "./NavUnLogged.vue";
-  import Materialfootermin from "./FooterMin.vue";
-  import Materialfooter from "./Footer.vue";
-  import Registerform from "./RegisterForm.vue";
+import Navunlogged from './NavUnLogged.vue'
+import Materialfootermin from './FooterMin.vue'
+import Materialfooter from './Footer.vue'
+import Registerform from './RegisterForm.vue'
 
-  export default {
-    components: {
-      Registerform,
-      Materialfootermin,
-      Materialfooter,
-      Navunlogged},
-    name: 'register',
-  }
+export default {
+  components: {
+    Registerform,
+    Materialfootermin,
+    Materialfooter,
+    Navunlogged},
+  name: 'register'
+}
 </script>
 
 <style scoped>

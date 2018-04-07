@@ -32,8 +32,8 @@
     <orderEntry type="library" name="Gradle: net.sourceforge.nekohtml:nekohtml:1.9.22" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.security:spring-security-core:4.2.4.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-aop:4.3.14.RELEASE" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.springframework.boot:spring-boot-devtools:1.5.10.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-beans:4.3.14.RELEASE" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: org.springframework.boot:spring-boot-devtools:1.5.10.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-context:4.3.14.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-core:4.3.14.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-expression:4.3.14.RELEASE" level="project" />

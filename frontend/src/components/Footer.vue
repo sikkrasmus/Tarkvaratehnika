@@ -1,5 +1,5 @@
 <template>
-  <v-footer height="auto" class="indigo darken-4" :app="app">
+  <v-footer height="auto" class="primary" :app="app">
     <v-layout row wrap justify-center>
       <v-btn color="white" flat  :to="'/'">Home</v-btn>
       <v-btn color="white" flat  :to="'/about'">About us</v-btn>
@@ -14,14 +14,14 @@
 </template>
 
 <script>
-  export default {
-    name: 'materialfooter',
-    data () {
-      return {
-        app: true
-      }
+export default {
+  name: 'materialfooter',
+  data () {
+    return {
+      app: true
     }
   }
+}
 </script>
 
 <style>

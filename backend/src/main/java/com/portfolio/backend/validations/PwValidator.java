@@ -18,14 +18,17 @@ public class PwValidator implements ConstraintValidator<ValidPassword, String> {
 
     public boolean isValid(String password, ConstraintValidatorContext context) {
 
+        if (password == null){
+            return false;
+        }
+
         Properties props = new Properties();
         try {
-            props.load(new FileInputStream("/Users/Sam/IdeaProjects/Tarkvaratehnika3/backend/src/main/resources/messages.properties"));
+            props.load(new FileInputStream("C:\\Users\\rasmuss\\IdeaProjects\\Tarkvaratehnika\\backend\\src\\main\\resources\\messages.properties"));
         } catch (IOException e) {
             e.printStackTrace();
         }
         MessageResolver resolver = new PropertiesMessageResolver(props);
-
 
         PasswordValidator validator = new PasswordValidator(resolver,
 
@@ -48,7 +51,7 @@ public class PwValidator implements ConstraintValidator<ValidPassword, String> {
         }
         context.disableDefaultConstraintViolation();
         context.buildConstraintViolationWithTemplate(
-                Joiner.on(",").join(validator.getMessages(result)))
+                Joiner.on(" & ").join(validator.getMessages(result)))
                 .addConstraintViolation();
         return false;
     }

@@ -1,6 +1,5 @@
 package com.portfolio.backend.coins.bittrex;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.portfolio.backend.coins.CoinMarketInfo;
 import com.portfolio.backend.coins.CoinSummary;
 
