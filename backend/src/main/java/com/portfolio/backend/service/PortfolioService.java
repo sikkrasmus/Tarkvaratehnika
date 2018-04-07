@@ -25,6 +25,8 @@ public class PortfolioService {
         portfolio.setName(portfolioDTO.getName());
         portfolio.setDescription(portfolioDTO.getDescription());
         portfolio.setUsername(session.getAttribute("name").toString());
+        System.out.println("PortfolioUsername: " + portfolio.getUsername());
+        System.out.println("PortfolioName: " + portfolio.getName());
         portfolioRepository.save(portfolio);
     }
 

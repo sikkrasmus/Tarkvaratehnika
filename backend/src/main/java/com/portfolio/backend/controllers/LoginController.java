@@ -1,10 +1,17 @@
 package com.portfolio.backend.controllers;
 
 import com.portfolio.backend.DTO.UserDTO;
+import com.portfolio.backend.service.DatabaseService;
+import com.portfolio.backend.service.PortfolioService;
 import com.portfolio.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 @CrossOrigin
 @RestController
@@ -13,12 +20,21 @@ public class LoginController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private DatabaseService databaseService;
+
+    @Autowired
+    private PortfolioService portfolioService;
+
     @PostMapping("/login")
     @ResponseStatus(HttpStatus.CREATED)
-    public UserDTO login(@RequestBody UserDTO userDTO){
-        System.out.println(userDTO.getEmail() + " " + userDTO.getPassword());
-        if (userService.validateUser(userDTO)){
-            return userDTO;
+    public Map<String, String> login(@RequestBody UserDTO userDTO, HttpSession session) {
+        if (userService.validateUser(userDTO)) {
+            Map<String, String> data = new HashMap<>();
+            session.setAttribute("name", userDTO.getEmail());
+            data.put("username", userDTO.getEmail());
+            data.put("sessionid", session.getId());
+            return data;
         } else {
             return null;
         }
