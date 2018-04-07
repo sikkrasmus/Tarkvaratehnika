@@ -53,8 +53,21 @@ export default {
     loginValidation: function () {
       axios.post('http://localhost:8080/login', this.user)
         .then(response => {
-          if (response.data.email !== undefined) {
-            this.$store.commit('getUsername', this.user.email)
+          if (response.data.username !== undefined) {
+            //save cookie
+            this.$store.dispatch('addCookie', {
+              name: 'session_id',
+              value: response.data.sessionid,
+              expirationDateInSeconds: 300
+            })
+
+            this.$store.dispatch('addCookie', {
+              name: 'username',
+              value: response.data.username,
+              expirationDateInSeconds: 300
+            })
+
+            this.$store.commit("getUsername", response.data.username)
             this.$router.push('Home')
           } else {
             alert('Wrong user or pw!')
@@ -64,7 +77,7 @@ export default {
         .catch(e => {
           this.errors.push(e)
         })
-    }
+    },
   }
 }
 </script>

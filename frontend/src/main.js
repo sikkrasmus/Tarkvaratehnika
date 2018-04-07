@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store/store'
+import VueCookies from 'vue-cookies'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 import colors from 'vuetify/es5/util/colors'
@@ -22,6 +23,7 @@ new Vue({
   el: '#app',
   store,
   router,
+  VueCookies,
   components: {App},
   template: '<App/>'
 }).$mount('#app')
