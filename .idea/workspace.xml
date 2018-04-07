@@ -2,127 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c724ac56-37b0-4875-8b79-346f4364f01b" name="Default" comment="Portfolio coins mockup">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/backend/src/main/resources/static/lodash/lodash.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/components/PortfolioCoins.vue" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/axios/axios.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/css/styles.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/fonts/roboto/Roboto-Bold.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/fonts/roboto/Roboto-Bold.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/fonts/roboto/Roboto-Light.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/fonts/roboto/Roboto-Light.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/fonts/roboto/Roboto-Medium.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/fonts/roboto/Roboto-Medium.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/fonts/roboto/Roboto-Regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/fonts/roboto/Roboto-Regular.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/fonts/roboto/Roboto-Thin.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/fonts/roboto/Roboto-Thin.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/js/animation.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/js/bin/materialize.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/js/bin/materialize.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/js/buttons.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/js/cards.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/js/carousel.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/js/character_counter.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/js/chips.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/js/collapsible.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/js/date_picker/picker.date.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/js/date_picker/picker.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/js/date_picker/picker.time.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/js/dropdown.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/js/forms.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/js/global.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/js/hammer.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/js/initial.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/js/jquery.easing.1.4.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/js/jquery.hammer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/js/materialbox.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/js/modal.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/js/parallax.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/js/pushpin.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/js/scrollFire.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/js/scrollspy.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/js/sideNav.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/js/slider.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/js/tabs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/js/tapTarget.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/js/toasts.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/js/tooltip.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/js/transitions.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/js/velocity.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/js/waves.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/_badges.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/_buttons.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/_cards.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/_carousel.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/_chips.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/_collapsible.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/_color.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/_dropdown.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/_global.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/_grid.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/_icons-material-design.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/_materialbox.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/_modal.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/_navbar.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/_normalize.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/_preloader.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/_pulse.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/_roboto.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/_sideNav.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/_slider.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/_table_of_contents.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/_tabs.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/_tapTarget.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/_toast.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/_tooltip.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/_transitions.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/_typography.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/_variables.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/_waves.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/date_picker/_default.date.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/date_picker/_default.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/date_picker/_default.time.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/forms/_checkboxes.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/forms/_file-input.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/forms/_forms.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/forms/_input-fields.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/forms/_radio-buttons.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/forms/_range.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/forms/_select.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/components/forms/_switches.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/materialize.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/materialize.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/materialize-src/sass/materialize.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/vue/app.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/static/vue/vue.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/templates/home.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/templates/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/templates/login.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/templates/register.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/out/production/classes/com/portfolio/backend/controllers/MainController.class" afterPath="$PROJECT_DIR$/backend/out/production/classes/com/portfolio/backend/controllers/MainController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/out/production/classes/com/portfolio/backend/service/UserService.class" afterPath="$PROJECT_DIR$/backend/out/production/classes/com/portfolio/backend/service/UserService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/backend_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/backend_main.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/out/production/resources/application.properties" afterPath="$PROJECT_DIR$/backend/out/production/resources/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/coins/bittrex/APIFormatBittrex.java" afterPath="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/coins/bittrex/APIFormatBittrex.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/controllers/MainController.java" afterPath="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/controllers/MainController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/components/Footer.vue" afterPath="$PROJECT_DIR$/frontend/src/components/Footer.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/components/FooterLogged.vue" afterPath="$PROJECT_DIR$/frontend/src/components/FooterLogged.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/components/FooterMin.vue" afterPath="$PROJECT_DIR$/frontend/src/components/FooterMin.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/components/Home.vue" afterPath="$PROJECT_DIR$/frontend/src/components/Home.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/components/Landing.vue" afterPath="$PROJECT_DIR$/frontend/src/components/Landing.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/components/Login.vue" afterPath="$PROJECT_DIR$/frontend/src/components/Login.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/components/LoginForm.vue" afterPath="$PROJECT_DIR$/frontend/src/components/LoginForm.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/components/NavLogged.vue" afterPath="$PROJECT_DIR$/frontend/src/components/NavLogged.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/components/NavUnLogged.vue" afterPath="$PROJECT_DIR$/frontend/src/components/NavUnLogged.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/components/Register.vue" afterPath="$PROJECT_DIR$/frontend/src/components/Register.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/components/RegisterForm.vue" afterPath="$PROJECT_DIR$/frontend/src/components/RegisterForm.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/main.js" afterPath="$PROJECT_DIR$/frontend/src/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/store/store.js" afterPath="$PROJECT_DIR$/frontend/src/store/store.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -145,17 +25,7 @@
     <option name="SHOW_TABLE_DETAILS" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
     <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <expand>
-      <path>
-        <item name="" type="eadb38e5:DatabaseStructure$Root" />
-        <item name="tarkvaratehnika@localhost" type="e3449647:DbNodeDescriptor" />
-      </path>
-      <path>
-        <item name="" type="eadb38e5:DatabaseStructure$Root" />
-        <item name="tarkvaratehnika@localhost" type="e3449647:DbNodeDescriptor" />
-        <item name="tarkvaratehnika" type="e3449647:DbNodeDescriptor" />
-      </path>
-    </expand>
+    <expand />
     <select />
   </component>
   <component name="ExternalProjectsData">
@@ -198,60 +68,7 @@
     <favorites_list name="Tarkvaratehnika" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="13" column="34" lean-forward="false" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
-              <folding>
-                <element signature="e#140#161#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Home.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/components/Home.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="11" column="8" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Register.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/components/Register.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NavLogged.vue" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/frontend/src/components/NavLogged.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
-              <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Landing.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/components/Landing.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" column="66" lean-forward="false" selection-start-line="8" selection-start-column="66" selection-end-line="8" selection-end-column="66" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -264,7 +81,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="reDesign-vue-to-springboot" />
+        <entry key="$PROJECT_DIR$" value="FrontReDo" />
       </map>
     </option>
   </component>
@@ -502,8 +319,8 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$/backend" value="3042729277000" />
-        <entry key="$PROJECT_DIR$/backend/build.gradle" value="3060388277" />
+        <entry key="$PROJECT_DIR$/backend" value="3042846290000" />
+        <entry key="$PROJECT_DIR$/backend/build.gradle" value="1409960351" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -797,27 +614,7 @@
               <item name="Tarkvaratehnika3" type="b2602c69:ProjectViewProjectNode" />
               <item name="Tarkvaratehnika3" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tarkvaratehnika3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tarkvaratehnika3" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tarkvaratehnika3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tarkvaratehnika3" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tarkvaratehnika3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tarkvaratehnika3" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -1003,13 +800,20 @@
       <workItem from="1522911209832" duration="12529000" />
       <workItem from="1522926777002" duration="4229000" />
       <workItem from="1522978198728" duration="3563000" />
-      <workItem from="1523062208990" duration="12314000" />
+      <workItem from="1523062208990" duration="12721000" />
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Portfolio coins mockup">
+      <created>1523094934182</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1523094934182</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50849000" />
+    <option name="totallyTimeSpent" value="51256000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1040,8 +844,8 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36713547" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938564" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36713547" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32938564" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938564" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26794967" sideWeight="0.4978678" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25663716" sideWeight="0.4962325" order="6" side_tool="false" content_ui="combo" />
@@ -1137,7 +941,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Implemented new portfolio adding functionality. When logged in, user can now see all his/her portfolios from the dropdown menu.&#10;&#10;Improved session management -&gt; still needs some work." />
     <MESSAGE value="Merge from feature branch (addingPortfolio)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge from feature branch (addingPortfolio)" />
+    <MESSAGE value="Portfolio coins mockup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Portfolio coins mockup" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1236,9 +1041,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
           <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#21#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1463,9 +1266,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="654">
           <caret line="56" column="0" lean-forward="true" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#v-flex#0;n#v-layout#0;n#v-container#0;n#div#0;n#v-expansion-panel-content#0;n#v-expansion-panel#0;n#template#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1504,7 +1305,7 @@
     <entry file="file://$PROJECT_DIR$/frontend/src/components/Home.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
-          <caret line="11" column="8" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+          <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -1517,21 +1318,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/components/NavLogged.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="27" column="22" lean-forward="false" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
           <caret line="13" column="34" lean-forward="false" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
           <folding>
-            <element signature="e#140#161#0" expanded="true" />
+            <element signature="e#140#161#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/components/NavLogged.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
