@@ -5,8 +5,6 @@
     <v-container>
       <br><br>
     </v-container>
-    <materialfootermin class="hidden-lg-and-up"></materialfootermin>
-    <materialfooterlogged class="hidden-md-and-down"></materialfooterlogged>
     </div>
   </v-app>
 </template>

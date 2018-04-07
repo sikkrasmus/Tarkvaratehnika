@@ -8,7 +8,7 @@
         <form @submit.prevent="register">
           <v-layout column>
             <v-flex>
-              <v-text-field color="indigo darken-4"
+              <v-text-field color="accent"
                             v-model="user.email"
                             name="email"
                             label="Email"
@@ -17,7 +17,7 @@
                             required></v-text-field>
             </v-flex>
             <v-flex>
-              <v-text-field color="indigo darken-4"
+              <v-text-field color="accent"
                             v-model="user.password"
                             name="password"
                             label="Password"
@@ -26,7 +26,7 @@
                             required></v-text-field>
             </v-flex>
             <v-flex>
-              <v-text-field color="indigo darken-4"
+              <v-text-field color="accent"
                             name="confirmPassword"
                             label="Confirm Password"
                             id="confirmPassword"
@@ -45,37 +45,35 @@
 </template>
 
 <script>
-  import axios from 'axios'
+import axios from 'axios'
 
+export default {
+  data () {
+    return {
+      user: {
+        email: '',
+        password: ''
+      },
+      errors: []
+    }
+  },
 
-  export default {
-    data() {
-      return {
-        user: {
-          email: '',
-          password: ''
-        },
-        errors: []
-      }
-    },
-
-
-    methods: {
-      register : function () {
-        axios.post('http://localhost:8080/register', this.user)
-          .then(response => {
-            if (response.status === 201){
-              this.$router.push('Login')
-            }
-          })
-          .catch(e => {
-            alert('something went wrong, try again!');
-            this.$router.push('Register')
-            this.errors.push(e)
-          })
-      }
+  methods: {
+    register: function () {
+      axios.post('http://localhost:8080/register', this.user)
+        .then(response => {
+          if (response.status === 201) {
+            this.$router.push('Login')
+          }
+        })
+        .catch(e => {
+          alert('something went wrong, try again!')
+          this.$router.push('Register')
+          this.errors.push(e)
+        })
     }
   }
+}
 </script>
 
 <style scoped>

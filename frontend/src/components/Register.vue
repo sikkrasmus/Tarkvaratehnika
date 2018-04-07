@@ -5,7 +5,6 @@
       <registerform></registerform>
     </v-container>
     <materialfooter class="hidden-md-and-down"></materialfooter>
-    <materialfootermin class="hidden-lg-and-up"></materialfootermin>
   </v-app>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <v-toolbar color="teal lighten-3" dark tabs>
-      <v-toolbar-side-icon :to="'/home'"><img src='../assets/cwlogo.png' style="width: 36px; height: 36px;">
+    <v-toolbar color="primary" dark tabs>
+      <v-toolbar-side-icon :to="'/home'" class="hidden-md-and-down"><img src='../assets/cwlogo.png' style="width: 36px; height: 36px;" class="hidden-md-and-down">
       </v-toolbar-side-icon>
       <v-toolbar-title class="hidden-md-and-down">coin<strong>Watch</strong></v-toolbar-title>
       <v-spacer></v-spacer>
@@ -10,7 +10,7 @@
         <v-btn class="white--text" flat>Manage</v-btn>
         <v-btn class="white--text" flat>Log out</v-btn>
       </v-toolbar-items>
-      <v-tabs centered color="teal lighten-3" slot="extension" slider-color="indigo darken-4" v-model="model">
+      <v-tabs centered color="primary" slot="extension" slider-color="white" v-model="model">
         <v-tab :href="'#tab-1'">
           Overview
         </v-tab>
@@ -23,7 +23,7 @@
       <v-tab-item :id="'tab-1'">
         <v-container>
         <v-card flat>
-          <v-card-text>{{overview}}</v-card-text>
+          <portfoliocoins></portfoliocoins>
         </v-card>
         </v-container>
       </v-tab-item>
@@ -41,7 +41,10 @@
 </template>
 
 <script>
+import Portfoliocoins from './PortfolioCoins.vue'
+
 export default {
+  components: {Portfoliocoins},
   name: 'navlogged',
   data () {
     return {

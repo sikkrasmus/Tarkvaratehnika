@@ -8,7 +8,7 @@
         <form @submit.prevent="loginValidation">
           <v-layout column>
             <v-flex>
-              <v-text-field color="indigo darken-4"
+              <v-text-field color="accent"
                             v-model="user.email"
                             name="email"
                             label="Email"
@@ -17,7 +17,7 @@
                             required></v-text-field>
             </v-flex>
             <v-flex>
-              <v-text-field color="indigo darken-4"
+              <v-text-field color="accent"
                             v-model="user.password"
                             name="password"
                             label="Password"
@@ -36,36 +36,37 @@
 </template>
 
 <script>
-  import axios from 'axios'
+import axios from 'axios'
 
-  export default {
-    data() {
-      return {
-        user: {
-          email: '',
-          password: ''
-        },
-        errors: []
-      }
-    },
+export default {
+  data () {
+    return {
+      user: {
+        email: '',
+        password: ''
+      },
+      errors: []
+    }
+  },
 
-    methods: {
-      loginValidation : function () {
-        axios.post('http://localhost:8080/login', this.user)
-          .then(response => {
-            if (response.data.email !== undefined){
-              this.$router.push('Home')
-            } else {
-              alert('Wrong user or pw!');
-              this.$router.push('Login')
-            }
-          })
-          .catch(e => {
-            this.errors.push(e)
-          })
-      }
+  methods: {
+    loginValidation: function () {
+      axios.post('http://localhost:8080/login', this.user)
+        .then(response => {
+          if (response.data.email !== undefined) {
+            this.$store.commit('getUsername', this.user.email)
+            this.$router.push('Home')
+          } else {
+            alert('Wrong user or pw!')
+            this.$router.push('Login')
+          }
+        })
+        .catch(e => {
+          this.errors.push(e)
+        })
     }
   }
+}
 </script>
 
 <style scoped>

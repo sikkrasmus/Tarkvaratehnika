@@ -6,9 +6,12 @@ export default new Vuex.Store({
   strict: true,
   state: {
     logged: false,
-    username: 'testusername'
+    username: 'test'
   },
   mutations: {
+    getUsername (state, uname) {
+      this.state.username = uname
+    }
   },
   actions: {
   },
