@@ -4,6 +4,7 @@
     <v-expansion-panel>
       <v-expansion-panel-content v-for="data in computedDatas" :key="data">
         <div slot="header">{{data}}</div>
+        <v-divider></v-divider>
         <v-card>
           <v-container grid-list id="dropdown-example">
             <v-layout row wrap>
@@ -26,6 +27,7 @@
                 label="Price"
                 v-model="price"
               ></v-text-field>
+              <v-btn outline color="indigo">Add</v-btn>
             </v-form>
           </v-card-text>
         </v-card>
@@ -44,6 +46,8 @@
       return {
         haveResults: true,
         value: "",
+        amount: '',
+        price: '',
         exchanges: ['Bittrex', 'Binance'],
         datas: [
           "VeChain",

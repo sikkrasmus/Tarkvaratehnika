@@ -1,16 +1,16 @@
 <template>
   <v-container fluid grid-list-sm>
     <v-layout row wrap>
-      <v-flex xs12>
+      <v-flex xs12 sm12 md12>
         <v-card>
           <v-toolbar extended>
-            <v-layout row>
-              <v-flex>
+            <v-layout row wrap>
+              <v-flex xs12 sm12 md12>
                 <div>
                   <div class="headline">
                     <v-container id="dropdown-example">
                       <v-layout row wrap>
-                        <v-flex xs12 sm12>
+                        <v-flex xs12 sm12 md12>
                           <v-select
                             :items="portfolios"
                             :value="portfolios[0]"
@@ -38,12 +38,11 @@
             <v-layout row justify-center>
                 <v-dialog v-model="dialog" max-width="100%" class="hidden-lg-and-up">
                 <v-card>
-                  <v-card-title class="headline">Add new coin</v-card-title>
-                  <coinsearch></coinsearch>
+                  <v-card-title class="headline">Add new coin  <v-spacer></v-spacer>
+                    <v-btn color="green darken-1" flat="flat" @click.native="dialog = false">Cancel</v-btn></v-card-title>
                   <v-card-actions>
-                    <v-spacer></v-spacer>
-                    <v-btn color="green darken-1" flat="flat" @click.native="dialog = false">Cancel</v-btn>
                   </v-card-actions>
+                  <coinsearch></coinsearch>
                 </v-card>
               </v-dialog>
             </v-layout>
