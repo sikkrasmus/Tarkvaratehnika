@@ -4,7 +4,7 @@ import Landing from '@/components/Landing.vue'
 import Login from '@/components/Login.vue'
 import Register from '@/components/Register.vue'
 import Home from '@/components/Home.vue'
-import UserProfile from '@/components/UserProfile'
+import UserProfile from '@/components/UserProfile.vue'
 Vue.use(Router)
 
 export default new Router({
