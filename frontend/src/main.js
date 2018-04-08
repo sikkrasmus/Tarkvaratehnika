@@ -7,6 +7,7 @@ import store from './store/store'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 import colors from 'vuetify/es5/util/colors'
+import cookie from 'vue-cookie'
 Vue.config.productionTip = false
 
 Vue.use(Vuetify, {
@@ -20,6 +21,7 @@ Vue.use(Vuetify, {
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  cookie,
   store,
   router,
   components: {App},
