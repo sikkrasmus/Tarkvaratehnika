@@ -12,19 +12,32 @@ export default new Vuex.Store({
   state: {
     logged: false,
     username: '',
+    portfolios: [],
   },
   mutations: {
+    savePortfolios(state, data) {
+      data.forEach(portfolio => {
+        if (!state.portfolios.includes(portfolio)){
+          state.portfolios.push(portfolio)
+        }
+      })
+
+      console.log("port: " + state.portfolios)
+    },
+
     getUsername(state, uname) {
       this.state.username = uname
     },
 
     clearSession(state) {
+      state.portfolios = []
       localstorage.clear()
       document.cookie.split(";")
-        .forEach(function(c) {
+        .forEach(function (c) {
           document.cookie = c.replace(/^ +/, "")
             .replace(/=.*/, "=;expires=" + new Date()
-              .toUTCString() + ";path=/"); });
+              .toUTCString() + ";path=/");
+        });
     },
 
     addCookie(state, data) {
@@ -63,6 +76,9 @@ export default new Vuex.Store({
     deleteCookie: ({commit}, payload) => {
       commit('addCookie', payload)
     },
+    savePortfolios: ({commit}, payload) => {
+      commit('savePortfolios', payload)
+    }
   },
   getters: {},
   methods: {}

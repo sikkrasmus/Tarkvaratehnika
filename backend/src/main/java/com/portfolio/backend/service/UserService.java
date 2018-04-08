@@ -31,7 +31,7 @@ public class UserService {
 
     public boolean validateUser(UserDTO userDTO) {
         try {
-            User existing = userRepository.findByEmail(userDTO.getEmail());
+            User existing = userRepository.findByEmailContaining(userDTO.getEmail());
             System.out.println(existing.getEmail() + " " + existing.getPassword());
             return passwordEncoder.matches(userDTO.getPassword(), existing.getPassword());
         } catch (NullPointerException e) {
@@ -46,7 +46,14 @@ public class UserService {
      * @return True if email is in use. False if email is free to use.
      */
     public boolean isUserEmailExisting(UserDTO UserDTO) {
-        User existing = userRepository.findByEmail(UserDTO.getEmail());
+        User existing = userRepository.findByEmailContaining(UserDTO.getEmail());
         return existing != null;
+    }
+
+    public User findUser(String email) {
+        System.out.println("email: " + email);
+        User exist = userRepository.findByEmailContaining(email);
+        System.out.println(exist);
+        return userRepository.findByEmailContaining(email);
     }
 }
