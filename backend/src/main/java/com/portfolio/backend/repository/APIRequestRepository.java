@@ -1,5 +1,6 @@
 package com.portfolio.backend.repository;
 
+import com.portfolio.backend.DTO.CoinNamesDTO;
 import com.portfolio.backend.coins.bittrex.APIFormatBittrex;
 import com.portfolio.backend.coins.coinmarketcap.APIFormatCMC;
 import com.portfolio.backend.coins.CoinListElement;
@@ -10,7 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class CoinRepository {
+public class APIRequestRepository {
 
     private List<APIFormatBittrex> apiFormatBittrexList;
     private List<APIFormatCMC> apiFormatCMCList;
@@ -20,6 +21,17 @@ public class CoinRepository {
     private float BTCPrice = -1;
 
 
+    public List<CoinNamesDTO> getNamesFromResult() {
+        List<CoinNamesDTO> nameList = new ArrayList<>();
+        for (APIFormatBittrex coin : apiFormatBittrexList) {
+            if (coin.getMarket().getBaseCurrency().equals("BTC")) {
+                nameList.add(new CoinNamesDTO(coin.getMarket().getMarketCurrency(), coin.getMarket().getMarketCurrencyLong()));
+            } else if (coin.getMarket().getMarketCurrency().equals("BTC")) {
+                nameList.add(new CoinNamesDTO(coin.getMarket().getMarketCurrency(), coin.getMarket().getMarketCurrencyLong()));
+            }
+        }
+        return nameList;
+    }
 
 
     public void setPriceForBTC() {

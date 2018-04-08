@@ -22,10 +22,12 @@ public class CoinListElement {
             this.marketCap = 0;
         }
         this.change24h = change24h;
-        if (change24h.charAt(0) == '-') {
-            percentColor = "red_text";
-        } else {
-            percentColor = "green_text";
+        if (change24h != null) {
+            if (change24h.charAt(0) == '-') {
+                percentColor = "red_text";
+            } else {
+                percentColor = "green_text";
+            }
         }
     }
 

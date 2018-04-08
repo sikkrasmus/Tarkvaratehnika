@@ -2,7 +2,7 @@ package com.portfolio.backend.service;
 
 import com.portfolio.backend.DTO.UserDTO;
 import com.portfolio.backend.repository.UserRepository;
-import com.portfolio.backend.user.User;
+import com.portfolio.backend.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
