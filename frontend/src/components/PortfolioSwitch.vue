@@ -48,6 +48,7 @@
             </v-layout>
           </v-toolbar>
           <br><br>
+          <usertotalchart></usertotalchart>
             <portfoliocoins></portfoliocoins>
         </v-card>
       </v-flex>
@@ -58,8 +59,10 @@
 <script>
   import Portfoliocoins from "./PortfolioCoins.vue";
   import Coinsearch from "./CoinSearch.vue";
+  import Usertotalchart from "./UserTotalChart.vue";
   export default {
     components: {
+      Usertotalchart,
       Coinsearch,
       Portfoliocoins},
     data: () => ({
@@ -70,4 +73,5 @@
 </script>
 
 <style>
+
 </style>

@@ -9,6 +9,8 @@ import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 import colors from 'vuetify/es5/util/colors'
 import cookie from 'vue-cookie'
+import AmCharts from 'amcharts3'
+import AmSerial from 'amcharts3/amcharts/serial'
 Vue.config.productionTip = false
 
 Vue.use(Vuetify, {
@@ -23,6 +25,8 @@ Vue.use(Vuetify, {
 new Vue({
   el: '#app',
   cookie,
+  AmCharts,
+  AmSerial,
   store,
   router,
   VueCookies,
