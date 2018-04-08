@@ -9,13 +9,24 @@ public class PortfolioDTO {
 
     private String description;
 
+//    private Long userID;
+
     public PortfolioDTO() {
     }
 
     public PortfolioDTO(String name, String description) {
         this.name = name;
         this.description = description;
+//        this.userID = userID;
     }
+
+//    public Long getUserID() {
+//        return userID;
+//    }
+//
+//    public void setUserID(Long userID) {
+//        this.userID = userID;
+//    }
 
     public String getName() {
         return name;

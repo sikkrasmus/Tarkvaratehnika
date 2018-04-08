@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="tarkvaratehnika@coinwatchdatabase.ciuvskv8vfdh.eu-central-1.rds.amazonaws.com" uuid="0fb48342-0e5f-4f54-804f-802b48a14f1c">
+    <data-source source="LOCAL" name="tarkvaratehnika@coinwatchdatabase.ciuvskv8vfdh.eu-central-1.rds.amazonaws.com" uuid="3d796fc7-1bad-4109-a535-a1e2420f70d7">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
@@ -15,11 +15,11 @@
         <property name="yearIsDateType" value="false" />
       </driver-properties>
     </data-source>
-    <data-source source="LOCAL" name="tarkvaratehnika@localhost" uuid="3bc94989-99ae-4abf-b7d6-152612a15332">
+    <data-source source="LOCAL" name="db_example@localhost" uuid="b6c5589d-2fde-4cdc-b238-5547a13b6b11">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/tarkvaratehnika</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/db_example</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="convertToNull" />
@@ -29,11 +29,11 @@
         <property name="yearIsDateType" value="false" />
       </driver-properties>
     </data-source>
-    <data-source source="LOCAL" name="@localhost" uuid="d7f7b45b-cf51-4f7e-881c-e1497fc2e039">
+    <data-source source="LOCAL" name="coinwatch@localhost" uuid="ec98eaca-b6a7-4bfd-8818-d86a1d311172">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/coinwatch</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="convertToNull" />

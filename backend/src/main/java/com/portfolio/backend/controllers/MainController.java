@@ -1,23 +1,21 @@
 package com.portfolio.backend.controllers;
 
-import com.portfolio.backend.DTO.PortfolioDTO;
-import com.portfolio.backend.DTO.UserDTO;
-import com.portfolio.backend.coins.CoinListElement;
-import com.portfolio.backend.service.PortfolioService;
+import com.portfolio.backend.pojos.UserDTO;
 import com.portfolio.backend.service.RequestService;
 import com.portfolio.backend.service.UserService;
+import com.portfolio.backend.user.User;
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.io.IOException;
 import java.util.List;
 
-@RestController
+@Controller
 public class MainController {
 
     @Autowired
@@ -26,36 +24,30 @@ public class MainController {
     @Autowired
     private RequestService requestService;
 
-    @Autowired
-    private PortfolioService portfolioService;
+    @GetMapping(path = "/register")
+    public String register(UserDTO userDTO) {
+        return "register";
+    }
 
-    @RequestMapping(path = "/home")
-    public String home(HttpSession session) throws IOException, JSONException {
-//        requestService.getMarketSummary();
-        if (!session.isNew()){
-            return "home";
-        }
+    @RequestMapping(path = "/login")
+    public String login() {
         return "login";
     }
 
-    @RequestMapping(path = "/addPortfolio")
-    public String addPortfolio(PortfolioDTO portfolioDTO) {
-        return "addPortfolio";
-    }
-    @RequestMapping(path = "/portfolioView")
-    public String portfolioView() {
-        return "portfolioView";
+    @RequestMapping(path = "/home")
+    public String home() throws IOException, JSONException {
+//        requestService.getMarketSummary();
+        return "home";
     }
 
     @RequestMapping(path = "/index")
-    public String index(HttpSession session) {
+    public String index() {
         try {
             requestService.makeAllRequests();
         } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
 
-        session.invalidate();
         return "index";
     }
 
@@ -70,24 +62,20 @@ public class MainController {
         return requestService.getCoinList();
     }
 
-    @PostMapping(value = "/addPortfolio")
-    public String addPortfolio(@Valid PortfolioDTO portfolioDTO, HttpSession session, BindingResult bindingResult) {
-        if (bindingResult.hasErrors()) {
-            return "addPortfolio";
+
+    @PostMapping(value="/register")
+    public String registerValidation(@Valid UserDTO userDTO, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()){
+            return "register";
         }
-        portfolioService.createAndSavePortfolio(portfolioDTO, session);
+
+        userService.createAndSaveUser(userDTO);
         return "redirect:/home";
     }
 
-
-    @ModelAttribute(name = "portfolios")
-    public List<String> portfolios(HttpSession session) {
-        try {
-
-            return portfolioService.getAllUserPortfolios(session.getAttribute("name").toString());
-        } catch (NullPointerException e) {
-            return null;
-        }
+    @PostMapping(value="/login")
+    public @ResponseBody
+    String login(@RequestBody UserDTO userDTO) {
+        return userService.validateUser(userDTO);
     }
-
 }

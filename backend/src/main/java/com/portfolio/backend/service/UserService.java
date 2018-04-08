@@ -24,7 +24,6 @@ public class UserService {
     public UserDTO createAndSaveUser(UserDTO userDTO) {
         User u = new User();
         u.setEmail(userDTO.getEmail());
-        System.out.println(userDTO);
         u.setPassword(passwordEncoder.encode(userDTO.getPassword()));
         userRepository.save(u);
         return userDTO;

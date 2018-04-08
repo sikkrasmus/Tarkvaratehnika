@@ -14,6 +14,7 @@ import Navlogged from './NavLogged.vue'
 import Materialfootermin from './FooterMin.vue'
 import Materialfooter from './Footer.vue'
 import Materialfooterlogged from './FooterLogged.vue'
+import axios from 'axios'
 
 export default {
   components: {
@@ -21,11 +22,12 @@ export default {
     Materialfooter,
     Materialfootermin,
     Navlogged},
-  name: 'home',
+
   data () {
     return {
     }
-  }
+  },
+
 }
 </script>
 
