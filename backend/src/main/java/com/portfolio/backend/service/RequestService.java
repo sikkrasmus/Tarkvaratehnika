@@ -5,40 +5,66 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.introspect.VisibilityChecker;
+import com.portfolio.backend.DTO.CoinNamesDTO;
 import com.portfolio.backend.coins.bittrex.APIFormatBittrex;
 import com.portfolio.backend.coins.coinmarketcap.APIFormatCMC;
 import com.portfolio.backend.coins.CoinListElement;
-import com.portfolio.backend.repository.CoinRepository;
+import com.portfolio.backend.entities.CoinNames;
+import com.portfolio.backend.repository.APIRequestRepository;
+import com.portfolio.backend.repository.CoinNamesRepository;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class RequestService {
 
-    private CoinRepository coinRepository = new CoinRepository();
+    private APIRequestRepository APIRequestRepository = new APIRequestRepository();
+    private final CoinNamesRepository coinNamesRepository;
+
+    @Autowired
+    public RequestService(CoinNamesRepository coinNamesRepository) {
+        this.coinNamesRepository = coinNamesRepository;
+    }
 
     public void makeAllRequests() throws IOException, JSONException {
         getMarketSummaryFromBittrex();
     }
 
+    public void createAndUpdateCoinNames() throws IOException, JSONException {
+        getResultFromBittrex();
+        List<CoinNamesDTO> nameList = APIRequestRepository.getNamesFromResult();
+        List<CoinNames> names = new ArrayList<>();
+        for (CoinNamesDTO dto : nameList) {
+            CoinNames item = new CoinNames();
+            item.setShortname(dto.getShortName());
+            item.setLongname(dto.getLongname());
+            names.add(item);
+        }
+        coinNamesRepository.save(names);
+    }
+
     public void getMarketSummaryFromBittrex() throws IOException, JSONException {
+        APIRequestRepository.setPriceForBTC();
+        getMarketSummaryFromCoinMarketCap();
+        APIRequestRepository.createCoinList();
+    }
+
+    public void getResultFromBittrex() throws JSONException, IOException {
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<String> response = restTemplate.getForEntity(
                 "https://bittrex.com/api/v2.0/pub/markets/GetMarketSummaries",
                 String.class);
         JSONObject jsonObject = new JSONObject(response.getBody());
-        List<APIFormatBittrex> result = getBittrexFormatFromRequest(jsonObject.getString("result"));
-        coinRepository.setApiFormatBittrexList(result);
-        coinRepository.setPriceForBTC();
-        getMarketSummaryFromCoinMarketCap();
-        coinRepository.createCoinList();
+        APIRequestRepository.setApiFormatBittrexList(getBittrexFormatFromRequest(jsonObject.getString("result")));
     }
 
     public void getMarketSummaryFromCoinMarketCap() throws JSONException, IOException {
@@ -48,7 +74,7 @@ public class RequestService {
                 String.class);
         JSONArray jsonObject = new JSONArray(response.getBody());
         List<APIFormatCMC> result = getCMCFormatFromRequest(jsonObject.toString());
-        coinRepository.setApiFormatCMCList(result);
+        APIRequestRepository.setApiFormatCMCList(result);
     }
 
 
@@ -69,10 +95,14 @@ public class RequestService {
     }
 
     public List<CoinListElement> getCoinList() {
-        return coinRepository.getCoinList();
+        return APIRequestRepository.getCoinList();
     }
 
-    public CoinRepository getCoinRepository() {
-        return coinRepository;
+    public APIRequestRepository getAPIRequestRepository() {
+        return APIRequestRepository;
+    }
+
+    public static double getPriceForPortfolio(Long portfoli0ID) {
+        return 999;
     }
 }
