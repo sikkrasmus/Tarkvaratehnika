@@ -6,8 +6,7 @@
       <v-toolbar-title class="hidden-md-and-down">coin<strong>Watch</strong></v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
-        <v-btn class="white--text" flat>{{username}}</v-btn>
-        <v-btn class="white--text" flat>Manage</v-btn>
+        <v-btn class="white--text" :to="'/profile'" flat>{{username}}</v-btn>
         <v-btn class="white--text" v-on:click="logOut" flat>Log out</v-btn>
       </v-toolbar-items>
       <v-tabs centered color="primary" slot="extension" slider-color="white" v-model="model">
