@@ -14,14 +14,10 @@
 </template>
 
 <script>
-  import Portfoliocoins from './PortfolioCoins.vue'
-  import Portfolioswitch from "./PortfolioSwitch.vue";
-
   export default {
     components: {
-      Portfolioswitch,
-      Portfoliocoins},
-    name: 'navloggedwithouttabs',
+      name: 'navloggedwithouttabs',
+    },
     data () {
       return {
         model: 'tab-1',
