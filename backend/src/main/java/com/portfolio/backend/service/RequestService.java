@@ -7,11 +7,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.introspect.VisibilityChecker;
 import com.portfolio.backend.DTO.CoinNamesDTO;
 import com.portfolio.backend.coins.bittrex.APIFormatBittrex;
+import com.portfolio.backend.coins.bittrex.SingleMarketFormat;
 import com.portfolio.backend.coins.coinmarketcap.APIFormatCMC;
 import com.portfolio.backend.coins.CoinListElement;
+import com.portfolio.backend.entities.Coin;
 import com.portfolio.backend.entities.CoinNames;
 import com.portfolio.backend.repository.APIRequestRepository;
 import com.portfolio.backend.repository.CoinNamesRepository;
+import com.portfolio.backend.repository.CoinRepository;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -29,10 +32,12 @@ public class RequestService {
 
     private APIRequestRepository APIRequestRepository = new APIRequestRepository();
     private final CoinNamesRepository coinNamesRepository;
+    private final CoinRepository coinRepository;
 
     @Autowired
-    public RequestService(CoinNamesRepository coinNamesRepository) {
+    public RequestService(CoinNamesRepository coinNamesRepository, CoinRepository coinRepository) {
         this.coinNamesRepository = coinNamesRepository;
+        this.coinRepository = coinRepository;
     }
 
     public void makeAllRequests() throws IOException, JSONException {
@@ -50,6 +55,14 @@ public class RequestService {
             names.add(item);
         }
         coinNamesRepository.save(names);
+    }
+
+    public SingleMarketFormat getMarketSummaryFromBittrexForOneCoin(String shortName) throws JSONException, IOException {
+        RestTemplate restTemplate = new RestTemplate();
+        String url = "https://bittrex.com/api/v1.1/public/getmarketsummary?market=btc-" + shortName;
+        ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
+        JSONObject jsonObject = new JSONObject(response.getBody());
+        return getSingleMarketFormatFromRequest(jsonObject.getString("result")).get(0);
     }
 
     public void getMarketSummaryFromBittrex() throws IOException, JSONException {
@@ -94,6 +107,16 @@ public class RequestService {
         });
     }
 
+    private List<SingleMarketFormat> getSingleMarketFormatFromRequest(String json) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
+        mapper.setVisibilityChecker(VisibilityChecker.Std.defaultInstance().withFieldVisibility(JsonAutoDetect.Visibility.ANY));
+        return mapper.readValue(json, new TypeReference<List<SingleMarketFormat>>() {
+        });
+    }
+
+
+
     public List<CoinListElement> getCoinList() {
         return APIRequestRepository.getCoinList();
     }
@@ -102,7 +125,23 @@ public class RequestService {
         return APIRequestRepository;
     }
 
-    public static double getPriceForPortfolio(Long portfoli0ID) {
-        return 999;
+    public double getPriceForPortfolio(Long portfolioId) throws IOException, JSONException {
+        double price = 0;
+        List<Coin> allCoins = (List<Coin>) coinRepository.findAll();
+        List<Coin> portfolioCoins = new ArrayList<>();
+        for (Coin c : allCoins) {
+            if (c.getPortfolio().getId() == portfolioId) {
+                portfolioCoins.add(c);
+            }
+        }
+        for (Coin coin : portfolioCoins) {
+            price += getPriceFor(coin);
+        }
+        return price;
+    }
+
+    private double getPriceFor(Coin coin) throws IOException, JSONException {
+        SingleMarketFormat market = getMarketSummaryFromBittrexForOneCoin(coin.getShortname());
+        return market.getLast();
     }
 }

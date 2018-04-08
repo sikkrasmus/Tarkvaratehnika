@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service
 public class UserService {
@@ -39,14 +41,12 @@ public class UserService {
         }
     }
 
-    /**
-     * Method to check, if current email is already in use.
-     *
-     * @param UserDTO User object.
-     * @return True if email is in use. False if email is free to use.
-     */
     public boolean isUserEmailExisting(UserDTO UserDTO) {
         User existing = userRepository.findByEmail(UserDTO.getEmail());
         return existing != null;
+    }
+
+    public User getUserBy(long id) {
+        return userRepository.findById(id);
     }
 }
