@@ -44,6 +44,14 @@ public class CoinService {
         return coinNames.getShortname();
     }
 
+    public Coin getCoinBy(Long id) {
+        return coinRepository.findById(id);
+    }
+
+    public void deleteAll() {
+        coinRepository.deleteAll();
+    }
+
     public List<CoinNames> getAllCoins(){
         return (List<CoinNames>) coinNamesRepository.findAll();
     }

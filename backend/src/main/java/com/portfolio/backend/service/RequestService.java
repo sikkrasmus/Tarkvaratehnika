@@ -68,8 +68,14 @@ public class RequestService {
     }
 
     public SingleMarketFormat getMarketSummaryFromBittrexForOneCoin(String shortName) throws JSONException, IOException {
+        System.out.println(shortName);
         RestTemplate restTemplate = new RestTemplate();
-        String url = "https://bittrex.com/api/v1.1/public/getmarketsummary?market=btc-" + shortName;
+        String url;
+        if (shortName.equals("BTC")) {
+            url = "https://bittrex.com/api/v1.1/public/getmarketsummary?market=usdt-" + shortName;
+        } else {
+            url = "https://bittrex.com/api/v1.1/public/getmarketsummary?market=btc-" + shortName;
+        }
         ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
         JSONObject jsonObject = new JSONObject(response.getBody());
         return getSingleMarketFormatFromRequest(jsonObject.getString("result")).get(0);
@@ -179,6 +185,6 @@ public class RequestService {
 
     public String getValueChangeForCoin(Coin coin) throws IOException, JSONException {
         SingleMarketFormat market = getMarketSummaryFromBittrexForOneCoin(coin.getShortname());
-        return String.format("%.2f", market.getPrevDay() / coin.getPricebought() * 100) + "%";
+        return String.format("%.2f", ((market.getLast() - market.getPrevDay()) / market.getLast()) * 100) + "%";
     }
 }

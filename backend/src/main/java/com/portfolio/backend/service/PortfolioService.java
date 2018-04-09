@@ -100,4 +100,8 @@ public class PortfolioService {
     public Portfolio getPortfolioBy(Long id) {
         return portfolioRepository.findById(id);
     }
+
+    public void deleteAll() {
+        portfolioRepository.deleteAll();
+    }
 }
