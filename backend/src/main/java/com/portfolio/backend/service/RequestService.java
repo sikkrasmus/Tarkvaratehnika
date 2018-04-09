@@ -140,8 +140,13 @@ public class RequestService {
         return price;
     }
 
-    private double getPriceFor(Coin coin) throws IOException, JSONException {
+    public double getPriceFor(Coin coin) throws IOException, JSONException {
         SingleMarketFormat market = getMarketSummaryFromBittrexForOneCoin(coin.getShortname());
         return market.getLast();
+    }
+
+    public String getValueChangeForCoin(Coin coin) throws IOException, JSONException {
+        SingleMarketFormat market = getMarketSummaryFromBittrexForOneCoin(coin.getShortname());
+        return String.format("%.2f", market.getPrevDay() / coin.getPricebought() * 100) + "%";
     }
 }

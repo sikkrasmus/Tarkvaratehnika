@@ -41,6 +41,7 @@ export default {
     axios.post('http://localhost:8080/getPortfolio', this.info)
       .then(response => {
         this.$store.dispatch('savePortfolios', response.data)
+
       })
       .catch(e => {
         console.log(e)

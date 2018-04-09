@@ -9,7 +9,7 @@ public class PortfolioDTO {
 
     private String description;
 
-//    private Long userID;
+    private Long portfolioId;
 
     public PortfolioDTO() {
     }
@@ -17,7 +17,6 @@ public class PortfolioDTO {
     public PortfolioDTO(String name, String description) {
         this.name = name;
         this.description = description;
-//        this.userID = userID;
     }
 
 //    public Long getUserID() {
@@ -42,5 +41,13 @@ public class PortfolioDTO {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Long getPortfolioId() {
+        return portfolioId;
+    }
+
+    public void setPortfolioId(Long portfolioId) {
+        this.portfolioId = portfolioId;
     }
 }

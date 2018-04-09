@@ -23,12 +23,13 @@ export default new Vuex.Store({
       for(var key in state.portfolios) {
         if(state.portfolios[key] === name) {
           state.portfolioId = key
+          return
         }
       }
     },
 
     selectPortfolio(state, portfolio){
-      state.selectedPortfolio = portfolio
+      state.selectedPortfolio = portfolio.name
     },
 
     savePortfolios(state, data) {
@@ -51,6 +52,7 @@ export default new Vuex.Store({
     },
 
     clearSession(state) {
+      state.selectedPortfolio = null
       state.portfolios = {}
       state.portfolioNames = []
       localstorage.clear()
