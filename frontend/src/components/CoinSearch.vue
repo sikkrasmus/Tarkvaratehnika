@@ -3,12 +3,14 @@
     <input type="text" v-model="value" class="search-box" placeholder="Search here">
     <v-expansion-panel>
       <v-expansion-panel-content v-for="data in computedDatas" :key="data">
-        <div slot="header">{{data}}</div>
+        <div slot="header" v-on:click="getCoinName(data)">{{data}}</div>
+        <v-divider></v-divider>
         <v-card>
           <v-container grid-list id="dropdown-example">
             <v-layout row wrap>
               <v-flex xs12 sm12>
                 <v-select
+                  @input="selectExchange"
                   :items="exchanges"
                   label="Exchange"
                   target="#dropdown-example"
@@ -17,15 +19,16 @@
             </v-layout>
           </v-container>
           <v-card-text>
-            <v-form>
+            <v-form @submit.prevent="addCoin">
               <v-text-field
                 label="Amount"
-                v-model="amount"
+                v-model="requestData.amount"
               ></v-text-field>
               <v-text-field
                 label="Price"
-                v-model="price"
+                v-model="requestData.priceBought"
               ></v-text-field>
+              <v-btn outline color="indigo" type="submit" v-on:click="redirectToHome">Add</v-btn>
             </v-form>
           </v-card-text>
         </v-card>
@@ -38,12 +41,24 @@
 </template>
 
 <script>
+
+  import axios from 'axios'
+
   export default {
     name: 'coinsearch',
     data() {
       return {
+        value: '',
         haveResults: true,
-        value: "",
+        selectedExchange: '',
+        requestData: {
+          longName: '',
+          amount: null,
+          exchange: '',
+          portfolioId: null,
+          priceBought: null,
+        },
+
         exchanges: ['Bittrex', 'Binance'],
         datas: [
           "VeChain",
@@ -74,6 +89,38 @@
           this.haveResults = true;
         }
         return result;
+      }
+    },
+
+    methods : {
+      addCoin : function () {
+        this.$store.dispatch('getPortfolioId', this.$store.state.selectedPortfolio)
+
+        this.requestData.exchange = this.selectedExchange
+        this.requestData.portfolioId = this.$store.state.portfolioId
+
+        console.log(JSON.stringify(this.requestData))
+
+        axios.post('http://localhost:8080/addCoin', this.requestData)
+          .then(response => {
+            console.log(response)
+          })
+          .catch(error => {
+            this.errors.push(error)
+          })
+
+      },
+
+      selectExchange : function (value) {
+        this.selectedExchange = value;
+      },
+
+      getCoinName: function (name) {
+        this.requestData.longName = name;
+      },
+
+      redirectToHome() {
+//       this.$router.go()
       }
     }
   }
