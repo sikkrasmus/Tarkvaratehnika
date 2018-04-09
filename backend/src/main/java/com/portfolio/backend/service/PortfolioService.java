@@ -11,12 +11,14 @@ import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@Transactional
 public class PortfolioService {
 
     private final PortfolioRepository portfolioRepository;
@@ -71,5 +73,13 @@ public class PortfolioService {
                 portfolioHistoryRepository.save(history);
             }
         }
+    }
+
+    public Portfolio getPortfolioBy(String name) {
+        return portfolioRepository.findByName(name);
+    }
+
+    public void deletePortfolioWith(String name) {
+        portfolioRepository.deleteByName(name);
     }
 }

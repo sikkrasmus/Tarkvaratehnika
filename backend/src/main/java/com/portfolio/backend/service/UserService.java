@@ -49,4 +49,12 @@ public class UserService {
     public User getUserBy(long id) {
         return userRepository.findById(id);
     }
+
+    public User getUserBy(String email) {
+        return userRepository.findByEmail(email);
+    }
+
+    public void deleteUserWith(String name) {
+        userRepository.deleteByName(name);
+    }
 }
