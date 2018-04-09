@@ -12,11 +12,13 @@
                       <v-layout row wrap>
                         <v-flex xs12 sm12 md12>
                           <v-select
+                            label="Select Portfolio"
+                            @input="selectPortfolio"
                             :items="portfolios"
                             :value="portfolios[0]"
                             overflow
-                            target="#dropdown-example"
-                          ></v-select>
+                            target="#dropdown-example">
+                          </v-select>
                         </v-flex>
                       </v-layout>
                     </v-container>
@@ -60,15 +62,38 @@
   import Portfoliocoins from "./PortfolioCoins.vue";
   import Coinsearch from "./CoinSearch.vue";
   import Usertotalchart from "./UserTotalChart.vue";
+
   export default {
     components: {
       Usertotalchart,
       Coinsearch,
       Portfoliocoins},
-    data: () => ({
-      portfolios: ['Main', 'Alts', 'Shitcoins'],
-      dialog: false
-    })
+
+    data () {
+      return {
+        portfolios: [],
+        dialog: this.$store.state.dialog,
+        selectedPortfolio: ''
+      }
+    },
+
+    computed : {
+      state () {
+        return this.$store.state.selectedPortfolio
+      }
+    },
+
+    mounted () {
+      console.log("portfolio names: " + this.$store.state.portfolioNames)
+      this.portfolios = this.$store.state.portfolioNames
+    },
+
+    methods : {
+      selectPortfolio(value){
+        this.$store.commit('selectPortfolio', value)
+      },
+    }
+
   }
 </script>
 

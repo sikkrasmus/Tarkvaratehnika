@@ -7,6 +7,7 @@ import javax.sound.sampled.Port;
 
 public interface PortfolioRepository extends CrudRepository<Portfolio, Long> {
     Portfolio findById(Long id);
-//    Portfolio findByEmail(String email);
+    Portfolio findByName(String name);
     Portfolio findByUserId(Long id);
+    void deleteByName(String name);
 }

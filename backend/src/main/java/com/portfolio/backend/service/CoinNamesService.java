@@ -22,4 +22,12 @@ public class CoinNamesService {
         coinNames.setShortname(dto.getShortName());
         coinNamesRepository.save(coinNames);
     }
+
+    public CoinNames getCoinNamesBy(String shortName) {
+        return coinNamesRepository.findByShortname(shortName);
+    }
+
+    public void deleteAll() {
+        coinNamesRepository.deleteAll();
+    }
 }

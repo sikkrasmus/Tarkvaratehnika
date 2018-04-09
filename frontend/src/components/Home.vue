@@ -25,8 +25,28 @@ export default {
 
   data () {
     return {
+      info : {
+        email: ''
+      },
+      errors: []
     }
   },
+
+  mounted () {
+    this.$store.dispatch('getCookie', {
+      name: 'username'
+    })
+
+    this.info.email = this.$store.state.username
+    axios.post('http://localhost:8080/getPortfolio', this.info)
+      .then(response => {
+        this.$store.dispatch('savePortfolios', response.data)
+      })
+      .catch(e => {
+        console.log(e)
+        this.errors.push(e)
+      })
+  }
 
 }
 </script>

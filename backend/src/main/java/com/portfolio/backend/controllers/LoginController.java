@@ -20,15 +20,13 @@ public class LoginController {
     @Autowired
     private UserService userService;
 
-    @Autowired
-    private DatabaseService databaseService;
 
     @Autowired
     private PortfolioService portfolioService;
 
     @PostMapping("/login")
     @ResponseStatus(HttpStatus.CREATED)
-    public Map<String, String> login(@RequestBody UserDTO userDTO, HttpSession session) {
+    public Map<String, String> login(@RequestBody UserDTO userDTO, HttpSession session) throws IOException, JSONException {
         if (userService.validateUser(userDTO)) {
             Map<String, String> data = new HashMap<>();
             session.setAttribute("name", userDTO.getEmail());
