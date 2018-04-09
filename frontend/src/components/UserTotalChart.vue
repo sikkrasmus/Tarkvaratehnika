@@ -10,24 +10,24 @@
 
       }
     },
-    created () {
+    mounted () {
       var chart = AmCharts.makeChart("chartdiv", {
         "type": "serial",
         "theme": "light",
         "marginTop":0,
-        "marginRight": 80,
+        "marginRight": 50,
         "dataProvider": [{
-          "year": "2222",
-          "value": -0.307
+          "year": AmCharts.stringToDate("2018-04-08 17:34:12", "YYYY-MM-DD JJ-NN-SS"),
+          "value": 500
         }, {
-          "year": "2223",
-          "value": -0.168
+          "year": AmCharts.stringToDate("2018-04-09 17:34:12", "YYYY-MM-DD JJ-NN-SS"),
+          "value": 600
         },{
-          "year": "2224",
-          "value": -0.2
+          "year": AmCharts.stringToDate("2018-04-10 17:34:12", "YYYY-MM-DD JJ-NN-SS"),
+          "value": 400
         },{
-          "year": "2225",
-          "value": -0.3
+          "year": AmCharts.stringToDate("2018-04-11 06:34:12", "YYYY-MM-DD JJ-NN-SS"),
+          "value": 300
         }],
         "valueAxes": [{
           "axisAlpha": 0,
@@ -37,9 +37,9 @@
           "id":"g1",
           "balloonText": "[[category]]<br><b><span style='font-size:14px;'>[[value]]</span></b>",
           "bullet": "round",
-          "bulletSize": 8,
-          "lineColor": "#d1655d",
-          "lineThickness": 2,
+          "bulletSize": 4,
+          "lineColor": "#304FFE",
+          "lineThickness": 3,
           "negativeLineColor": "#637bb6",
           "type": "smoothedLine",
           "valueField": "value"
@@ -56,23 +56,25 @@
           "autoGridCount":true,
           "selectedGraphFillAlpha":0,
           "graphLineAlpha":0.2,
-          "graphLineColor":"#c2c2c2",
+          "graphLineColor":"#304FFE",
           "selectedGraphLineColor":"#888888",
           "selectedGraphLineAlpha":1
 
         },
         "chartCursor": {
-          "categoryBalloonDateFormat": "YYYY",
+          "categoryBalloonDateFormat": "DD",
+          "color": "#FFFFFF",
+          "cursorColor": "#E91E63",
           "cursorAlpha": 0,
           "valueLineEnabled":true,
           "valueLineBalloonEnabled":true,
           "valueLineAlpha":0.5,
           "fullWidth":true
         },
-        "dataDateFormat": "YYYY",
+        "dataDateFormat": "YYYY-MM-DD JJ-NN-SS",
         "categoryField": "year",
         "categoryAxis": {
-          "minPeriod": "YYYY",
+          "minPeriod": "DD",
           "parseDates": true,
           "minorGridAlpha": 0.1,
           "minorGridEnabled": true

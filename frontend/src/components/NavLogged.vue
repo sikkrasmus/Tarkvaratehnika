@@ -29,7 +29,7 @@
       <v-tab-item :id="'tab-2'">
         <v-container>
           <v-card flat>
-            <v-card-text>{{watchlist}}</v-card-text>
+            <v-card-text ><h2 class="text-xs-center">{{watchlist}}</h2></v-card-text>
           </v-card>
         </v-container>
       </v-tab-item>
@@ -50,7 +50,7 @@ export default {
     return {
       model: 'tab-1',
       overview: 'this is overview tab',
-      watchlist: 'this is watchlist tab'
+      watchlist: 'Coming soon!'
     }
   },
   computed: {
