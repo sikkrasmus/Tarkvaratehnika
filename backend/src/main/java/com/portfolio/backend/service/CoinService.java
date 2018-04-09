@@ -24,7 +24,7 @@ public class CoinService {
     }
 
 
-    public void createAndSaveCoin(CoinDTO coinDTO, Portfolio p) {
+    public Coin createAndSaveCoin(CoinDTO coinDTO, Portfolio p) {
         Coin coin = new Coin();
         coin.setExchange(coinDTO.getExchange());
         coin.setLongname(coinDTO.getLongName());
@@ -32,9 +32,9 @@ public class CoinService {
         coin.setPortfolio(p);
         coin.setAmount(coinDTO.getAmount());
         coin.setTimeadded(new Timestamp(System.currentTimeMillis()));
-//        coin.setTimeadded(coinDTO.getTimeAdded());
         coin.setPricebought(coinDTO.getPriceBought());
         coinRepository.save(coin);
+        return coin;
     }
 
     private String getCoinShortName(String longname){

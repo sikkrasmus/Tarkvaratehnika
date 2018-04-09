@@ -4,23 +4,20 @@ import com.portfolio.backend.DTO.CoinDTO;
 import com.portfolio.backend.DTO.PortfolioDTO;
 import com.portfolio.backend.DTO.UserDTO;
 import com.portfolio.backend.DTO.UserPortfolioDTO;
+import com.portfolio.backend.entities.Coin;
 import com.portfolio.backend.entities.Portfolio;
-import com.portfolio.backend.entities.PortfolioHistory;
 import com.portfolio.backend.entities.User;
-import com.portfolio.backend.repository.CoinRepository;
 import com.portfolio.backend.service.CoinService;
 import com.portfolio.backend.service.PortfolioService;
+import com.portfolio.backend.service.RequestService;
 import com.portfolio.backend.service.UserService;
+import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.sql.Time;
-import java.sql.Timestamp;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.io.IOException;
+import java.util.*;
 
 @CrossOrigin
 @RestController
@@ -35,9 +32,12 @@ public class PortfolioController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private RequestService requestService;
+
     @PostMapping("/addPortfolio")
     @ResponseStatus(HttpStatus.CREATED)
-    public Map<String, String> savePortfolio(@RequestBody UserPortfolioDTO userPortfolioDTO){
+    public Map<String, String> savePortfolio(@RequestBody UserPortfolioDTO userPortfolioDTO) {
         PortfolioDTO portfolioDTO = new PortfolioDTO(userPortfolioDTO.getPortfolioName(), userPortfolioDTO.getDescription());
 
         User user = userService.findUser(userPortfolioDTO.getEmail());
@@ -53,13 +53,13 @@ public class PortfolioController {
 
     @PostMapping("/getPortfolio")
     @ResponseStatus(HttpStatus.CREATED)
-    public Map<Long, String> getPortfolio(@RequestBody UserDTO userDTO){
+    public Map<Long, String> getPortfolio(@RequestBody UserDTO userDTO) {
         return portfolioService.getPortfoliosNamesByUsername(userDTO.getEmail());
     }
 
     @PostMapping("/addCoin")
     @ResponseStatus(HttpStatus.CREATED)
-    public CoinDTO addCoin(@RequestBody CoinDTO coinDTO){
+    public CoinDTO addCoin(@RequestBody CoinDTO coinDTO) {
         Portfolio portfolio = portfolioService.getPortfolioById(coinDTO.getPortfolioId());
         coinService.createAndSaveCoin(coinDTO, portfolio);
 
@@ -69,6 +69,25 @@ public class PortfolioController {
         return coinDTO;
     }
 
+    @PostMapping("/getPortfolioCoins")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Map<String, String[]> getPortfolioCoins(@RequestBody PortfolioDTO portfolioDTO) throws IOException, JSONException {
+
+        Map<String, String[]> coins = new HashMap<>();
+        Portfolio portfolio = portfolioService.getPortfolioById(portfolioDTO.getPortfolioId());
+
+
+        for (Coin coin : portfolio.getCoins()) {
+            if (coin.getLongname() != null) {
+
+                coins.put(coin.getLongname(), new String[]{coin.getShortname(),
+                        String.valueOf(coin.getAmount()), String.valueOf(requestService.getPriceFor(coin)),
+                        requestService.getValueChangeForCoin(coin)});
+            }
+        }
+        return coins;
+
+    }
     @PostMapping("/getGraph")
     @ResponseStatus(HttpStatus.CREATED)
     public Map<Timestamp, Double> getHistory(@RequestBody PortfolioDTO portfolioDTO) {

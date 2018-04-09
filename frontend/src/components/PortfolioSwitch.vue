@@ -15,7 +15,7 @@
                             label="Select Portfolio"
                             @input="selectPortfolio"
                             :items="portfolios"
-                            :value="portfolios[0]"
+                            :value="this.$store.state.selectedPortfolio"
                             overflow
                             target="#dropdown-example">
                           </v-select>
@@ -73,24 +73,21 @@
       return {
         portfolios: [],
         dialog: this.$store.state.dialog,
-        selectedPortfolio: ''
-      }
-    },
-
-    computed : {
-      state () {
-        return this.$store.state.selectedPortfolio
       }
     },
 
     mounted () {
-      console.log("portfolio names: " + this.$store.state.portfolioNames)
       this.portfolios = this.$store.state.portfolioNames
+      if (this.$store.state.selectedPortfolio === null){
+        this.selectPortfolio(this.portfolios[0])
+      }
     },
 
     methods : {
       selectPortfolio(value){
-        this.$store.commit('selectPortfolio', value)
+        this.$store.dispatch('selectPortfolio', {
+          name: value
+        })
       },
     }
 
