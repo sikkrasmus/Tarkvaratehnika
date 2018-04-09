@@ -15,7 +15,7 @@
         "type": "serial",
         "theme": "light",
         "marginTop":0,
-        "marginRight": 50,
+        "marginRight": 20,
         "dataProvider": [{
           "year": AmCharts.stringToDate("2018-04-08 17:34:12", "YYYY-MM-DD JJ-NN-SS"),
           "value": 500
@@ -74,6 +74,7 @@
         "dataDateFormat": "YYYY-MM-DD JJ-NN-SS",
         "categoryField": "year",
         "categoryAxis": {
+          "gridPosition": "start",
           "minPeriod": "DD",
           "parseDates": true,
           "minorGridAlpha": 0.1,
@@ -90,6 +91,8 @@
       }
 
       function zoomChart(){
+        chart.addListener("rendered", zoomChart);
+        chart.tapToActivate = false
         chart.zoomToIndexes(Math.round(chart.dataProvider.length * 0.4), Math.round(chart.dataProvider.length * 0.55));
       }
     }
