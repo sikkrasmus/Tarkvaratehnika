@@ -60,7 +60,7 @@ public class UserService {
     }
 
     public User getUserBy(String email) {
-        return userRepository.findByEmail(email);
+        return userRepository.findByEmailContaining(email);
     }
 
     public void deleteUserWith(String name) {

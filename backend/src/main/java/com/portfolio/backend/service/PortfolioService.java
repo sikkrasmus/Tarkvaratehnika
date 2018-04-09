@@ -43,6 +43,7 @@ public class PortfolioService {
         portfolio.setDescription(portfolioDTO.getDescription());
         portfolio.setUser(user);
         portfolioRepository.save(portfolio);
+        return portfolio;
     }
 
     public List<Portfolio> getAllPortfoliosFor(Long id) {
