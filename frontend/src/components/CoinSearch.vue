@@ -28,7 +28,7 @@
                 label="Price"
                 v-model="requestData.priceBought"
               ></v-text-field>
-              <v-btn outline color="indigo" type="submit" v-on:click="redirectToHome">Add</v-btn>
+              <v-btn outline color="indigo" type="submit">Add</v-btn>
             </v-form>
           </v-card-text>
         </v-card>
@@ -119,9 +119,6 @@
         this.requestData.longName = name;
       },
 
-      redirectToHome() {
-//       this.$router.go()
-      }
     }
   }
 </script>

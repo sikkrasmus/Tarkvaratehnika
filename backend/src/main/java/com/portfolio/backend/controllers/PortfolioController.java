@@ -6,6 +6,7 @@ import com.portfolio.backend.DTO.UserDTO;
 import com.portfolio.backend.DTO.UserPortfolioDTO;
 import com.portfolio.backend.entities.Coin;
 import com.portfolio.backend.entities.Portfolio;
+import com.portfolio.backend.entities.PortfolioHistory;
 import com.portfolio.backend.entities.User;
 import com.portfolio.backend.service.CoinService;
 import com.portfolio.backend.service.PortfolioService;
@@ -17,6 +18,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.sql.Timestamp;
 import java.util.*;
 
 @CrossOrigin

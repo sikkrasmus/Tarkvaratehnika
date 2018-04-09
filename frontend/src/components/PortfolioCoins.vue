@@ -5,10 +5,12 @@
         <v-container grid-list-md text-xs-center>
           <v-layout row wrap>
             <v-flex xs1 class="hidden-md-and-down">
-             <img v-bind:src="'frontend/src/assets/coins/' + value[0] + '.png'" style="width: 25px;"/>
+             <img v-bind:src="'/static/coins/' + value[0] + '.png'" style="width: 25px;"/>
+              <!--<img v-bind:src="'/static/coins/NEO.png'" style="width: 25px;"/>-->
+
             </v-flex>
             <v-flex xs3 class="hidden-lg-and-up">
-            <img :src="'../assets/coins/' + value[0] + '.png'" style="width: 25px;"/> style="width: 50px; align-content: center;"/>
+            <img :src="'/static/coins/' + value[0] + '.png'" style="width: 50px;"/>
             </v-flex>
             <v-flex xs2 text-xs-left class="hidden-md-and-down">
             {{ key }}
@@ -17,10 +19,10 @@
               {{ key }}
             </v-flex>
             <v-flex xs3 text-xs-left class="hidden-md-and-down">
-              {{ value[1] }} {{value[0]}} ({{ value[2] * value[1] }} {{currency}})
+              {{ value[1] }} {{value[0]}} ({{ value[2] * value[1] }} {{getCurrency(value[0])}})
             </v-flex>
             <v-flex xs6 text-xs-left class="hidden-lg-and-up">
-              {{ value[1] }} {{value[0]}} ({{ (value[2] * value[1]).toFixed(2) }} {{currency}})
+              {{ value[1] }} {{value[0]}} ({{ (value[2] * value[1]).toFixed(2) }} {{getCurrency(value[0])}})
             </v-flex>
             <v-flex xs2 text-xs-right class="hidden-md-and-down">
               {{value[2]}}
@@ -29,12 +31,12 @@
               {{value[2]}}
             </v-flex>
             <v-flex xs1 text-xs-left class="hidden-md-and-down">
-            {{currency}}
+            {{getCurrency(value[0])}}
           </v-flex>
-            <v-flex xs2 text-xs-right red--text class="hidden-md-and-down">
+            <v-flex xs2 text-xs-right class="hidden-md-and-down" v-bind:style="{ color: getPercentColor(value[3]) }">
               {{value[3]}}
             </v-flex>
-            <v-flex xs2 text-xs-right red--text class="hidden-lg-and-up">
+            <v-flex xs2 text-xs-right class="hidden-lg-and-up" v-bind:style="{ color: getPercentColor(value[3]) }">
               {{value[3]}}
             </v-flex>
           </v-layout>
@@ -58,9 +60,10 @@ export default {
       coinName: '',
       shortName: '',
       price: '',
-      currency: 'BTC',
+      currency: '',
       change: '',
       coinData: null,
+      // color: "red",
 
       requestCoins: {
         portfolioId: null
@@ -88,6 +91,23 @@ export default {
   methods: {
     findTotalAmmount: function (amount, price) {
       return amount * price
+    },
+
+    getCurrency: function (shortName) {
+      // console.log(shortName)
+      if (shortName === "BTC") {
+        return "USD"
+      } else {
+        return "BTC"
+      }
+    },
+
+    getPercentColor(number) {
+      if (number.charAt(0) === "-") {
+        return "red"
+      } else {
+        return "green"
+      }
     }
   }
 }
