@@ -10,21 +10,56 @@ export default new Vuex.Store({
   plugins: [createPersistedState()],
   strict: true,
   state: {
+    dialog: true,
     logged: false,
     username: '',
+    portfolioNames: [],
+    portfolios: {},
+    selectedPortfolio: null,
+    portfolioId: null
   },
   mutations: {
+    getPortfolioId(state, name){
+      for(var key in state.portfolios) {
+        if(state.portfolios[key] === name) {
+          state.portfolioId = key
+        }
+      }
+    },
+
+    selectPortfolio(state, portfolio){
+      state.selectedPortfolio = portfolio
+    },
+
+    savePortfolios(state, data) {
+      for (var key in data){
+        if (data.hasOwnProperty(key)){
+          if (!state.portfolioNames.includes(data[key])){
+            state.portfolioNames.push(data[key])
+          }
+        }
+      }
+      state.portfolios = data
+    },
+
     getUsername(state, uname) {
-      this.state.username = uname
+      state.username = uname
+    },
+
+    getDialog(state, value){
+      state.dialog = value
     },
 
     clearSession(state) {
+      state.portfolios = {}
+      state.portfolioNames = []
       localstorage.clear()
       document.cookie.split(";")
-        .forEach(function(c) {
+        .forEach(function (c) {
           document.cookie = c.replace(/^ +/, "")
             .replace(/=.*/, "=;expires=" + new Date()
-              .toUTCString() + ";path=/"); });
+              .toUTCString() + ";path=/");
+        });
     },
 
     addCookie(state, data) {
@@ -50,6 +85,11 @@ export default new Vuex.Store({
     }
   },
   actions: {
+
+    selectPortfolio: ({commit}, payload) => {
+      commit('selectPortfolio', payload)
+    },
+
     addCookie: ({commit}, payload) => {
       commit('addCookie', payload)
     },
@@ -63,6 +103,17 @@ export default new Vuex.Store({
     deleteCookie: ({commit}, payload) => {
       commit('addCookie', payload)
     },
+    savePortfolios: ({commit}, payload) => {
+      commit('savePortfolios', payload)
+    },
+
+    getPortfolioId: ({commit}, payload) => {
+      commit('getPortfolioId', payload)
+    },
+
+    getDialog: ({commit}, payload) => {
+      commit('getDialog', payload)
+    }
   },
   getters: {},
   methods: {}
