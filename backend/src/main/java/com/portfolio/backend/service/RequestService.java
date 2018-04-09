@@ -23,9 +23,19 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.URL;
+import java.nio.channels.Channels;
+import java.nio.channels.ReadableByteChannel;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class RequestService {
@@ -143,6 +153,28 @@ public class RequestService {
     public double getPriceFor(Coin coin) throws IOException, JSONException {
         SingleMarketFormat market = getMarketSummaryFromBittrexForOneCoin(coin.getShortname());
         return market.getLast();
+    }
+
+    public void saveAllImagesFromBittrex() throws IOException, JSONException {
+        getResultFromBittrex();
+        Map<String, String> urlMap = APIRequestRepository.getIconUrlMap();
+        Iterator it = urlMap.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry pair = (Map.Entry)it.next();
+            BufferedImage image;
+            try {
+                System.out.println("saving image for: " + pair.getKey());
+                if (pair.getValue() != null) {
+                    URL url = new URL(pair.getValue().toString());
+                    image = ImageIO.read(url);
+                    ImageIO.write(image, "png", new File("frontend/src/assets/coins/" + pair.getKey() + ".png"));
+                    it.remove();
+                }
+            } catch (IOException e) {
+            }
+        }
+
+
     }
 
     public String getValueChangeForCoin(Coin coin) throws IOException, JSONException {

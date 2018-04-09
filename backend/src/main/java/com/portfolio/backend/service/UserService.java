@@ -58,4 +58,16 @@ public class UserService {
         System.out.println(exist);
         return userRepository.findByEmailContaining(email);
     }
+
+    public User getUserBy(String email) {
+        return userRepository.findByEmailContaining(email);
+    }
+
+    public User getUserBy(Long id) {
+        return userRepository.findById(id);
+    }
+
+    public void deleteUserWith(String name) {
+        userRepository.deleteByName(name);
+    }
 }

@@ -11,7 +11,8 @@ import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.sound.sampled.Port;
+import java.io.IOException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -26,7 +27,8 @@ public class PortfolioService {
     private final RequestService requestService;
 
     @Autowired
-    public PortfolioService(PortfolioRepository portfolioRepository, UserRepository userRepository, PortfolioHistoryRepository portfolioHistoryRepository, RequestService requestService) {
+    public PortfolioService(PortfolioRepository portfolioRepository, UserRepository userRepository,
+                            PortfolioHistoryRepository portfolioHistoryRepository, RequestService requestService) {
         this.portfolioRepository = portfolioRepository;
         this.userRepository = userRepository;
         this.portfolioHistoryRepository = portfolioHistoryRepository;
@@ -40,16 +42,38 @@ public class PortfolioService {
         portfolio.setName(portfolioDTO.getName());
         portfolio.setDescription(portfolioDTO.getDescription());
         portfolio.setUser(user);
-//        portfolio.setUserId(1L);
-//        portfolio.setEmail("testuser@gmail.com");
         portfolioRepository.save(portfolio);
         return portfolio;
     }
 
+    public List<Portfolio> getAllPortfoliosFor(Long id) {
+        List<Portfolio> portfolios = new ArrayList<>();
+        Iterable<Portfolio> allPortfolios = portfolioRepository.findAll();
 
+        for (Portfolio p : allPortfolios) {
+            if (p.getUser().getId() == id) {
+                portfolios.add(p);
+            }
+        }
+        return portfolios;
+    }
 
     public Portfolio getPortfolioById(long id) {
         return portfolioRepository.findById(id);
+    }
+
+    public void saveCurrentPriceForAllPortfolios() throws IOException, JSONException {
+        List<User> allUsers = (List<User>) userRepository.findAll();
+        for (User user : allUsers) {
+            List<Portfolio> portfolios = getAllPortfoliosFor(user.getId());
+            for (Portfolio p : portfolios) {
+                PortfolioHistory history = new PortfolioHistory();
+                history.setTime(new Timestamp(System.currentTimeMillis()));
+                history.setValue(requestService.getPriceForPortfolio(p.getId()));
+                history.setPortfolio(p);
+                portfolioHistoryRepository.save(history);
+            }
+        }
     }
 
     public Map<Long, String> getPortfoliosNamesByUsername(String email) {
@@ -63,5 +87,17 @@ public class PortfolioService {
             }
         }
         return portfolioNames;
+    }
+
+    public Portfolio getPortfolioBy(String name) {
+        return portfolioRepository.findByName(name);
+    }
+
+    public void deletePortfolioWith(String name) {
+        portfolioRepository.deleteByName(name);
+    }
+
+    public Portfolio getPortfolioBy(Long id) {
+        return portfolioRepository.findById(id);
     }
 }

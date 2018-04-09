@@ -6,8 +6,7 @@ Saamuel Starke
 # Tehnoloogiad 
  - Vue.js
  - Java
- - Gradle456
- - Gradle123
+ - Gradle
  - Spring Boot
  - MySQL/PostgreSQL
 

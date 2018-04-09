@@ -63,6 +63,9 @@ public class PortfolioController {
         Portfolio portfolio = portfolioService.getPortfolioById(coinDTO.getPortfolioId());
         coinService.createAndSaveCoin(coinDTO, portfolio);
 
+        System.out.println(coinDTO.getLongName());
+        System.out.println(coinDTO.getPriceBought());
+
         return coinDTO;
     }
 
@@ -85,5 +88,17 @@ public class PortfolioController {
         return coins;
 
     }
+    @PostMapping("/getGraph")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Map<Timestamp, Double> getHistory(@RequestBody PortfolioDTO portfolioDTO) {
+        Portfolio portfolio = portfolioService.getPortfolioBy(portfolioDTO.getPortfolioId());
+        Set<PortfolioHistory> histories = portfolio.getHistories();
+        Map<Timestamp, Double> result = new HashMap<>();
+        for (PortfolioHistory history : histories) {
+            result.put(history.getTime(), history.getValue());
+        }
+        return result;
+    }
+
 
 }

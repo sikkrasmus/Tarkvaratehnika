@@ -91,4 +91,12 @@ public class APIRequestRepository {
     public List<CoinListElement> getCoinList() {
         return coinList;
     }
+
+    public Map<String, String> getIconUrlMap() {
+        Map<String, String> urls = new HashMap<>();
+        for (APIFormatBittrex item : apiFormatBittrexList) {
+            urls.put(item.getMarket().getMarketCurrency(), item.getMarket().getLogoUrl());
+        }
+        return urls;
+    }
 }

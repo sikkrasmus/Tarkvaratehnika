@@ -17,6 +17,7 @@ public class PortfolioDTO {
     public PortfolioDTO(String name, String description) {
         this.name = name;
         this.description = description;
+//        this.userID = userID;
     }
 
 //    public Long getUserID() {
