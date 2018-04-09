@@ -88,6 +88,7 @@
         this.$store.dispatch('selectPortfolio', {
           name: value
         })
+        this.$router.go();
       },
     }
 

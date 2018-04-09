@@ -4,9 +4,7 @@ import com.portfolio.backend.DTO.CoinDTO;
 import com.portfolio.backend.DTO.PortfolioDTO;
 import com.portfolio.backend.DTO.UserDTO;
 import com.portfolio.backend.DTO.UserPortfolioDTO;
-import com.portfolio.backend.entities.Coin;
-import com.portfolio.backend.entities.Portfolio;
-import com.portfolio.backend.entities.User;
+import com.portfolio.backend.entities.*;
 import com.portfolio.backend.service.CoinService;
 import com.portfolio.backend.service.PortfolioService;
 import com.portfolio.backend.service.RequestService;
@@ -17,6 +15,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.sql.Timestamp;
 import java.util.*;
 
 @CrossOrigin
@@ -88,16 +87,24 @@ public class PortfolioController {
         return coins;
 
     }
-    @PostMapping("/getGraph")
+    @PostMapping("/getGraphData")
     @ResponseStatus(HttpStatus.CREATED)
-    public Map<Timestamp, Double> getHistory(@RequestBody PortfolioDTO portfolioDTO) {
+    public Map<Timestamp, Double> getGraph(@RequestBody PortfolioDTO portfolioDTO) {
+
         Portfolio portfolio = portfolioService.getPortfolioBy(portfolioDTO.getPortfolioId());
         Set<PortfolioHistory> histories = portfolio.getHistories();
-        Map<Timestamp, Double> result = new HashMap<>();
+
+        Map<Timestamp, Double> result = new TreeMap<>();
         for (PortfolioHistory history : histories) {
             result.put(history.getTime(), history.getValue());
         }
         return result;
+    }
+
+    @PostMapping("/getAllCoins")
+    @ResponseStatus(HttpStatus.CREATED)
+    public List<CoinNames> getAllCoins(){
+        return coinService.getAllCoins();
     }
 
 

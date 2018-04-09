@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 @Service
 public class CoinService {
@@ -41,6 +42,10 @@ public class CoinService {
         System.out.println(longname);
         CoinNames coinNames = coinNamesRepository.findByLongname(longname);
         return coinNames.getShortname();
+    }
+
+    public List<CoinNames> getAllCoins(){
+        return (List<CoinNames>) coinNamesRepository.findAll();
     }
 
 }

@@ -3,38 +3,54 @@
 </template>
 
 <script>
+  import axios from 'axios'
+
   export default {
     name: 'usertotalchart',
-    data () {
+    data() {
       return {
-
+        requestData: {
+          portfolioId: null
+        },
+        response: {
+          date: '',
+          value: ''
+        },
       }
     },
-    mounted () {
+    mounted() {
+
+      this.requestData.portfolioId = this.$store.state.portfolioId
+      axios.post('http://localhost:8080/getGraphData', this.requestData)
+        .then(response => {
+          for (var key in response.data) {
+            if (response.data.hasOwnProperty(key)) {
+              var obj = {
+                year: key,
+                value: response.data[key]
+              }
+            }
+            chart.dataProvider.push(obj)
+          }
+
+          chart.validateData();
+        })
+        .catch(error => {
+          console.log(error)
+        })
+
       var chart = AmCharts.makeChart("chartdiv", {
         "type": "serial",
         "theme": "light",
-        "marginTop":0,
+        "marginTop": 0,
         "marginRight": 20,
-        "dataProvider": [{
-          "year": AmCharts.stringToDate("2018-04-08 17:34:12", "YYYY-MM-DD JJ-NN-SS"),
-          "value": 500
-        }, {
-          "year": AmCharts.stringToDate("2018-04-09 17:34:12", "YYYY-MM-DD JJ-NN-SS"),
-          "value": 600
-        },{
-          "year": AmCharts.stringToDate("2018-04-10 17:34:12", "YYYY-MM-DD JJ-NN-SS"),
-          "value": 400
-        },{
-          "year": AmCharts.stringToDate("2018-04-11 06:34:12", "YYYY-MM-DD JJ-NN-SS"),
-          "value": 300
-        }],
+        "dataProvider": [],
         "valueAxes": [{
           "axisAlpha": 0,
           "position": "left"
         }],
         "graphs": [{
-          "id":"g1",
+          "id": "g1",
           "balloonText": "[[category]]<br><b><span style='font-size:14px;'>[[value]]</span></b>",
           "bullet": "round",
           "bulletSize": 4,
@@ -45,20 +61,20 @@
           "valueField": "value"
         }],
         "chartScrollbar": {
-          "graph":"g1",
-          "gridAlpha":0,
-          "color":"#888888",
-          "scrollbarHeight":55,
-          "backgroundAlpha":0,
-          "selectedBackgroundAlpha":0.1,
-          "selectedBackgroundColor":"#888888",
-          "graphFillAlpha":0,
-          "autoGridCount":true,
-          "selectedGraphFillAlpha":0,
-          "graphLineAlpha":0.2,
-          "graphLineColor":"#304FFE",
-          "selectedGraphLineColor":"#888888",
-          "selectedGraphLineAlpha":1
+          "graph": "g1",
+          "gridAlpha": 0,
+          "color": "#888888",
+          "scrollbarHeight": 55,
+          "backgroundAlpha": 0,
+          "selectedBackgroundAlpha": 0.1,
+          "selectedBackgroundColor": "#888888",
+          "graphFillAlpha": 0,
+          "autoGridCount": true,
+          "selectedGraphFillAlpha": 0,
+          "graphLineAlpha": 0.2,
+          "graphLineColor": "#304FFE",
+          "selectedGraphLineColor": "#888888",
+          "selectedGraphLineAlpha": 1
 
         },
         "chartCursor": {
@@ -66,10 +82,10 @@
           "color": "#FFFFFF",
           "cursorColor": "#E91E63",
           "cursorAlpha": 0,
-          "valueLineEnabled":true,
-          "valueLineBalloonEnabled":true,
-          "valueLineAlpha":0.5,
-          "fullWidth":true
+          "valueLineEnabled": true,
+          "valueLineBalloonEnabled": true,
+          "valueLineAlpha": 0.5,
+          "fullWidth": true
         },
         "dataDateFormat": "YYYY-MM-DD JJ-NN-SS",
         "categoryField": "year",
@@ -82,15 +98,15 @@
         },
         "export": {
           "enabled": true
-        }
+        },
       });
 
       chart.addListener("rendered", zoomChart);
-      if(chart.zoomChart){
+      if (chart.zoomChart) {
         chart.zoomChart();
       }
 
-      function zoomChart(){
+      function zoomChart() {
         chart.addListener("rendered", zoomChart);
         chart.tapToActivate = false
         chart.zoomToIndexes(Math.round(chart.dataProvider.length * 0.4), Math.round(chart.dataProvider.length * 0.55));
@@ -101,7 +117,7 @@
 
 <style>
   #chartdiv {
-    width	: 100%;
-    height	: 500px;
+    width: 100%;
+    height: 500px;
   }
 </style>

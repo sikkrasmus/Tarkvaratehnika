@@ -3,7 +3,10 @@
     <input type="text" v-model="value" class="search-box" placeholder="Search here">
     <v-expansion-panel>
       <v-expansion-panel-content v-for="data in computedDatas" :key="data">
-        <div slot="header" v-on:click="getCoinName(data)">{{data}}</div>
+        <div slot="header" v-on:click="getCoinName(data)">
+          <img v-bind:src="'/static/coins/' + getShortNameFromLongName(data) + '.png'" style="width: 25px; height: 25px; margin: 0 20px 0 0"/>
+          {{data}}
+        </div>
         <v-divider></v-divider>
         <v-card>
           <v-container grid-list id="dropdown-example">
@@ -28,7 +31,7 @@
                 label="Price"
                 v-model="requestData.priceBought"
               ></v-text-field>
-              <v-btn outline color="indigo" type="submit" v-on:click="redirectToHome">Add</v-btn>
+              <v-btn outline color="indigo" type="submit" :click="returnToHome">Add</v-btn>
             </v-form>
           </v-card-text>
         </v-card>
@@ -51,6 +54,8 @@
         value: '',
         haveResults: true,
         selectedExchange: '',
+        coinData: {},
+        shortName: '',
         requestData: {
           longName: '',
           amount: null,
@@ -60,36 +65,34 @@
         },
 
         exchanges: ['Bittrex', 'Binance'],
-        datas: [
-          "VeChain",
-          "Neo",
-          "Bitcoin",
-          "Tron",
-          "Ripple",
-          "Mithril",
-          "Cardano",
-          "Bitcoin gold",
-          "Litecoin"]
+        coinList: []
       }
     },
     computed: {
       computedDatas: function () {
-        var result = this.datas.filter((value) => {
+        var result = this.coinList.filter((value) => {
           return value.toLowerCase().includes(this.value.toLowerCase());
         });
-        if (this.value != "") {
+        if (this.value !== "") {
           result = result.map((value) => {
             return value.replace(this.value, this.value)
           });
         }
-        if (result.length == 0) {
-          this.haveResults = false;
-        }
-        else {
-          this.haveResults = true;
-        }
+        this.haveResults = result.length !== 0;
         return result;
       }
+    },
+    mounted () {
+      axios.post('http://localhost:8080/getAllCoins')
+        .then(response => {
+          this.coinData = response.data;
+          for (var i = 0; i < response.data.length; i++){
+            this.coinList.push(Object.values(response.data[i])[2])
+          }
+        }).error(error => {
+        this.errors.push(error)
+
+      })
     },
 
     methods : {
@@ -98,8 +101,6 @@
 
         this.requestData.exchange = this.selectedExchange
         this.requestData.portfolioId = this.$store.state.portfolioId
-
-        console.log(JSON.stringify(this.requestData))
 
         axios.post('http://localhost:8080/addCoin', this.requestData)
           .then(response => {
@@ -111,6 +112,16 @@
 
       },
 
+      getShortNameFromLongName: function(longName){
+
+        for (var i = 0; i < this.coinData.length; i++) {
+          if (Object.values(this.coinData[i])[2] === longName){
+            return Object.values(this.coinData[i])[1]
+          }
+        }
+
+      },
+
       selectExchange : function (value) {
         this.selectedExchange = value;
       },
@@ -119,9 +130,10 @@
         this.requestData.longName = name;
       },
 
-      redirectToHome() {
-//       this.$router.go()
+      returnToHome: function () {
+        this.$router.go()
       }
+
     }
   }
 </script>

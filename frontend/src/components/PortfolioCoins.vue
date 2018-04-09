@@ -5,10 +5,10 @@
         <v-container grid-list-md text-xs-center>
           <v-layout row wrap>
             <v-flex xs1 class="hidden-md-and-down">
-             <img v-bind:src="'frontend/src/assets/coins/' + value[0] + '.png'" style="width: 25px;"/>
+             <img v-bind:src="'/static/coins/' + value[0] + '.png'" style="width: 25px;"/>
             </v-flex>
             <v-flex xs3 class="hidden-lg-and-up">
-            <img :src="'../assets/coins/' + value[0] + '.png'" style="width: 25px;"/> style="width: 50px; align-content: center;"/>
+            <img v-bind:src="'/static/coins/' + value[0] + '.png'" style="width: 50px;"/>
             </v-flex>
             <v-flex xs2 text-xs-left class="hidden-md-and-down">
             {{ key }}

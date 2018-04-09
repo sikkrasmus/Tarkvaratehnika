@@ -1,10 +1,197 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0a974662-b172-45a0-95de-fd47c99ff459" name="Default" comment="">
+    <list default="true" id="0a974662-b172-45a0-95de-fd47c99ff459" name="Default" comment="Implemented portfolio data fetching to front end view.">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/backend/out/production/resources/bittrex_market_summary" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/2GIVE.png" afterPath="$PROJECT_DIR$/frontend/static/coins/2GIVE.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/ABY.png" afterPath="$PROJECT_DIR$/frontend/static/coins/ABY.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/ADT.png" afterPath="$PROJECT_DIR$/frontend/static/coins/ADT.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/ADX.png" afterPath="$PROJECT_DIR$/frontend/static/coins/ADX.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/AEON.png" afterPath="$PROJECT_DIR$/frontend/static/coins/AEON.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/ANT.png" afterPath="$PROJECT_DIR$/frontend/static/coins/ANT.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/ARDR.png" afterPath="$PROJECT_DIR$/frontend/static/coins/ARDR.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/ARK.png" afterPath="$PROJECT_DIR$/frontend/static/coins/ARK.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/AUR.png" afterPath="$PROJECT_DIR$/frontend/static/coins/AUR.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/BAT.png" afterPath="$PROJECT_DIR$/frontend/static/coins/BAT.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/BAY.png" afterPath="$PROJECT_DIR$/frontend/static/coins/BAY.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/BCPT.png" afterPath="$PROJECT_DIR$/frontend/static/coins/BCPT.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/BITB.png" afterPath="$PROJECT_DIR$/frontend/static/coins/BITB.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/BLITZ.png" afterPath="$PROJECT_DIR$/frontend/static/coins/BLITZ.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/BLK.png" afterPath="$PROJECT_DIR$/frontend/static/coins/BLK.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/BLOCK.png" afterPath="$PROJECT_DIR$/frontend/static/coins/BLOCK.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/BNT.png" afterPath="$PROJECT_DIR$/frontend/static/coins/BNT.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/BRK.png" afterPath="$PROJECT_DIR$/frontend/static/coins/BRK.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/BRX.png" afterPath="$PROJECT_DIR$/frontend/static/coins/BRX.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/BSD.png" afterPath="$PROJECT_DIR$/frontend/static/coins/BSD.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/BTC.png" afterPath="$PROJECT_DIR$/frontend/static/coins/BTC.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/BURST.png" afterPath="$PROJECT_DIR$/frontend/static/coins/BURST.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/BYC.png" afterPath="$PROJECT_DIR$/frontend/static/coins/BYC.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/CANN.png" afterPath="$PROJECT_DIR$/frontend/static/coins/CANN.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/CFI.png" afterPath="$PROJECT_DIR$/frontend/static/coins/CFI.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/CLAM.png" afterPath="$PROJECT_DIR$/frontend/static/coins/CLAM.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/CLOAK.png" afterPath="$PROJECT_DIR$/frontend/static/coins/CLOAK.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/COVAL.png" afterPath="$PROJECT_DIR$/frontend/static/coins/COVAL.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/CRB.png" afterPath="$PROJECT_DIR$/frontend/static/coins/CRB.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/CRW.png" afterPath="$PROJECT_DIR$/frontend/static/coins/CRW.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/CURE.png" afterPath="$PROJECT_DIR$/frontend/static/coins/CURE.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/CVC.png" afterPath="$PROJECT_DIR$/frontend/static/coins/CVC.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/DASH.png" afterPath="$PROJECT_DIR$/frontend/static/coins/DASH.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/DCR.png" afterPath="$PROJECT_DIR$/frontend/static/coins/DCR.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/DCT.png" afterPath="$PROJECT_DIR$/frontend/static/coins/DCT.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/DEFAULT.png" afterPath="$PROJECT_DIR$/frontend/static/coins/DEFAULT.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/DGB.png" afterPath="$PROJECT_DIR$/frontend/static/coins/DGB.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/DMD.png" afterPath="$PROJECT_DIR$/frontend/static/coins/DMD.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/DMT.png" afterPath="$PROJECT_DIR$/frontend/static/coins/DMT.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/DNT.png" afterPath="$PROJECT_DIR$/frontend/static/coins/DNT.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/DOGE.png" afterPath="$PROJECT_DIR$/frontend/static/coins/DOGE.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/DOPE.png" afterPath="$PROJECT_DIR$/frontend/static/coins/DOPE.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/DTB.png" afterPath="$PROJECT_DIR$/frontend/static/coins/DTB.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/DYN.png" afterPath="$PROJECT_DIR$/frontend/static/coins/DYN.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/EDG.png" afterPath="$PROJECT_DIR$/frontend/static/coins/EDG.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/EFL.png" afterPath="$PROJECT_DIR$/frontend/static/coins/EFL.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/EGC.png" afterPath="$PROJECT_DIR$/frontend/static/coins/EGC.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/EMC.png" afterPath="$PROJECT_DIR$/frontend/static/coins/EMC.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/EMC2.png" afterPath="$PROJECT_DIR$/frontend/static/coins/EMC2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/ENG.png" afterPath="$PROJECT_DIR$/frontend/static/coins/ENG.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/ENRG.png" afterPath="$PROJECT_DIR$/frontend/static/coins/ENRG.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/ERC.png" afterPath="$PROJECT_DIR$/frontend/static/coins/ERC.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/ETC.png" afterPath="$PROJECT_DIR$/frontend/static/coins/ETC.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/ETH.png" afterPath="$PROJECT_DIR$/frontend/static/coins/ETH.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/EXCL.png" afterPath="$PROJECT_DIR$/frontend/static/coins/EXCL.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/EXP.png" afterPath="$PROJECT_DIR$/frontend/static/coins/EXP.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/FCT.png" afterPath="$PROJECT_DIR$/frontend/static/coins/FCT.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/FLDC.png" afterPath="$PROJECT_DIR$/frontend/static/coins/FLDC.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/FLO.png" afterPath="$PROJECT_DIR$/frontend/static/coins/FLO.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/FTC.png" afterPath="$PROJECT_DIR$/frontend/static/coins/FTC.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/GAM.png" afterPath="$PROJECT_DIR$/frontend/static/coins/GAM.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/GAME.png" afterPath="$PROJECT_DIR$/frontend/static/coins/GAME.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/GBYTE.png" afterPath="$PROJECT_DIR$/frontend/static/coins/GBYTE.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/GEO.png" afterPath="$PROJECT_DIR$/frontend/static/coins/GEO.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/GLD.png" afterPath="$PROJECT_DIR$/frontend/static/coins/GLD.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/GNO.png" afterPath="$PROJECT_DIR$/frontend/static/coins/GNO.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/GNT.png" afterPath="$PROJECT_DIR$/frontend/static/coins/GNT.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/GOLOS.png" afterPath="$PROJECT_DIR$/frontend/static/coins/GOLOS.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/GRC.png" afterPath="$PROJECT_DIR$/frontend/static/coins/GRC.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/GRS.png" afterPath="$PROJECT_DIR$/frontend/static/coins/GRS.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/GUP.png" afterPath="$PROJECT_DIR$/frontend/static/coins/GUP.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/HMQ.png" afterPath="$PROJECT_DIR$/frontend/static/coins/HMQ.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/IGNIS.png" afterPath="$PROJECT_DIR$/frontend/static/coins/IGNIS.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/INCNT.png" afterPath="$PROJECT_DIR$/frontend/static/coins/INCNT.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/IOC.png" afterPath="$PROJECT_DIR$/frontend/static/coins/IOC.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/ION.png" afterPath="$PROJECT_DIR$/frontend/static/coins/ION.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/IOP.png" afterPath="$PROJECT_DIR$/frontend/static/coins/IOP.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/KMD.png" afterPath="$PROJECT_DIR$/frontend/static/coins/KMD.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/KORE.png" afterPath="$PROJECT_DIR$/frontend/static/coins/KORE.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/LBC.png" afterPath="$PROJECT_DIR$/frontend/static/coins/LBC.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/LGD.png" afterPath="$PROJECT_DIR$/frontend/static/coins/LGD.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/LMC.png" afterPath="$PROJECT_DIR$/frontend/static/coins/LMC.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/LRC.png" afterPath="$PROJECT_DIR$/frontend/static/coins/LRC.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/LSK.png" afterPath="$PROJECT_DIR$/frontend/static/coins/LSK.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/LTC.png" afterPath="$PROJECT_DIR$/frontend/static/coins/LTC.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/LUN.png" afterPath="$PROJECT_DIR$/frontend/static/coins/LUN.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/MANA.png" afterPath="$PROJECT_DIR$/frontend/static/coins/MANA.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/MCO.png" afterPath="$PROJECT_DIR$/frontend/static/coins/MCO.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/MEME.png" afterPath="$PROJECT_DIR$/frontend/static/coins/MEME.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/MER.png" afterPath="$PROJECT_DIR$/frontend/static/coins/MER.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/MLN.png" afterPath="$PROJECT_DIR$/frontend/static/coins/MLN.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/MONA.png" afterPath="$PROJECT_DIR$/frontend/static/coins/MONA.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/MUE.png" afterPath="$PROJECT_DIR$/frontend/static/coins/MUE.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/MUSIC.png" afterPath="$PROJECT_DIR$/frontend/static/coins/MUSIC.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/NAV.png" afterPath="$PROJECT_DIR$/frontend/static/coins/NAV.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/NBT.png" afterPath="$PROJECT_DIR$/frontend/static/coins/NBT.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/NEO.png" afterPath="$PROJECT_DIR$/frontend/static/coins/NEO.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/NEOS.png" afterPath="$PROJECT_DIR$/frontend/static/coins/NEOS.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/NLG.png" afterPath="$PROJECT_DIR$/frontend/static/coins/NLG.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/NMR.png" afterPath="$PROJECT_DIR$/frontend/static/coins/NMR.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/NXS.png" afterPath="$PROJECT_DIR$/frontend/static/coins/NXS.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/OK.png" afterPath="$PROJECT_DIR$/frontend/static/coins/OK.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/PART.png" afterPath="$PROJECT_DIR$/frontend/static/coins/PART.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/PAY.png" afterPath="$PROJECT_DIR$/frontend/static/coins/PAY.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/PINK.png" afterPath="$PROJECT_DIR$/frontend/static/coins/PINK.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/PIVX.png" afterPath="$PROJECT_DIR$/frontend/static/coins/PIVX.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/POLY.png" afterPath="$PROJECT_DIR$/frontend/static/coins/POLY.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/POT.png" afterPath="$PROJECT_DIR$/frontend/static/coins/POT.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/POWR.png" afterPath="$PROJECT_DIR$/frontend/static/coins/POWR.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/PTC.png" afterPath="$PROJECT_DIR$/frontend/static/coins/PTC.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/PTOY.png" afterPath="$PROJECT_DIR$/frontend/static/coins/PTOY.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/QRL.png" afterPath="$PROJECT_DIR$/frontend/static/coins/QRL.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/QTUM.png" afterPath="$PROJECT_DIR$/frontend/static/coins/QTUM.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/QWARK.png" afterPath="$PROJECT_DIR$/frontend/static/coins/QWARK.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/RADS.png" afterPath="$PROJECT_DIR$/frontend/static/coins/RADS.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/RBY.png" afterPath="$PROJECT_DIR$/frontend/static/coins/RBY.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/RCN.png" afterPath="$PROJECT_DIR$/frontend/static/coins/RCN.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/RDD.png" afterPath="$PROJECT_DIR$/frontend/static/coins/RDD.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/REP.png" afterPath="$PROJECT_DIR$/frontend/static/coins/REP.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/RLC.png" afterPath="$PROJECT_DIR$/frontend/static/coins/RLC.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/RVR.png" afterPath="$PROJECT_DIR$/frontend/static/coins/RVR.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/SALT.png" afterPath="$PROJECT_DIR$/frontend/static/coins/SALT.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/SBD.png" afterPath="$PROJECT_DIR$/frontend/static/coins/SBD.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/SC.png" afterPath="$PROJECT_DIR$/frontend/static/coins/SC.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/SEQ.png" afterPath="$PROJECT_DIR$/frontend/static/coins/SEQ.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/SHIFT.png" afterPath="$PROJECT_DIR$/frontend/static/coins/SHIFT.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/SIB.png" afterPath="$PROJECT_DIR$/frontend/static/coins/SIB.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/SLR.png" afterPath="$PROJECT_DIR$/frontend/static/coins/SLR.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/SLS.png" afterPath="$PROJECT_DIR$/frontend/static/coins/SLS.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/SNRG.png" afterPath="$PROJECT_DIR$/frontend/static/coins/SNRG.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/SNT.png" afterPath="$PROJECT_DIR$/frontend/static/coins/SNT.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/SPHR.png" afterPath="$PROJECT_DIR$/frontend/static/coins/SPHR.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/SPR.png" afterPath="$PROJECT_DIR$/frontend/static/coins/SPR.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/SRN.png" afterPath="$PROJECT_DIR$/frontend/static/coins/SRN.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/STEEM.png" afterPath="$PROJECT_DIR$/frontend/static/coins/STEEM.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/STORJ.png" afterPath="$PROJECT_DIR$/frontend/static/coins/STORJ.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/STRAT.png" afterPath="$PROJECT_DIR$/frontend/static/coins/STRAT.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/SWIFT.png" afterPath="$PROJECT_DIR$/frontend/static/coins/SWIFT.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/SWT.png" afterPath="$PROJECT_DIR$/frontend/static/coins/SWT.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/SYNX.png" afterPath="$PROJECT_DIR$/frontend/static/coins/SYNX.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/SYS.png" afterPath="$PROJECT_DIR$/frontend/static/coins/SYS.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/THC.png" afterPath="$PROJECT_DIR$/frontend/static/coins/THC.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/TIX.png" afterPath="$PROJECT_DIR$/frontend/static/coins/TIX.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/TKS.png" afterPath="$PROJECT_DIR$/frontend/static/coins/TKS.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/TRST.png" afterPath="$PROJECT_DIR$/frontend/static/coins/TRST.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/TRUST.png" afterPath="$PROJECT_DIR$/frontend/static/coins/TRUST.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/TRX.png" afterPath="$PROJECT_DIR$/frontend/static/coins/TRX.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/TUSD.png" afterPath="$PROJECT_DIR$/frontend/static/coins/TUSD.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/TX.png" afterPath="$PROJECT_DIR$/frontend/static/coins/TX.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/UBQ.png" afterPath="$PROJECT_DIR$/frontend/static/coins/UBQ.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/UNB.png" afterPath="$PROJECT_DIR$/frontend/static/coins/UNB.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/UP.png" afterPath="$PROJECT_DIR$/frontend/static/coins/UP.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/VEE.png" afterPath="$PROJECT_DIR$/frontend/static/coins/VEE.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/VIA.png" afterPath="$PROJECT_DIR$/frontend/static/coins/VIA.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/VIB.png" afterPath="$PROJECT_DIR$/frontend/static/coins/VIB.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/VRC.png" afterPath="$PROJECT_DIR$/frontend/static/coins/VRC.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/VRM.png" afterPath="$PROJECT_DIR$/frontend/static/coins/VRM.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/VTC.png" afterPath="$PROJECT_DIR$/frontend/static/coins/VTC.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/VTR.png" afterPath="$PROJECT_DIR$/frontend/static/coins/VTR.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/WAVES.png" afterPath="$PROJECT_DIR$/frontend/static/coins/WAVES.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/WAX.png" afterPath="$PROJECT_DIR$/frontend/static/coins/WAX.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/WINGS.png" afterPath="$PROJECT_DIR$/frontend/static/coins/WINGS.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/XCP.png" afterPath="$PROJECT_DIR$/frontend/static/coins/XCP.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/XEL.png" afterPath="$PROJECT_DIR$/frontend/static/coins/XEL.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/XEM.png" afterPath="$PROJECT_DIR$/frontend/static/coins/XEM.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/XLM.png" afterPath="$PROJECT_DIR$/frontend/static/coins/XLM.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/XMG.png" afterPath="$PROJECT_DIR$/frontend/static/coins/XMG.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/XMR.png" afterPath="$PROJECT_DIR$/frontend/static/coins/XMR.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/XMY.png" afterPath="$PROJECT_DIR$/frontend/static/coins/XMY.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/XRP.png" afterPath="$PROJECT_DIR$/frontend/static/coins/XRP.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/XST.png" afterPath="$PROJECT_DIR$/frontend/static/coins/XST.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/XVC.png" afterPath="$PROJECT_DIR$/frontend/static/coins/XVC.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/XWC.png" afterPath="$PROJECT_DIR$/frontend/static/coins/XWC.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/XZC.png" afterPath="$PROJECT_DIR$/frontend/static/coins/XZC.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/ZCL.png" afterPath="$PROJECT_DIR$/frontend/static/coins/ZCL.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/ZEC.png" afterPath="$PROJECT_DIR$/frontend/static/coins/ZEC.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/ZEN.png" afterPath="$PROJECT_DIR$/frontend/static/coins/ZEN.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/assets/coins/ZRX.png" afterPath="$PROJECT_DIR$/frontend/static/coins/ZRX.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/out/production/classes/com/portfolio/backend/service/RequestService$2.class" afterPath="$PROJECT_DIR$/backend/out/production/classes/com/portfolio/backend/service/RequestService$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/out/production/resources/application.properties" afterPath="$PROJECT_DIR$/backend/out/production/resources/application.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/controllers/LoginController.java" afterPath="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/controllers/LoginController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/controllers/PortfolioController.java" afterPath="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/controllers/PortfolioController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/service/CoinService.java" afterPath="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/service/CoinService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/components/CoinSearch.vue" afterPath="$PROJECT_DIR$/frontend/src/components/CoinSearch.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/components/PortfolioCoins.vue" afterPath="$PROJECT_DIR$/frontend/src/components/PortfolioCoins.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/components/PortfolioSwitch.vue" afterPath="$PROJECT_DIR$/frontend/src/components/PortfolioSwitch.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/components/UserTotalChart.vue" afterPath="$PROJECT_DIR$/frontend/src/components/UserTotalChart.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/backend/.gradle/" />
     <ignored path="$PROJECT_DIR$/backend/build/" />
@@ -52,9 +239,13 @@
       <file leaf-file-name="PortfolioController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/controllers/PortfolioController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="20" column="16" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-              <folding />
+            <state relative-caret-position="491">
+              <caret line="83" column="46" lean-forward="true" selection-start-line="83" selection-start-column="46" selection-end-line="83" selection-end-column="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3806#3807#0" expanded="true" />
+                <element signature="e#3854#3855#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -62,92 +253,10 @@
       <file leaf-file-name="RequestService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/service/RequestService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="183" column="1" lean-forward="false" selection-start-line="183" selection-start-column="1" selection-end-line="183" selection-end-column="1" />
+            <state relative-caret-position="610">
+              <caret line="179" column="18" lean-forward="false" selection-start-line="179" selection-start-column="18" selection-end-line="179" selection-end-column="18" />
               <folding>
                 <marker date="1523304778785" expanded="true" signature="6735:6741" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Coin.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/entities/Coin.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-              <folding>
-                <element signature="e#1158#1159#0" expanded="true" />
-                <element signature="e#1187#1188#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PortfolioDTO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/DTO/PortfolioDTO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="13" column="27" lean-forward="false" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-              <folding>
-                <marker date="1523304752572" expanded="true" signature="894:900" ph=" }" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Portfolio.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/entities/Portfolio.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="665">
-              <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-              <folding>
-                <element signature="e#1065#1066#0" expanded="true" />
-                <element signature="e#1093#1094#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PortfolioService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/service/PortfolioService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="44" column="44" lean-forward="false" selection-start-line="44" selection-start-column="44" selection-end-line="44" selection-end-column="44" />
-              <folding>
-                <marker date="1523304651631" expanded="true" signature="3831:3838" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PortfolioRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/repository/PortfolioRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CoinService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/service/CoinService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="36" column="20" lean-forward="false" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/controllers/LoginController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="665">
-              <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-              <folding>
-                <marker date="1523304695583" expanded="true" signature="1082:1389" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -157,10 +266,93 @@
         <entry file="file://$PROJECT_DIR$/frontend/src/components/PortfolioCoins.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="133">
-              <caret line="7" column="102" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="102" />
+              <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#v-flex#0;n#v-layout#0;n#v-container#0;n#div#0;n#v-expansion-panel-content#0;n#v-expansion-panel#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#v-flex#1;n#v-layout#0;n#v-container#0;n#div#0;n#v-expansion-panel-content#0;n#v-expansion-panel#0;n#template#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CoinNamesDTO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/DTO/CoinNamesDTO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CoinDTO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/DTO/CoinDTO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="836">
+              <caret line="60" column="18" lean-forward="false" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="18" />
+              <folding>
+                <element signature="e#1416#1417#0" expanded="true" />
+                <element signature="e#1447#1448#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/controllers/LoginController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+              <folding>
+                <marker date="1523314749780" expanded="true" signature="1084:1391" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PortfolioSwitch.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/components/PortfolioSwitch.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1178">
+              <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CoinService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/service/CoinService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="695">
+              <caret line="47" column="63" lean-forward="false" selection-start-line="47" selection-start-column="63" selection-end-line="47" selection-end-column="63" />
+              <folding>
+                <element signature="e#1654#1655#0" expanded="true" />
+                <element signature="e#1724#1725#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CoinSearch.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/components/CoinSearch.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="551">
+              <caret line="38" column="27" lean-forward="true" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#div#0;n#v-expansion-panel-content#0;n#v-expansion-panel#0;n#v-container#0;n#template#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserTotalChart.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/components/UserTotalChart.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="30" column="15" lean-forward="false" selection-start-line="30" selection-start-column="15" selection-end-line="30" selection-end-column="15" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <marker date="1523312455149" expanded="true" signature="1293:1308" ph="..." />
               </folding>
             </state>
           </provider>
@@ -608,7 +800,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/coins/CoinSummaries.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/coins/CoinRepository.java" />
         <option value="$PROJECT_DIR$/backend/src/main/resources/static/css/styles.css" />
         <option value="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/DTO/HoldingDTO.java" />
@@ -639,26 +830,27 @@
         <option value="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/DTO/UserPortfolioDTO.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/repository/UserRepository.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/service/UserService.java" />
-        <option value="$PROJECT_DIR$/backend/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/controllers/AddPortfolioController.java" />
         <option value="$PROJECT_DIR$/frontend/src/components/UserProfile.vue" />
         <option value="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/service/PortfolioService.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/DTO/CoinDTO.java" />
         <option value="$PROJECT_DIR$/frontend/src/components/NavLogged.vue" />
-        <option value="$PROJECT_DIR$/frontend/src/components/CoinSearch.vue" />
         <option value="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/repository/CoinNamesRepository.java" />
         <option value="$PROJECT_DIR$/frontend/src/components/LoginForm.vue" />
         <option value="$PROJECT_DIR$/frontend/src/components/Home.vue" />
-        <option value="$PROJECT_DIR$/frontend/src/components/PortfolioSwitch.vue" />
-        <option value="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/controllers/LoginController.java" />
-        <option value="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/service/CoinService.java" />
         <option value="$PROJECT_DIR$/frontend/src/store/store.js" />
         <option value="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/DTO/UserDTO.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/DTO/PortfolioDTO.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/service/RequestService.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/entities/Coin.java" />
+        <option value="$PROJECT_DIR$/backend/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/frontend/src/components/PortfolioSwitch.vue" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/service/CoinService.java" />
         <option value="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/controllers/PortfolioController.java" />
         <option value="$PROJECT_DIR$/frontend/src/components/PortfolioCoins.vue" />
+        <option value="$PROJECT_DIR$/frontend/src/components/UserTotalChart.vue" />
+        <option value="$PROJECT_DIR$/frontend/src/components/CoinSearch.vue" />
+        <option value="$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/controllers/LoginController.java" />
       </list>
     </option>
   </component>
@@ -739,38 +931,6 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tarkvaratehnika" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tarkvaratehnika" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="coins" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tarkvaratehnika" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tarkvaratehnika" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="coins" type="462c0819:PsiDirectoryNode" />
-              <item name="bittrex" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tarkvaratehnika" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tarkvaratehnika" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="coins" type="462c0819:PsiDirectoryNode" />
-              <item name="coinmarketcap" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Tarkvaratehnika" type="b2602c69:ProjectViewProjectNode" />
@@ -873,14 +1033,6 @@
               <item name="Tarkvaratehnika" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="coins" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tarkvaratehnika" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tarkvaratehnika" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -888,14 +1040,13 @@
               <item name="Tarkvaratehnika" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="router" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Tarkvaratehnika" type="b2602c69:ProjectViewProjectNode" />
               <item name="Tarkvaratehnika" type="462c0819:PsiDirectoryNode" />
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -921,6 +1072,11 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\rasmuss\IdeaProjects\Tarkvaratehnika\frontend\static" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -1059,7 +1215,7 @@
       <workItem from="1523028729046" duration="6087000" />
       <workItem from="1523095121568" duration="28216000" />
       <workItem from="1523126294006" duration="3007000" />
-      <workItem from="1523257359765" duration="33602000" />
+      <workItem from="1523257359765" duration="42988000" />
     </task>
     <task id="LOCAL-00001" summary="convert json to object list">
       <created>1519756378559</created>
@@ -1096,11 +1252,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523304615772</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Implemented portfolio data fetching to front end view.">
+      <created>1523305455969</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1523305455969</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127068000" />
+    <option name="totallyTimeSpent" value="136454000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1045" y="-1440" width="1572" height="1417" extended-state="0" />
@@ -1123,7 +1286,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890624" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16328125" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43125" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17734376" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26984128" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1165,17 +1328,17 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.399137" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32831" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.384375" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1639698" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32890624" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43125" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17761034" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2437276" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17734376" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26984128" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="SOQL Query" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -1231,39 +1394,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/coins/coinmarketcap/APIFormatCMC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/DTO/CoinNamesDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="34" lean-forward="false" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/entities/CoinNames.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/controllers/RegisterController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/components/NavLoggedWithOutTabs.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
@@ -1380,14 +1515,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/DTO/PortfolioHistoryDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/DTO/UserPortfolioDTO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
@@ -1432,29 +1559,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/DTO/CoinDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="60" column="18" lean-forward="false" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="18" />
-          <folding>
-            <element signature="e#1416#1417#0" expanded="false" />
-            <element signature="e#1447#1448#0" expanded="false" />
-            <element signature="e#1725#1726#0" expanded="false" />
-            <element signature="e#1759#1760#0" expanded="false" />
-            <element signature="e#1811#1812#0" expanded="false" />
-            <element signature="e#1857#1858#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/components/CoinSearch.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/repository/CoinRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -1468,17 +1572,6 @@
         <state relative-caret-position="152">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/components/UserTotalChart.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-494">
-          <caret line="13" column="22" lean-forward="false" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <marker date="1523304652375" expanded="true" signature="1066:1081" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1522,24 +1615,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/components/PortfolioSwitch.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="82" column="7" lean-forward="true" selection-start-line="82" selection-start-column="7" selection-end-line="82" selection-end-column="7" />
-          <folding>
-            <element signature="e#2074#2124#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="36" lean-forward="true" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/DTO/UserDTO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -1547,26 +1622,6 @@
           <folding>
             <element signature="e#637#638#0" expanded="true" />
             <element signature="e#665#666#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/store/store.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="21" lean-forward="true" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#21#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/controllers/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding>
-            <marker date="1523304695583" expanded="true" signature="1082:1389" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1584,17 +1639,9 @@
         <state relative-caret-position="665">
           <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding>
-            <element signature="e#1065#1066#0" expanded="true" />
-            <element signature="e#1093#1094#0" expanded="true" />
+            <element signature="e#1065#1066#0" expanded="false" />
+            <element signature="e#1093#1094#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/service/CoinService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="36" column="20" lean-forward="false" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1613,15 +1660,66 @@
         <state relative-caret-position="19">
           <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
           <folding>
-            <element signature="e#1158#1159#0" expanded="true" />
-            <element signature="e#1187#1188#0" expanded="true" />
+            <element signature="e#1158#1159#0" expanded="false" />
+            <element signature="e#1187#1188#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/resources/messages.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/DTO/PortfolioHistoryDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="29" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="29" />
+          <folding>
+            <element signature="e#488#489#0" expanded="false" />
+            <element signature="e#534#535#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/entities/PortfolioHistory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/store/store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="18" column="21" lean-forward="false" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-core/8.5.27/39da3cdb8ac2650c4210c74db7377806cd8e8871/tomcat-embed-core-8.5.27-sources.jar!/org/apache/coyote/AbstractProtocol.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="789" column="0" lean-forward="false" selection-start-line="789" selection-start-column="0" selection-end-line="789" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/service/PortfolioService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
+        <state relative-caret-position="-122">
           <caret line="44" column="44" lean-forward="false" selection-start-line="44" selection-start-column="44" selection-end-line="44" selection-end-column="44" />
           <folding>
             <marker date="1523304651631" expanded="true" signature="3831:3838" ph="{...}" />
@@ -1629,28 +1727,101 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/DTO/CoinDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="836">
+          <caret line="60" column="18" lean-forward="false" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="18" />
+          <folding>
+            <element signature="e#1416#1417#0" expanded="true" />
+            <element signature="e#1447#1448#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/DTO/CoinNamesDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/service/CoinService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="695">
+          <caret line="47" column="63" lean-forward="false" selection-start-line="47" selection-start-column="63" selection-end-line="47" selection-end-column="63" />
+          <folding>
+            <element signature="e#1654#1655#0" expanded="true" />
+            <element signature="e#1724#1725#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/components/PortfolioSwitch.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1178">
+          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/service/RequestService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="183" column="1" lean-forward="false" selection-start-line="183" selection-start-column="1" selection-end-line="183" selection-end-column="1" />
+        <state relative-caret-position="610">
+          <caret line="179" column="18" lean-forward="false" selection-start-line="179" selection-start-column="18" selection-end-line="179" selection-end-column="18" />
           <folding>
             <marker date="1523304778785" expanded="true" signature="6735:6741" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/components/UserTotalChart.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="30" column="15" lean-forward="false" selection-start-line="30" selection-start-column="15" selection-end-line="30" selection-end-column="15" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <marker date="1523312455149" expanded="true" signature="1293:1308" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/components/CoinSearch.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="38" column="27" lean-forward="true" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#v-expansion-panel-content#0;n#v-expansion-panel#0;n#v-container#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/controllers/PortfolioController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="20" column="16" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-          <folding />
+        <state relative-caret-position="491">
+          <caret line="83" column="46" lean-forward="true" selection-start-line="83" selection-start-column="46" selection-end-line="83" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3806#3807#0" expanded="true" />
+            <element signature="e#3854#3855#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/portfolio/backend/controllers/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <marker date="1523314749780" expanded="true" signature="1084:1391" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/components/PortfolioCoins.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
-          <caret line="7" column="102" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="102" />
+          <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
           <folding>
             <element signature="n#style#0;n#img#0;n#v-flex#0;n#v-layout#0;n#v-container#0;n#div#0;n#v-expansion-panel-content#0;n#v-expansion-panel#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#v-flex#1;n#v-layout#0;n#v-container#0;n#div#0;n#v-expansion-panel-content#0;n#v-expansion-panel#0;n#template#0;n#!!top" expanded="true" />
