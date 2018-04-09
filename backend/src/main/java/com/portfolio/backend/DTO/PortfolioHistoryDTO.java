@@ -6,12 +6,12 @@ public class PortfolioHistoryDTO {
 
     private Long portfolioID;
 //    private Timestamp time;
-    private int value;
+    private double value;
 
     public PortfolioHistoryDTO() {
     }
 
-    public PortfolioHistoryDTO(Long portfolioID, int value) {
+    public PortfolioHistoryDTO(Long portfolioID, double value) {
         this.portfolioID = portfolioID;
         this.value = value;
     }
@@ -24,7 +24,7 @@ public class PortfolioHistoryDTO {
         this.portfolioID = portfolioID;
     }
 
-    public int getValue() {
+    public double getValue() {
         return value;
     }
 

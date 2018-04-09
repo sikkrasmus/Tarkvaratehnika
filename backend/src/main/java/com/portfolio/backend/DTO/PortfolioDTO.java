@@ -9,6 +9,8 @@ public class PortfolioDTO {
 
     private String description;
 
+    private long portfolioId;
+
 //    private Long userID;
 
     public PortfolioDTO() {
@@ -42,5 +44,13 @@ public class PortfolioDTO {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public long getPortfolioId() {
+        return portfolioId;
+    }
+
+    public void setPortfolioId(long portfolioId) {
+        this.portfolioId = portfolioId;
     }
 }

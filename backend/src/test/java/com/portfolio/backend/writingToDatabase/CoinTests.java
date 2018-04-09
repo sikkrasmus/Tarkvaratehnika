@@ -1,5 +1,6 @@
 package com.portfolio.backend.writingToDatabase;
 
+import com.portfolio.backend.DTO.CoinDTO;
 import com.portfolio.backend.service.CoinService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,6 +20,6 @@ public class CoinTests {
 
     @Test
     public void TestSavingCoin() {
-
+//        CoinDTO coinDTO = new CoinDTO()
     }
 }

@@ -96,4 +96,8 @@ public class PortfolioService {
     public void deletePortfolioWith(String name) {
         portfolioRepository.deleteByName(name);
     }
+
+    public Portfolio getPortfolioBy(Long id) {
+        return portfolioRepository.findById(id);
+    }
 }

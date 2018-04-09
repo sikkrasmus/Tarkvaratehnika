@@ -33,4 +33,12 @@ public class PortfolioHistoryService {
         history.setPortfolio(p);
         portfolioHistoryRepository.save(history);
     }
+
+    public PortfolioHistory getHistoryByPortfolio(Portfolio portfolio) {
+        return portfolioHistoryRepository.findByPortfolio(portfolio);
+    }
+
+    public void deleteAll() {
+        portfolioHistoryRepository.deleteAll();
+    }
 }

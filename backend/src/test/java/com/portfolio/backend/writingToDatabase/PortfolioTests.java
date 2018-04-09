@@ -41,7 +41,7 @@ public class PortfolioTests {
     public void testAssigningUserToPortfolioWhenSaving() {
         UserDTO userToSave = new UserDTO("testuser@gmail.com", "password", "test");
         userService.createAndSaveUser(userToSave);
-        User user = userService.getUserBy(1);
+        User user = userService.getUserBy(1L);
         PortfolioDTO toSave = new PortfolioDTO("test1", "portfolio for testing1");
         portfolioService.createAndSavePortfolio(toSave, user);
         Assert.assertEquals(portfolioService.getPortfolioBy("test1").getUser(), user);

@@ -5,6 +5,7 @@ import com.portfolio.backend.DTO.PortfolioDTO;
 import com.portfolio.backend.DTO.UserDTO;
 import com.portfolio.backend.DTO.UserPortfolioDTO;
 import com.portfolio.backend.entities.Portfolio;
+import com.portfolio.backend.entities.PortfolioHistory;
 import com.portfolio.backend.entities.User;
 import com.portfolio.backend.repository.CoinRepository;
 import com.portfolio.backend.service.CoinService;
@@ -14,9 +15,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Time;
+import java.sql.Timestamp;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 @CrossOrigin
 @RestController
@@ -63,6 +67,18 @@ public class PortfolioController {
         System.out.println(coinDTO.getPriceBought());
 
         return coinDTO;
+    }
+
+    @PostMapping("/getGraph")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Map<Timestamp, Double> getHistory(@RequestBody PortfolioDTO portfolioDTO) {
+        Portfolio portfolio = portfolioService.getPortfolioBy(portfolioDTO.getPortfolioId());
+        Set<PortfolioHistory> histories = portfolio.getHistories();
+        Map<Timestamp, Double> result = new HashMap<>();
+        for (PortfolioHistory history : histories) {
+            result.put(history.getTime(), history.getValue());
+        }
+        return result;
     }
 
 
