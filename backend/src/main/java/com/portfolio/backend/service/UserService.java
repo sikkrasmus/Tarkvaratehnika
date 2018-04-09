@@ -70,4 +70,8 @@ public class UserService {
     public void deleteUserWith(String name) {
         userRepository.deleteByName(name);
     }
+
+    public void deleteAll() {
+        userRepository.deleteAll();
+    }
 }
