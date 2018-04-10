@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 
 @Service
 public class UserService {
@@ -33,8 +31,7 @@ public class UserService {
 
     public boolean validateUser(UserDTO userDTO) {
         try {
-            User existing = userRepository.findByEmailContaining(userDTO.getEmail());
-            System.out.println(existing.getEmail() + " " + existing.getPassword());
+            User existing = userRepository.findByEmail(userDTO.getEmail());
             return passwordEncoder.matches(userDTO.getPassword(), existing.getPassword());
         } catch (NullPointerException e) {
             return false;
@@ -48,19 +45,17 @@ public class UserService {
      * @return True if email is in use. False if email is free to use.
      */
     public boolean isUserEmailExisting(UserDTO UserDTO) {
-        User existing = userRepository.findByEmailContaining(UserDTO.getEmail());
+        User existing = userRepository.findByEmail(UserDTO.getEmail());
         return existing != null;
     }
 
     public User findUser(String email) {
-        System.out.println("email: " + email);
-        User exist = userRepository.findByEmailContaining(email);
-        System.out.println(exist);
-        return userRepository.findByEmailContaining(email);
+        User exist = userRepository.findByEmail(email);
+        return userRepository.findByEmail(email);
     }
 
     public User getUserBy(String email) {
-        return userRepository.findByEmailContaining(email);
+        return userRepository.findByEmail(email);
     }
 
     public User getUserBy(Long id) {

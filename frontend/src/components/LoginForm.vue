@@ -5,7 +5,7 @@
         <h1>Sign in</h1>
       </v-flex>
       <v-flex xs12 sm6 offset-sm3 mt-3>
-        <form @submit.prevent="loginValidation">
+        <form @submit.prevent="login">
           <v-layout column>
             <v-flex>
               <v-text-field color="accent"
@@ -36,50 +36,41 @@
 </template>
 
 <script>
-import axios from 'axios'
+  import axios from 'axios'
+  import {mapActions} from 'vuex'
 
-export default {
-  data () {
-    return {
-      user: {
-        email: '',
-        password: ''
-      },
-      errors: []
-    }
-  },
-
-  methods: {
-    loginValidation: function () {
-      axios.post('http://localhost:8080/login', this.user)
-        .then(response => {
-          if (response.data.username !== undefined) {
-            //save cookie
-            this.$store.dispatch('addCookie', {
-              name: 'session_id',
-              value: response.data.sessionid,
-              expirationDateInSeconds: 300
-            })
-
-            this.$store.dispatch('addCookie', {
-              name: 'username',
-              value: response.data.username,
-              expirationDateInSeconds: 300
-            })
-
-            this.$store.commit("getUsername", response.data.username)
-            this.$router.push('Home')
-          } else {
-            alert('Wrong user or pw!')
-            this.$router.push('Login')
-          }
-        })
-        .catch(e => {
-          this.errors.push(e)
-        })
+  export default {
+    data() {
+      return {
+        user: {
+          email: '',
+          password: ''
+        },
+        errors: []
+      }
     },
+
+    methods: {
+      ...mapActions([
+        'loginValidation',
+        'savePortfolios',
+        'getPortfolioCoins',
+        'getPortfolioId'
+      ]),
+      login() {
+        this.loginValidation(this.user)
+          .then(() => {
+            this.$router.push('/home')
+            this.savePortfolios({email: this.user.email})
+            this.getPortfolioId(this.$store.state.selectedPortfolio)
+            this.getPortfolioCoins(this.$store.state.portfolioId)
+          }).catch(e => {
+          console.log(e)
+          //alert("Invalid Credentials")
+        })
+      }
+    }
   }
-}
 </script>
 
 <style scoped>

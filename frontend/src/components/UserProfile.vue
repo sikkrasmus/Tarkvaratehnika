@@ -60,10 +60,7 @@
 
     methods: {
       addPortfolio: function () {
-
-         this.$store.dispatch('getCookie', {
-          name: "username"
-        })
+        console.log(this.info)
         this.info.email = this.$store.state.username
         axios.post('http://localhost:8080/addPortfolio', this.info)
           .then(response => {

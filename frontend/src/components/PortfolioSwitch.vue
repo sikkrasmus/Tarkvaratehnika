@@ -12,10 +12,10 @@
                       <v-layout row wrap>
                         <v-flex xs12 sm12 md12>
                           <v-select
-                            label="Select Portfolio"
-                            @input="selectPortfolio"
+                            :label="portfolios[0]"
+                            @input="switchPortfolio"
                             :items="portfolios"
-                            :value="this.$store.state.selectedPortfolio"
+                            :value="selectedPortfolio"
                             overflow
                             target="#dropdown-example">
                           </v-select>
@@ -62,6 +62,7 @@
   import Portfoliocoins from "./PortfolioCoins.vue";
   import Coinsearch from "./CoinSearch.vue";
   import Usertotalchart from "./UserTotalChart.vue";
+  import {mapActions} from 'vuex'
 
   export default {
     components: {
@@ -71,25 +72,25 @@
 
     data () {
       return {
-        portfolios: [],
-        dialog: this.$store.state.dialog,
-      }
-    },
-
-    mounted () {
-      this.portfolios = this.$store.state.portfolioNames
-      if (this.$store.state.selectedPortfolio === null){
-        this.selectPortfolio(this.portfolios[0])
+        dialog: false,
+        portfolios: this.$store.state.portfolioNames,
+        selectedPortfolio: this.$store.state.selectedPortfolio
       }
     },
 
     methods : {
-      selectPortfolio(value){
-        this.$store.dispatch('selectPortfolio', {
-          name: value
-        })
-        this.$router.go();
-      },
+      ...mapActions([
+        'selectPortfolio',
+        'getPortfolioCoins',
+        'getPortfolioId'
+
+      ]),
+
+      switchPortfolio(value){
+        this.selectPortfolio(value)
+        this.getPortfolioId(value)
+        this.getPortfolioCoins(this.$store.state.portfolioId)
+      }
     }
 
   }

@@ -62,9 +62,6 @@ public class PortfolioController {
         Portfolio portfolio = portfolioService.getPortfolioById(coinDTO.getPortfolioId());
         coinService.createAndSaveCoin(coinDTO, portfolio);
 
-        System.out.println(coinDTO.getLongName());
-        System.out.println(coinDTO.getPriceBought());
-
         return coinDTO;
     }
 

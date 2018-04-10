@@ -32,13 +32,13 @@ public class LoginController {
     @ResponseStatus(HttpStatus.CREATED)
     public Map<String, String> login(@RequestBody UserDTO userDTO, HttpSession session) throws IOException, JSONException {
         if (userService.validateUser(userDTO)) {
-
 //            requestService.createAndUpdateCoinNames();
-
             Map<String, String> data = new HashMap<>();
             session.setAttribute("name", userDTO.getEmail());
             data.put("username", userDTO.getEmail());
             data.put("sessionid", session.getId());
+
+            System.out.println(data.toString());
             return data;
         } else {
             return null;

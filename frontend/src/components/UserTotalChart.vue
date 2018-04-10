@@ -21,23 +21,25 @@
     mounted() {
 
       this.requestData.portfolioId = this.$store.state.portfolioId
-      axios.post('http://localhost:8080/getGraphData', this.requestData)
-        .then(response => {
-          for (var key in response.data) {
-            if (response.data.hasOwnProperty(key)) {
-              var obj = {
-                year: key,
-                value: response.data[key]
+      if (this.requestData.portfolioId !== null){
+        axios.post('http://localhost:8080/getGraphData', this.requestData)
+          .then(response => {
+            for (var key in response.data) {
+              if (response.data.hasOwnProperty(key)) {
+                var obj = {
+                  year: key,
+                  value: response.data[key]
+                }
               }
+              chart.dataProvider.push(obj)
             }
-            chart.dataProvider.push(obj)
-          }
 
-          chart.validateData();
-        })
-        .catch(error => {
-          console.log(error)
-        })
+            chart.validateData();
+          })
+          .catch(error => {
+            console.log(error)
+          })
+      }
 
       var chart = AmCharts.makeChart("chartdiv", {
         "type": "serial",

@@ -51,6 +51,7 @@
 
 <script>
   import axios from 'axios'
+  import {mapActions} from 'vuex'
 export default {
   name: 'portfoliocoins',
   data () {
@@ -60,29 +61,8 @@ export default {
       price: '',
       currency: '',
       change: '',
-      coinData: null,
-
-      requestCoins: {
-        portfolioId: null
-      }
+      coinData: this.$store.state.coinData,
     }
-  },
-
-  mounted () {
-    console.log('portfolio name: ' + this.$store.state.selectedPortfolio)
-    this.$store.dispatch('getPortfolioId', this.$store.state.selectedPortfolio)
-
-    this.requestCoins.portfolioId = this.$store.state.portfolioId
-
-    axios.post('http://localhost:8080/getPortfolioCoins', this.requestCoins)
-      .then(response => {
-        this.coinData = response.data;
-        console.log()
-      })
-      .catch(error => {
-        console.log("error")
-        console.log(error)
-      })
   },
 
   methods: {

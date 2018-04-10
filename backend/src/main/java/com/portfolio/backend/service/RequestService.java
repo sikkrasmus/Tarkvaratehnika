@@ -68,7 +68,6 @@ public class RequestService {
     }
 
     public SingleMarketFormat getMarketSummaryFromBittrexForOneCoin(String shortName) throws JSONException, IOException {
-        System.out.println(shortName);
         RestTemplate restTemplate = new RestTemplate();
         String url;
         if (shortName.equals("BTC")) {
@@ -169,7 +168,6 @@ public class RequestService {
             Map.Entry pair = (Map.Entry)it.next();
             BufferedImage image;
             try {
-                System.out.println("saving image for: " + pair.getKey());
                 if (pair.getValue() != null) {
                     URL url = new URL(pair.getValue().toString());
                     image = ImageIO.read(url);
@@ -179,8 +177,6 @@ public class RequestService {
             } catch (IOException e) {
             }
         }
-
-
     }
 
     public String getValueChangeForCoin(Coin coin) throws IOException, JSONException {

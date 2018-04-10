@@ -46,6 +46,7 @@
 <script>
 
   import axios from 'axios'
+  import {mapActions} from 'vuex'
 
   export default {
     name: 'coinsearch',
@@ -96,24 +97,16 @@
     },
 
     methods : {
-      addCoin : function () {
-        this.$store.dispatch('getPortfolioId', this.$store.state.selectedPortfolio)
+      ...mapActions([
+        'addCoinToPortfolio'
+      ]),
 
-        this.requestData.exchange = this.selectedExchange
-        this.requestData.portfolioId = this.$store.state.portfolioId
-
-        axios.post('http://localhost:8080/addCoin', this.requestData)
-          .then(response => {
-            console.log(response)
-          })
-          .catch(error => {
-            this.errors.push(error)
-          })
-
+      addCoin () {
+        this.requestData.portfolioId = this.$store.state.portfolioId;
+        this.addCoinToPortfolio(this.requestData)
       },
 
       getShortNameFromLongName: function(longName){
-
         for (var i = 0; i < this.coinData.length; i++) {
           if (Object.values(this.coinData[i])[2] === longName){
             return Object.values(this.coinData[i])[1]
@@ -123,17 +116,14 @@
       },
 
       selectExchange : function (value) {
-        this.selectedExchange = value;
+        this.requestData.exchange = value;
       },
 
       getCoinName: function (name) {
         this.requestData.longName = name;
       },
 
-      redirectToHome() {
-//       this.$router.go()
       }
-    }
   }
 </script>
 
