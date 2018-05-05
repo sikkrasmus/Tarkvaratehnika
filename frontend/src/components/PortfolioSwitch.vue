@@ -38,10 +38,12 @@
               <v-icon>add</v-icon>
             </v-btn>
             <v-layout row justify-center>
-                <v-dialog v-model="dialog" max-width="100%" class="hidden-lg-and-up">
+              <v-dialog v-model="dialog" max-width="100%" class="hidden-lg-and-up">
                 <v-card>
-                  <v-card-title class="headline">Add new coin  <v-spacer></v-spacer>
-                    <v-btn color="green darken-1" flat="flat" @click.native="dialog = false">Cancel</v-btn></v-card-title>
+                  <v-card-title class="headline">Add new coin
+                    <v-spacer></v-spacer>
+                    <v-btn color="green darken-1" flat="flat" @click.native="cancel()">Cancel</v-btn>
+                  </v-card-title>
                   <v-card-actions>
                   </v-card-actions>
                   <coinsearch></coinsearch>
@@ -51,7 +53,7 @@
           </v-toolbar>
           <br><br>
           <usertotalchart></usertotalchart>
-            <portfoliocoins></portfoliocoins>
+          <portfoliocoins></portfoliocoins>
         </v-card>
       </v-flex>
     </v-layout>
@@ -68,9 +70,10 @@
     components: {
       Usertotalchart,
       Coinsearch,
-      Portfoliocoins},
+      Portfoliocoins
+    },
 
-    data () {
+    data() {
       return {
         dialog: false,
         portfolios: this.$store.state.portfolioNames,
@@ -78,7 +81,7 @@
       }
     },
 
-    methods : {
+    methods: {
       ...mapActions([
         'selectPortfolio',
         'getPortfolioCoins',
@@ -86,7 +89,12 @@
 
       ]),
 
-      switchPortfolio(value){
+      cancel() {
+        this.dialog = false;
+        this.getPortfolioCoins(this.$store.state.portfolioId)
+      },
+
+      switchPortfolio(value) {
         this.selectPortfolio(value)
         this.getPortfolioId(value)
         this.getPortfolioCoins(this.$store.state.portfolioId)

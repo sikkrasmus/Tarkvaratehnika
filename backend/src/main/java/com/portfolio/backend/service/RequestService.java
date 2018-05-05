@@ -57,12 +57,15 @@ public class RequestService {
     public void createAndUpdateCoinNames() throws IOException, JSONException {
         getResultFromBittrex();
         List<CoinNamesDTO> nameList = APIRequestRepository.getNamesFromResult();
+        List<CoinNames> namesInDb = (List<CoinNames>) coinNamesRepository.findAll();
         List<CoinNames> names = new ArrayList<>();
         for (CoinNamesDTO dto : nameList) {
             CoinNames item = new CoinNames();
             item.setShortname(dto.getShortName());
             item.setLongname(dto.getLongname());
-            names.add(item);
+            if (!namesInDb.contains(item)){
+                names.add(item);
+            }
         }
         coinNamesRepository.save(names);
     }

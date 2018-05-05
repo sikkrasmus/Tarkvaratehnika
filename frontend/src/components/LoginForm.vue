@@ -38,6 +38,7 @@
 <script>
   import axios from 'axios'
   import {mapActions} from 'vuex'
+  import {mapGetters} from 'vuex'
 
   export default {
     data() {
@@ -61,9 +62,7 @@
         this.loginValidation(this.user)
           .then(() => {
             this.$router.push('/home')
-            this.savePortfolios({email: this.user.email})
-            this.getPortfolioId(this.$store.state.selectedPortfolio)
-            this.getPortfolioCoins(this.$store.state.portfolioId)
+            this.savePortfolios({email: this.$store.state.username})
           }).catch(e => {
           console.log(e)
           //alert("Invalid Credentials")

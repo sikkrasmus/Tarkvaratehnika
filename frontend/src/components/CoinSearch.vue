@@ -4,7 +4,8 @@
     <v-expansion-panel>
       <v-expansion-panel-content v-for="data in computedDatas" :key="data">
         <div slot="header" v-on:click="getCoinName(data)">
-          <img v-bind:src="'/static/coins/' + getShortNameFromLongName(data) + '.png'" style="width: 25px; height: 25px; margin: 0 20px 0 0"/>
+          <img v-bind:src="'/static/coins/' + getShortNameFromLongName(data) + '.png'"
+               style="width: 25px; height: 25px; margin: 0 20px 0 0"/>
           {{data}}
         </div>
         <v-divider></v-divider>
@@ -83,11 +84,11 @@
         return result;
       }
     },
-    mounted () {
+    mounted() {
       axios.post('http://localhost:8080/getAllCoins')
         .then(response => {
           this.coinData = response.data;
-          for (var i = 0; i < response.data.length; i++){
+          for (var i = 0; i < response.data.length; i++) {
             this.coinList.push(Object.values(response.data[i])[2])
           }
         }).error(error => {
@@ -96,26 +97,27 @@
       })
     },
 
-    methods : {
+    methods: {
       ...mapActions([
-        'addCoinToPortfolio'
+        'addCoinToPortfolio',
+        'getPortfolioCoins',
       ]),
 
-      addCoin () {
+      addCoin() {
         this.requestData.portfolioId = this.$store.state.portfolioId;
         this.addCoinToPortfolio(this.requestData)
       },
 
-      getShortNameFromLongName: function(longName){
+      getShortNameFromLongName: function (longName) {
         for (var i = 0; i < this.coinData.length; i++) {
-          if (Object.values(this.coinData[i])[2] === longName){
+          if (Object.values(this.coinData[i])[2] === longName) {
             return Object.values(this.coinData[i])[1]
           }
         }
 
       },
 
-      selectExchange : function (value) {
+      selectExchange: function (value) {
         this.requestData.exchange = value;
       },
 
@@ -123,7 +125,7 @@
         this.requestData.longName = name;
       },
 
-      }
+    }
   }
 </script>
 
