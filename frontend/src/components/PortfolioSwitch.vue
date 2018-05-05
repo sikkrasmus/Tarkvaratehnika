@@ -12,9 +12,9 @@
                       <v-layout row wrap>
                         <v-flex xs12 sm12 md12>
                           <v-select
-                            :label="portfolios[0]"
+                            :label="this.$store.state.portfolioNames[0]"
                             @input="switchPortfolio"
-                            :items="portfolios"
+                            :items="this.$store.state.portfolioNames"
                             :value="selectedPortfolio"
                             overflow
                             target="#dropdown-example">
@@ -76,8 +76,6 @@
     data() {
       return {
         dialog: false,
-        portfolios: this.$store.state.portfolioNames,
-        selectedPortfolio: this.$store.state.selectedPortfolio
       }
     },
 
@@ -85,7 +83,8 @@
       ...mapActions([
         'selectPortfolio',
         'getPortfolioCoins',
-        'getPortfolioId'
+        'getPortfolioId',
+        'setPortfolioId'
 
       ]),
 
@@ -95,8 +94,9 @@
       },
 
       switchPortfolio(value) {
+        console.log(value + "id: " + this.$store.state.portfolioId)
         this.selectPortfolio(value)
-        this.getPortfolioId(value)
+        this.setPortfolioId(value);
         this.getPortfolioCoins(this.$store.state.portfolioId)
       }
     }

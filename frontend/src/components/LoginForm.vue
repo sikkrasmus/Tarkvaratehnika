@@ -54,7 +54,7 @@
     methods: {
       ...mapActions([
         'loginValidation',
-        'savePortfolios',
+        'updatePortfolios',
         'getPortfolioCoins',
         'getPortfolioId'
       ]),
@@ -62,10 +62,9 @@
         this.loginValidation(this.user)
           .then(() => {
             this.$router.push('/home')
-            this.savePortfolios({email: this.$store.state.username})
+            this.updatePortfolios({email: this.$store.state.username})
           }).catch(e => {
           console.log(e)
-          //alert("Invalid Credentials")
         })
       }
     }

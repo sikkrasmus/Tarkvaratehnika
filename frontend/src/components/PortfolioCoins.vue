@@ -71,7 +71,7 @@ export default {
   methods: {
     ...mapActions([
       'loginValidation',
-      'savePortfolios',
+      'updatePortfolios',
       'getPortfolioCoins',
       'getPortfolioId'
     ]),
