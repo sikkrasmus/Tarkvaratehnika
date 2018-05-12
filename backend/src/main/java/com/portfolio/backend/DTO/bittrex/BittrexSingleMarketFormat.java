@@ -1,6 +1,6 @@
-package com.portfolio.backend.coins.bittrex;
+package com.portfolio.backend.DTO.bittrex;
 
-public class SingleMarketFormat {
+public class BittrexSingleMarketFormat {
 
     private String MarketName;
     private double High;

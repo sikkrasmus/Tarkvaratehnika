@@ -1,4 +1,4 @@
-package com.portfolio.backend.coins;
+package com.portfolio.backend.DTO.bittrex;
 
 public class CoinSummary {
 
@@ -15,6 +15,25 @@ public class CoinSummary {
     private String OpenSellOrders;
     private String PrevDay;
     private String Created;
+
+    public CoinSummary() {
+    }
+
+    public CoinSummary(String marketName, String high, String low, String volume, String last, String baseVolume, String timeStamp, String bid, String ask, String openBuyOrders, String openSellOrders, String prevDay, String created) {
+        MarketName = marketName;
+        High = high;
+        Low = low;
+        Volume = volume;
+        Last = last;
+        BaseVolume = baseVolume;
+        TimeStamp = timeStamp;
+        Bid = bid;
+        Ask = ask;
+        OpenBuyOrders = openBuyOrders;
+        OpenSellOrders = openSellOrders;
+        PrevDay = prevDay;
+        Created = created;
+    }
 
     public String getMarketName() {
         return MarketName;

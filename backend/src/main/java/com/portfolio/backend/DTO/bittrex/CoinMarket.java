@@ -1,6 +1,6 @@
-package com.portfolio.backend.coins;
+package com.portfolio.backend.DTO.bittrex;
 
-public class CoinMarketInfo {
+public class CoinMarket {
 
     private String MarketCurrency;
     private String BaseCurrency;
@@ -13,6 +13,23 @@ public class CoinMarketInfo {
     private String Notice;
     private String IsSponsored;
     private String LogoUrl;
+
+    public CoinMarket(String marketCurrency, String baseCurrency, String marketCurrencyLong, String baseCurrencyLong, String minTradeSize, String marketName, String isActive, String created, String notice, String isSponsored, String logoUrl) {
+        MarketCurrency = marketCurrency;
+        BaseCurrency = baseCurrency;
+        MarketCurrencyLong = marketCurrencyLong;
+        BaseCurrencyLong = baseCurrencyLong;
+        MinTradeSize = minTradeSize;
+        MarketName = marketName;
+        IsActive = isActive;
+        Created = created;
+        Notice = notice;
+        IsSponsored = isSponsored;
+        LogoUrl = logoUrl;
+    }
+
+    public CoinMarket() {
+    }
 
     public String getMarketCurrency() {
         return MarketCurrency;
