@@ -35,7 +35,8 @@ export default {
     })
   },
 
-  savePortfolios: ({commit}, payload) => {
+  updatePortfolios: ({commit}, payload) => {
+    console.log("updatePortfolios invoked!")
     axios.post('http://localhost:8080/getPortfolio', payload)
       .then(response => {
         var portfolios = []
@@ -46,10 +47,25 @@ export default {
               portfolios.push(response.data[key])
           }
         }
-        commit('savePortfolios', portfolios)
+        commit('updatePortfolios', portfolios)
       }).catch(e => {
       console.log(e)
     })
+  },
+
+  addPortfolio: ({commit}, payload) => {
+    console.log("add portfolio invoked!")
+    axios.post('http://localhost:8080/addPortfolio', payload)
+      .then(response => {
+        commit('addPortfolio')
+      })
+      .catch(error => {
+        this.errors.push(error)
+      })
+  },
+
+  setPortfolioId: ({commit}, portfolioName) => {
+    commit('setPortfolioId', portfolioName)
   },
 
   selectPortfolio: ({commit}, payload) => {

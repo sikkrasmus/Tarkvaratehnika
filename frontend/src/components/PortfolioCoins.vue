@@ -30,6 +30,7 @@
           <v-flex xs1 text-xs-left class="hidden-md-and-down">
             {{getCurrency(value[0])}}
           </v-flex>
+
           <v-flex xs2 text-xs-right class="hidden-md-and-down" v-bind:style="{ color: getPercentColor(value[3]) }">
             {{value[3]}}
           </v-flex>
@@ -39,6 +40,12 @@
         </v-layout>
       </div>
       <v-card>
+        <v-flex>
+          <div>
+            <v-btn flat small color="primary" v-on:click="logData(value[0], value[2], value[3])">Sell</v-btn>
+            <v-btn flat small color="primary" v-on:click="logData(value[1], value[2], value[3])">Buy</v-btn>
+          </div>
+        </v-flex>
         <v-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</v-card-text>
       </v-card>
     </v-expansion-panel-content>
@@ -87,6 +94,10 @@ export default {
       } else {
         return "BTC"
       }
+    },
+
+    logData: function(value1, value2, value3) {
+      console.log(value1, value2, value3)
     },
 
     getPercentColor(number) {
