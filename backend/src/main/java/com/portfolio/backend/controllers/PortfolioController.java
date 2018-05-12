@@ -70,12 +70,12 @@ public class PortfolioController {
     public Map<String, String[]> getPortfolioCoins(@RequestBody PortfolioDTO portfolioDTO) throws IOException, JSONException {
 
         Map<String, String[]> coins = new HashMap<>();
+        System.out.println(portfolioDTO.getPortfolioId());
         Portfolio portfolio = portfolioService.getPortfolioById(portfolioDTO.getPortfolioId());
 
 
         for (Coin coin : portfolio.getCoins()) {
             if (coin.getLongname() != null) {
-
                 coins.put(coin.getLongname(), new String[]{coin.getShortname(),
                         String.valueOf(coin.getAmount()), String.valueOf(requestService.getPriceFor(coin)),
                         requestService.getValueChangeForCoin(coin)});

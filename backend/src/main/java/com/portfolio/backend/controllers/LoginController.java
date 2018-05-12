@@ -1,6 +1,7 @@
 package com.portfolio.backend.controllers;
 
 import com.portfolio.backend.DTO.UserDTO;
+import com.portfolio.backend.service.CoinService;
 import com.portfolio.backend.service.PortfolioService;
 import com.portfolio.backend.service.RequestService;
 import com.portfolio.backend.service.UserService;
@@ -28,17 +29,17 @@ public class LoginController {
     private RequestService requestService;
 
 
+
     @PostMapping("/login")
     @ResponseStatus(HttpStatus.CREATED)
     public Map<String, String> login(@RequestBody UserDTO userDTO, HttpSession session) throws IOException, JSONException {
         if (userService.validateUser(userDTO)) {
-
 //            requestService.createAndUpdateCoinNames();
-
             Map<String, String> data = new HashMap<>();
             session.setAttribute("name", userDTO.getEmail());
             data.put("username", userDTO.getEmail());
             data.put("sessionid", session.getId());
+
             return data;
         } else {
             return null;

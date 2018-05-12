@@ -12,10 +12,10 @@
                       <v-layout row wrap>
                         <v-flex xs12 sm12 md12>
                           <v-select
-                            label="Select Portfolio"
-                            @input="selectPortfolio"
-                            :items="portfolios"
-                            :value="this.$store.state.selectedPortfolio"
+                            :label="this.$store.state.portfolioNames[0]"
+                            @input="switchPortfolio"
+                            :items="this.$store.state.portfolioNames"
+                            :value="selectedPortfolio"
                             overflow
                             target="#dropdown-example">
                           </v-select>
@@ -38,10 +38,12 @@
               <v-icon>add</v-icon>
             </v-btn>
             <v-layout row justify-center>
-                <v-dialog v-model="dialog" max-width="100%" class="hidden-lg-and-up">
+              <v-dialog v-model="dialog" max-width="100%" class="hidden-lg-and-up">
                 <v-card>
-                  <v-card-title class="headline">Add new coin  <v-spacer></v-spacer>
-                    <v-btn color="green darken-1" flat="flat" @click.native="dialog = false">Cancel</v-btn></v-card-title>
+                  <v-card-title class="headline">Add new coin
+                    <v-spacer></v-spacer>
+                    <v-btn color="green darken-1" flat="flat" @click.native="cancel()">Cancel</v-btn>
+                  </v-card-title>
                   <v-card-actions>
                   </v-card-actions>
                   <coinsearch></coinsearch>
@@ -51,7 +53,7 @@
           </v-toolbar>
           <br><br>
           <usertotalchart></usertotalchart>
-            <portfoliocoins></portfoliocoins>
+          <portfoliocoins></portfoliocoins>
         </v-card>
       </v-flex>
     </v-layout>
@@ -62,34 +64,41 @@
   import Portfoliocoins from "./PortfolioCoins.vue";
   import Coinsearch from "./CoinSearch.vue";
   import Usertotalchart from "./UserTotalChart.vue";
+  import {mapActions} from 'vuex'
 
   export default {
     components: {
       Usertotalchart,
       Coinsearch,
-      Portfoliocoins},
+      Portfoliocoins
+    },
 
-    data () {
+    data() {
       return {
-        portfolios: [],
-        dialog: this.$store.state.dialog,
+        dialog: false,
       }
     },
 
-    mounted () {
-      this.portfolios = this.$store.state.portfolioNames
-      if (this.$store.state.selectedPortfolio === null){
-        this.selectPortfolio(this.portfolios[0])
-      }
-    },
+    methods: {
+      ...mapActions([
+        'selectPortfolio',
+        'getPortfolioCoins',
+        'getPortfolioId',
+        'setPortfolioId'
 
-    methods : {
-      selectPortfolio(value){
-        this.$store.dispatch('selectPortfolio', {
-          name: value
-        })
-        this.$router.go();
+      ]),
+
+      cancel() {
+        this.dialog = false;
+        this.getPortfolioCoins(this.$store.state.portfolioId)
       },
+
+      switchPortfolio(value) {
+        console.log(value + "id: " + this.$store.state.portfolioId)
+        this.selectPortfolio(value)
+        this.setPortfolioId(value);
+        this.getPortfolioCoins(this.$store.state.portfolioId)
+      }
     }
 
   }

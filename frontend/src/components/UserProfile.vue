@@ -8,7 +8,7 @@
           <v-card>
             <v-card-title class="headline">Add new portfolio</v-card-title>
             <v-container>
-              <v-form @submit.prevent="addPortfolio">
+              <v-form @submit.prevent="addPortf">
                 <v-text-field
                   label="Portfolio Name"
                   v-model="info.portfolioName"
@@ -37,6 +37,7 @@
   import Navlogged from "./NavLogged.vue";
   import Navloggedwithouttabs from "./NavLoggedWithOutTabs.vue";
   import axios from 'axios';
+  import {mapActions} from 'vuex'
 
   export default {
     components: {
@@ -59,20 +60,19 @@
     },
 
     methods: {
-      addPortfolio: function () {
+      ...mapActions([
+        'selectPortfolio',
+        'getPortfolioCoins',
+        'updatePortfolios',
+        'addPortfolio'
 
-         this.$store.dispatch('getCookie', {
-          name: "username"
-        })
-        this.info.email = this.$store.state.username
-        axios.post('http://localhost:8080/addPortfolio', this.info)
-          .then(response => {
-            this.$router.push('Home')
-          })
-          .catch(error => {
-            console.log("err: " + error)
-            this.errors.push(error)
-          })
+      ]),
+
+      addPortf () {
+        this.info.email = this.$store.state.username;
+        this.addPortfolio(this.info)
+        this.updatePortfolios({email: this.$store.state.username})
+        this.$router.push("/home")
       }
     }
   }

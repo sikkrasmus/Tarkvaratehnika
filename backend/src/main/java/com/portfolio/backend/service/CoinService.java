@@ -39,7 +39,6 @@ public class CoinService {
     }
 
     private String getCoinShortName(String longname){
-        System.out.println(longname);
         CoinNames coinNames = coinNamesRepository.findByLongname(longname);
         return coinNames.getShortname();
     }
