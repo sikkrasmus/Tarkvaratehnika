@@ -42,8 +42,8 @@
       <v-card>
         <v-flex>
           <div>
-            <v-btn flat small color="primary" v-on:click="logData(value[0], value[2], value[3])">Sell</v-btn>
-            <v-btn flat small color="primary" v-on:click="logData(value[1], value[2], value[3])">Buy</v-btn>
+            <v-btn flat small color="primary" v-on:click="logData(value[0], value[2], value[3])" v-model="sellBtnClicked">Sell</v-btn>
+            <v-btn flat small color="primary" v-on:click="logData(value[1], value[2], value[3])" v-model="buyBtnClicked">Buy</v-btn>
           </div>
         </v-flex>
         <v-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</v-card-text>
@@ -60,6 +60,8 @@ export default {
   name: 'portfoliocoins',
   data () {
     return {
+      sellBtnClicked: false,
+      buyBtnClicked: false,
       coinName: '',
       shortName: '',
       price: '',
@@ -70,9 +72,11 @@ export default {
   },
 
   mounted: function() {
-    this.getPortfolioCoins(this.$store.state.portfolioId)
-    this.coins = this.$store.state.coinData;
 
+    this.getPortfolioCoins(this.$store.state.portfolioId).then( () => {
+      this.coins = this.$store.state.coinData;
+
+    })
   },
 
   methods: {

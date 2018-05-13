@@ -50,9 +50,18 @@ public class PortfolioController {
         return data;
     }
 
+    @PostMapping("/deletePortfolio")
+    @ResponseStatus(HttpStatus.CREATED)
+    public boolean deletePortfolio(@RequestBody PortfolioDTO portfolioDTO) {
+        portfolioService.deletePortfolioById(portfolioDTO.getPortfolioId());
+        return true;
+    }
+
+
+
     @PostMapping("/getPortfolio")
     @ResponseStatus(HttpStatus.CREATED)
-    public Map<Long, String> getPortfolio(@RequestBody UserDTO userDTO) {
+    public Map<Long, List<String>> getPortfolio(@RequestBody UserDTO userDTO) {
         return portfolioService.getPortfoliosNamesByUsername(userDTO.getEmail());
     }
 

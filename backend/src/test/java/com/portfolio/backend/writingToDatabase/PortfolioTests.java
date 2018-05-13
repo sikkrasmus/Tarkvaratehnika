@@ -34,7 +34,7 @@ public class PortfolioTests {
         portfolioService.createAndSavePortfolio(dto, null);
         Portfolio portfolio = portfolioService.getPortfolioBy("test");
         Assert.assertEquals(portfolio.getName(), "test");
-        portfolioService.deletePortfolioWith("test");
+        portfolioService.deletePortfolioById("test");
     }
 
     @Test
@@ -45,7 +45,7 @@ public class PortfolioTests {
         PortfolioDTO toSave = new PortfolioDTO("test1", "portfolio for testing1");
         portfolioService.createAndSavePortfolio(toSave, user);
         Assert.assertEquals(portfolioService.getPortfolioBy("test1").getUser(), user);
-        portfolioService.deletePortfolioWith("test1");
+        portfolioService.deletePortfolioById("test1");
         userService.deleteUserWith("test");
     }
 }

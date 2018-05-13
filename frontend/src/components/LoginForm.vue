@@ -56,13 +56,19 @@
         'loginValidation',
         'updatePortfolios',
         'getPortfolioCoins',
-        'getPortfolioId'
+        'getPortfolioId',
+        'setPortfolioId'
       ]),
       login() {
         this.loginValidation(this.user)
           .then(() => {
-            this.$router.push('/home')
-            this.updatePortfolios({email: this.$store.state.username})
+            this.updatePortfolios({email: this.$store.state.username}).then(() => {
+              this.setPortfolioId(this.$store.state.selectedPortfolio).then(() => {
+                console.log(this.$store.state.portfolioId)
+                this.getPortfolioCoins(this.$store.state.portfolioId);
+                this.$router.push('/home')
+              })
+            });
           }).catch(e => {
           console.log(e)
         })

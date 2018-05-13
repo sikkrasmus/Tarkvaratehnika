@@ -19,8 +19,7 @@
       }
     },
     mounted() {
-
-      this.requestData.portfolioId = this.$store.state.portfolioId
+      this.requestData.portfolioId = this.$store.state.portfolioId;
       if (this.requestData.portfolioId !== null){
         axios.post('http://localhost:8080/getGraphData', this.requestData)
           .then(response => {

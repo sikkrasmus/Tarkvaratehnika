@@ -1,14 +1,9 @@
 import axios from 'axios'
-import state from "./store";
 
 export default {
   clearSession: ({commit}) => {
     commit('clearSession')
   },
-  deleteCookie: ({commit}, payload) => {
-    commit('addCookie', payload)
-  },
-
   getPortfolioId: ({commit}, payload) => {
     commit('getPortfolioId', payload)
   },
@@ -36,55 +31,97 @@ export default {
   },
 
   updatePortfolios: ({commit}, payload) => {
-    console.log("updatePortfolios invoked!")
-    axios.post('http://localhost:8080/getPortfolio', payload)
-      .then(response => {
-        var portfolios = []
-        commit('saveFullPortfolioData', response.data)
-        for (var key in response.data) {
-          if (response.data.hasOwnProperty(key)) {
-            if (!portfolios.includes(response.data[key]))
-              portfolios.push(response.data[key])
+    return new Promise((resolve, reject) => {
+      axios.post('http://localhost:8080/getPortfolio', payload)
+        .then(response => {
+          var portfolios = []
+          commit('saveFullPortfolioData', response.data);
+          for (var key in response.data) {
+            if (response.data.hasOwnProperty(key)) {
+              if (!portfolios.includes(response.data[key][0]))
+                portfolios.push(response.data[key][0])
+            }
           }
-        }
-        commit('updatePortfolios', portfolios)
-      }).catch(e => {
-      console.log(e)
+          commit('updatePortfolios', portfolios);
+          resolve()
+        }).catch(e => {
+        console.log(e)
+      })
+    }).catch(err => {
+      reject(err)
     })
   },
 
-  addPortfolio: ({commit}, payload) => {
-    console.log("add portfolio invoked!")
-    axios.post('http://localhost:8080/addPortfolio', payload)
-      .then(response => {
-        commit('addPortfolio')
-      })
-      .catch(error => {
-        this.errors.push(error)
-      })
-  },
-
-  setPortfolioId: ({commit}, portfolioName) => {
-    commit('setPortfolioId', portfolioName)
-  },
-
-  selectPortfolio: ({commit}, payload) => {
-    if (payload !== null) {
-      commit('selectPortfolio', payload)
-    }
-  },
-
-  getPortfolioCoins: ({commit}, portfolioId) => {
+  deletePortfolio: ({commit}, portfolioId) => {
     var requestData = {
       portfolioId: portfolioId
     }
-    axios.post('http://localhost:8080/getPortfolioCoins', requestData)
-      .then(response => {
-        commit('getPortfolioCoins', response.data)
-      })
-      .catch(error => {
-        console.log(error)
-      })
+    return new Promise((resolve, reject) => {
+      axios.post('http://localhost:8080/deletePortfolio', requestData)
+        .then(response => {
+          commit('deletePortfolio');
+          resolve();
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    }).catch(error => {
+      reject(error)
+    })
+  },
+
+
+  addPortfolio: ({commit}, payload) => {
+    return new Promise((resolve, reject) => {
+      axios.post('http://localhost:8080/addPortfolio', payload)
+        .then(response => {
+          commit('addPortfolio');
+          resolve();
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    }).catch(error => {
+      reject(error)
+    })
+
+  },
+
+  setPortfolioId: ({commit}, portfolioName) => {
+    return new Promise((resolve, reject) => {
+      commit('setPortfolioId', portfolioName)
+      resolve()
+    }).catch(error => {
+      console.log(error)
+    })
+  },
+
+  selectPortfolio: ({commit}, portfolio) => {
+    return new Promise((resolve, reject) => {
+      if (portfolio !== null) {
+        commit('selectPortfolio', portfolio)
+      }
+      resolve()
+    }).catch(error => {
+      console.log(error)
+    })
+  },
+
+  getPortfolioCoins: ({commit}, portfolioId) => {
+    return new Promise((resolve, reject) => {
+      var requestData = {
+        portfolioId: portfolioId
+      };
+      axios.post('http://localhost:8080/getPortfolioCoins', requestData)
+        .then(response => {
+          commit('getPortfolioCoins', response.data);
+          resolve();
+        })
+        .catch(error => {
+          console.log(error)
+        })
+
+    })
 
   },
 

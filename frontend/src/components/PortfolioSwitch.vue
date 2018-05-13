@@ -15,7 +15,7 @@
                             :label="this.$store.state.portfolioNames[0]"
                             @input="switchPortfolio"
                             :items="this.$store.state.portfolioNames"
-                            :value="selectedPortfolio"
+                            :value="this.$store.state.selectedPortfolio"
                             overflow
                             target="#dropdown-example">
                           </v-select>
@@ -84,7 +84,8 @@
         'selectPortfolio',
         'getPortfolioCoins',
         'getPortfolioId',
-        'setPortfolioId'
+        'setPortfolioId',
+        'updatePortfolios'
 
       ]),
 
@@ -94,10 +95,13 @@
       },
 
       switchPortfolio(value) {
-        console.log(value + "id: " + this.$store.state.portfolioId)
-        this.selectPortfolio(value)
-        this.setPortfolioId(value);
-        this.getPortfolioCoins(this.$store.state.portfolioId)
+        this.selectPortfolio(value).then(() => {
+          this.updatePortfolios({email: this.$store.state.username}).then(() => {
+            this.setPortfolioId(value).then(() => {
+              this.getPortfolioCoins(this.$store.state.portfolioId)
+            })
+          })
+        })
       }
     }
 

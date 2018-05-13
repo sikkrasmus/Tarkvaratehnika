@@ -21,7 +21,7 @@ public class Portfolio {
 //    @Column(name = "email")
 //    private String email;
 
-    @ManyToOne(cascade=CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="user_id")
     private User user;
 

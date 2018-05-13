@@ -23,17 +23,11 @@
       return {
         model: 'tab-1',
         overview: 'this is overview tab',
-        watchlist: 'this is watchlist tab'
+        watchlist: 'this is watchlist tab',
+        username: this.$store.state.username
       }
     },
-    computed: {
-      username () {
-        this.$store.dispatch('getCookie', {
-          name: 'username',
-        })
-        return this.$store.state.username
-      }
-    },
+
     methods: {
       logOut : function () {
 

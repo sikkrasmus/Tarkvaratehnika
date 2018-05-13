@@ -40,6 +40,7 @@
 <script>
 import Portfoliocoins from './PortfolioCoins.vue'
 import Portfolioswitch from "./PortfolioSwitch.vue";
+import {mapActions} from 'vuex'
 
 export default {
   components: {
@@ -50,20 +51,22 @@ export default {
     return {
       model: 'tab-1',
       overview: 'this is overview tab',
-      watchlist: 'Coming soon!'
+      watchlist: 'Coming soon!',
+      username: this.$store.state.username
     }
   },
-  computed: {
-    username () {
-      this.$store.dispatch('getCookie', {
-        name: 'username',
-      })
-      return this.$store.state.username
-    }
-  },
-  methods: {
-    logOut : function () {
 
+  mounted: function() {
+    this.updatePortfolios({email: this.state})
+  },
+
+  methods: {
+
+    ...mapActions([
+      'updatePortfolios'
+    ]),
+
+    logOut : function () {
       this.$store.dispatch('clearSession')
       this.$router.push('/')
     }

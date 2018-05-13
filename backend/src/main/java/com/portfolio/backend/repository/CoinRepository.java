@@ -7,4 +7,5 @@ import org.springframework.data.repository.CrudRepository;
 public interface CoinRepository extends CrudRepository<Coin, Long> {
     Coin findByShortname(String shortName);
     Coin findById(long id);
+    Coin deleteAllByPortfolioId(long Id);
 }

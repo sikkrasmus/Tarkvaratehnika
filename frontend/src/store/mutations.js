@@ -1,4 +1,5 @@
 import axios from 'axios'
+
 export default {
   clearSession(state) {
     state.selectedPortfolio = null
@@ -16,55 +17,34 @@ export default {
       });
   },
 
-  addCookie(state, data) {
-    var maxAge = "; max-age=" + data.expirationDateInSeconds;
-    document.cookie = data.name + "=" + data.value + ";" + maxAge + ";path=/";
-
-  },
-
-  deleteCookie(state, data) {
-    document.cookie = data.name + '=; Max-Age=-99999999;';
-  },
-  getCookie(state, data) {
-    var nameEQ = data.name + "=";
-    var ca = document.cookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-      var c = ca[i];
-      while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-      if (c.indexOf(nameEQ) === 0) {
-        this.username = c.substring(nameEQ.length, c.length);
-        return c.substring(nameEQ.length, c.length);
-      }
-    }
-    return null;
-  },
-
   loginValidation(state, payload) {
-      state.username = payload.username
-      state.sessionId = payload.sessionid
+    state.username = payload.username;
+    state.sessionId = payload.sessionid
   },
 
   updatePortfolios(state, portfolios) {
-    for (var key in portfolios){
-      state.portfolioNames.push(portfolios[key])
+    for (var key in portfolios) {
+        if (!state.portfolioNames.includes(portfolios[key])) {
+          state.portfolioNames.push(portfolios[key])
+        }
     }
-    if (state.selectedPortfolio === null && state.portfolioNames.length > 0){
+    if (state.selectedPortfolio === null && state.portfolioNames.length > 0) {
       state.selectedPortfolio = portfolios[0]
     }
 
     for (var k in state.portfolios) {
-      if (state.portfolios[k] === state.selectedPortfolio) {
-        state.portfolioId = k;
+      if (state.portfolios.hasOwnProperty(k)) {
+        if (state.portfolios[k][0] === state.selectedPortfolio) {
+          state.portfolioId = k;
+        }
       }
     }
-
     var requestData = {
       portfolioId: state.portfolioId
     }
 
     axios.post('http://localhost:8080/getPortfolioCoins', requestData)
       .then(response => {
-        console.log("response data" + response.data)
         state.coinData = response.data
       })
       .catch(error => {
@@ -73,18 +53,25 @@ export default {
 
   },
 
-  addPortfolio(){
-    this.$router.push('Home')
+  addPortfolio(state, portfolio){
+
   },
 
-  setPortfolioId(state, portfolioId) {
-    state.portfolioId = Object.keys(state.portfolios).find(key => state.portfolios[key] === portfolioId);
+  deletePortfolio(state, portfolioName){
+
+  },
+
+  setPortfolioId(state, portfolioName) {
+    state.portfolioId = Object.keys(state.portfolios).filter(function(key) {return state.portfolios[key][0] === portfolioName})[0];
+    console.log(state.portfolios)
   },
 
   getPortfolioId(state, name) {
     for (var key in state.portfolios) {
-      if (state.portfolios[key] === name) {
-        return state.portfolioId
+      if (state.portfolios.hasOwnProperty(key)) {
+        if (state.portfolios[key] === name) {
+          return state.portfolioId
+        }
       }
     }
   },
@@ -93,15 +80,15 @@ export default {
     state.selectedPortfolio = portfolio;
   },
 
-  getPortfolioCoins(state, payload){
+  getPortfolioCoins(state, payload) {
     state.coinData = payload;
   },
 
-  saveFullPortfolioData(state, payload){
+  saveFullPortfolioData(state, payload) {
     state.portfolios = payload;
   },
 
-  addCoinToPortfolio(state, payload){
+  addCoinToPortfolio(state, payload) {
     state.coinData.push(payload)
   }
 }
