@@ -25,7 +25,7 @@
             {{value[2]}}
           </v-flex>
           <v-flex xs7 offset-xs3 text-xs-left class="hidden-lg-and-up">
-            {{formatPrice(value[2])}}
+            {{value[2]}}
           </v-flex>
           <v-flex xs1 text-xs-left class="hidden-md-and-down">
             {{getCurrency(value[0])}}
@@ -121,7 +121,6 @@
     },
 
     mounted: function () {
-      console.log(this.$store.state.portfolioId)
       this.getPortfolioCoins(this.$store.state.portfolioId)
     },
 

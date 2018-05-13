@@ -134,6 +134,106 @@ export default {
     })
   },
 
+  getGraphData: ({commit}, portfolioId) => {
+    var chart = AmCharts.makeChart("chartdiv", {
+      "type": "serial",
+      "theme": "light",
+      "marginTop": 0,
+      "marginRight": 20,
+      "dataProvider": [],
+      "valueAxes": [{
+        "axisAlpha": 0,
+        "position": "left"
+      }],
+      "graphs": [{
+        "id": "g1",
+        "balloonText": "[[category]]<br><b><span style='font-size:14px;'>[[value]]</span></b>",
+        "bullet": "round",
+        "bulletSize": 4,
+        "lineColor": "#304FFE",
+        "lineThickness": 3,
+        "negativeLineColor": "#637bb6",
+        "type": "smoothedLine",
+        "valueField": "value"
+      }],
+      "chartScrollbar": {
+        "graph": "g1",
+        "gridAlpha": 0,
+        "color": "#888888",
+        "scrollbarHeight": 55,
+        "backgroundAlpha": 0,
+        "selectedBackgroundAlpha": 0.1,
+        "selectedBackgroundColor": "#888888",
+        "graphFillAlpha": 0,
+        "autoGridCount": true,
+        "selectedGraphFillAlpha": 0,
+        "graphLineAlpha": 0.2,
+        "graphLineColor": "#304FFE",
+        "selectedGraphLineColor": "#888888",
+        "selectedGraphLineAlpha": 1
+
+      },
+      "chartCursor": {
+        "categoryBalloonDateFormat": "DD",
+        "color": "#FFFFFF",
+        "cursorColor": "#E91E63",
+        "cursorAlpha": 0,
+        "valueLineEnabled": true,
+        "valueLineBalloonEnabled": true,
+        "valueLineAlpha": 0.5,
+        "fullWidth": true
+      },
+      "dataDateFormat": "YYYY-MM-DD JJ-NN-SS",
+      "categoryField": "year",
+      "categoryAxis": {
+        "gridPosition": "start",
+        "minPeriod": "DD",
+        "parseDates": true,
+        "minorGridAlpha": 0.1,
+        "minorGridEnabled": true
+      },
+      "export": {
+        "enabled": true
+      },
+    });
+    return new Promise((resolve, reject) => {
+      var requestData = {
+        portfolioId: portfolioId
+      };
+      axios.post('http://localhost:8080/getGraphData', requestData)
+        .then(response => {
+          for (var key in response.data) {
+            if (response.data.hasOwnProperty(key)) {
+              var obj = {
+                year: key,
+                value: response.data[key]
+              }
+            }
+            chart.dataProvider.push(obj)
+          }
+          chart.validateData();
+
+          chart.addListener("rendered", zoomChart);
+          if (chart.zoomChart) {
+            chart.zoomChart();
+          }
+
+          function zoomChart() {
+            chart.addListener("rendered", zoomChart);
+            chart.tapToActivate = false
+            chart.zoomToIndexes(Math.round(chart.dataProvider.length * 0.4), Math.round(chart.dataProvider.length * 0.55));
+          }
+
+          commit('getGraphData', chart.dataProvider);
+          resolve()
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    })
+
+  },
+
   getPortfolioCoins: ({commit}, portfolioId) => {
     return new Promise((resolve, reject) => {
       var requestData = {
@@ -161,8 +261,11 @@ export default {
       })
   },
 
-  getTotalPrice: ({commit}, payload) => {
-    axios.post('http://localhost:8080/getTotal', payload)
+  getTotalPrice: ({commit}, portfolioId) => {
+    var requestData = {
+      portfolioId: portfolioId
+    };
+    axios.post('http://localhost:8080/getTotal', requestData)
       .then(response => {
         commit('getTotalPrice', response.data)
       })
@@ -171,10 +274,12 @@ export default {
       })
   },
 
-  getProfit: ({commit}, payload) => {
-    axios.post('http://localhost:8080/getProfit', payload)
+  getProfit: ({commit}, portfolioId) => {
+    var requestData = {
+      portfolioId: portfolioId
+    };
+    axios.post('http://localhost:8080/getProfit', requestData)
       .then(response => {
-        console.log(response.data)
         commit('getProfit', response.data)
       })
       .catch(error => {

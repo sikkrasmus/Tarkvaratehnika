@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.sql.Timestamp;
+import java.text.ParseException;
 import java.util.*;
 
 @CrossOrigin
@@ -88,16 +89,6 @@ public class PortfolioController {
         coinService.sellCoin(coinDTO);
         return true;
     }
-        for (Coin coin : portfolio.getCoins()) {
-            if (coin.getLongname() != null) {
-                String value = String.format("%8.10f",requestService.getPriceFor(coin)).substring(0, 11)
-                        .replace(",", ".");
-                coins.put(coin.getLongname(), new String[]{coin.getShortname(),
-                        String.valueOf(coin.getAmount()), value,
-                        requestService.getValueChangeForCoin(coin)});
-            }
-        }
-        return coins;
 
     @PostMapping("/buyCoin")
     @ResponseStatus(HttpStatus.CREATED)

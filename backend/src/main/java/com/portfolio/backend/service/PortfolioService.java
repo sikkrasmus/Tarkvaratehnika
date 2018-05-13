@@ -128,7 +128,8 @@ public class PortfolioService {
             coins.put(coin.getLongname(),
                     new String[]{coin.getShortname(),
                             String.valueOf(coinData.get(coin.getShortname())),
-                            String.valueOf(requestService.getPriceFor(coin)),
+                            String.format("%8.10f",requestService.getPriceFor(coin)).substring(0, 11)
+                                    .replace(",", "."),
                             requestService.getValueChangeForCoin(coin)});
         }
         return coins;

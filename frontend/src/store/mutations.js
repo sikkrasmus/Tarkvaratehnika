@@ -44,6 +44,10 @@ export default {
     }
   },
 
+  getGraphData(state, data){
+    state.chartData = data;
+  },
+
   addPortfolio(state, portfolio) {
     var props = Object.keys(state.coinData);
     for (var i = 0; i < props.length; i++) {

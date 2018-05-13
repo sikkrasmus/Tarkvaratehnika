@@ -109,9 +109,7 @@
         if (this.$refs.form.validate()) {
           this.requestData.portfolioId = this.$store.state.portfolioId;
           this.addCoinToPortfolio(this.requestData).then(() => {
-            alert('coin added');
             location.reload();
-
           })
         }
       },

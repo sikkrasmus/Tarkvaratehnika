@@ -57,16 +57,18 @@
         'updatePortfolios',
         'getPortfolioCoins',
         'getPortfolioId',
-        'setPortfolioId'
+        'setPortfolioId',
+        'getGraphData'
       ]),
       login() {
         this.loginValidation(this.user)
           .then(() => {
             this.updatePortfolios({email: this.$store.state.username}).then(() => {
               this.setPortfolioId(this.$store.state.selectedPortfolio).then(() => {
-                console.log(this.$store.state.portfolioId)
-                this.getPortfolioCoins(this.$store.state.portfolioId);
-                this.$router.push('/home')
+                this.getPortfolioCoins(this.$store.state.portfolioId).then(() => {
+                  this.$router.push('/home')
+                  this.getGraphData(this.$store.state.portfolioId);
+                });
               })
             });
           }).catch(e => {
