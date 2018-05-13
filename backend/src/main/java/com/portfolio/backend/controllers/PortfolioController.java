@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.sql.Timestamp;
-import java.text.ParseException;
 import java.util.*;
 
 @CrossOrigin
@@ -39,7 +38,6 @@ public class PortfolioController {
     @ResponseStatus(HttpStatus.CREATED)
     public Map<String, String> savePortfolio(@RequestBody UserPortfolioDTO userPortfolioDTO) {
         PortfolioDTO portfolioDTO = new PortfolioDTO(userPortfolioDTO.getPortfolioName(), userPortfolioDTO.getDescription());
-
         User user = userService.findUser(userPortfolioDTO.getEmail());
         Portfolio portfolio = portfolioService.createAndSavePortfolio(portfolioDTO, user);
 
@@ -81,7 +79,15 @@ public class PortfolioController {
 
         Map<String, String[]> coins = new HashMap<>();
         Portfolio portfolio = portfolioService.getPortfolioById(portfolioDTO.getPortfolioId());
+        return portfolioService.getAllCoins(portfolio);
+    }
 
+    @PostMapping("/sellCoin")
+    @ResponseStatus(HttpStatus.CREATED)
+    public boolean sellCoin(@RequestBody CoinDTO coinDTO){
+        coinService.sellCoin(coinDTO);
+        return true;
+    }
         for (Coin coin : portfolio.getCoins()) {
             if (coin.getLongname() != null) {
                 String value = String.format("%8.10f",requestService.getPriceFor(coin)).substring(0, 11)
@@ -93,7 +99,13 @@ public class PortfolioController {
         }
         return coins;
 
+    @PostMapping("/buyCoin")
+    @ResponseStatus(HttpStatus.CREATED)
+    public boolean buyCoin(@RequestBody CoinDTO coinDTO){
+        coinService.buyCoin(coinDTO);
+        return true;
     }
+
     @PostMapping("/getGraphData")
     @ResponseStatus(HttpStatus.CREATED)
     public Map<Timestamp, Double> getGraph(@RequestBody PortfolioDTO portfolioDTO) {

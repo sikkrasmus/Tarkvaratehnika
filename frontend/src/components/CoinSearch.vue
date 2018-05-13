@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-container>
-        <v-form ref="form" v-model="valid" @submit.prevent="addCoin">
+      <v-form ref="form" v-model="valid" @submit.prevent="addCoin">
         <v-layout row wrap>
           <v-flex xs12 sm12>
             <v-select
@@ -28,7 +28,7 @@
         </v-layout>
         <v-text-field
           label="Amount"
-          :rules ="amountRules"
+          :rules="amountRules"
           v-model="requestData.amount"
           required
         ></v-text-field>
@@ -108,8 +108,11 @@
       addCoin() {
         if (this.$refs.form.validate()) {
           this.requestData.portfolioId = this.$store.state.portfolioId;
-          this.addCoinToPortfolio(this.requestData)
-          console.log('done')
+          this.addCoinToPortfolio(this.requestData).then(() => {
+            alert('coin added');
+            location.reload();
+
+          })
         }
       },
 
