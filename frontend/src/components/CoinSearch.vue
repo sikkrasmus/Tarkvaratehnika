@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-container>
-        <v-form ref="form" v-model="valid" @submit.prevent="addCoin">
+      <v-form ref="form" v-model="valid" @submit.prevent="addCoin">
         <v-layout row wrap>
           <v-flex xs12 sm12>
             <v-select
@@ -25,20 +25,27 @@
               required
             ></v-select>
           </v-flex>
+          <v-flex xs12>
+            <v-text-field
+              label="Amount"
+              :rules="amountRules"
+              v-model="requestData.amount"
+              required
+            ></v-text-field>
+          </v-flex>
+          <v-flex xs8 lg9>
+            <v-text-field
+              label="Price"
+              :rules="priceRules"
+              v-model="requestData.priceBought"
+              required
+            ></v-text-field>
+          </v-flex>
+          <v-flex xs4 lg3>
+            <v-btn color="info" @click="getPrice">Market</v-btn>
+          </v-flex>
+          <v-btn color="green accent-3" type="submit" style="width: 100%; color: indigo; margin: 0 ">Add</v-btn>
         </v-layout>
-        <v-text-field
-          label="Amount"
-          :rules ="amountRules"
-          v-model="requestData.amount"
-          required
-        ></v-text-field>
-        <v-text-field
-          label="Price"
-          :rules="priceRules"
-          v-model="requestData.priceBought"
-          required
-        ></v-text-field>
-        <v-btn color="green accent-3" type="submit" style="width: 100%; color: indigo; margin: 0 ">Add</v-btn>
       </v-form>
     </v-container>
   </div>
@@ -103,7 +110,20 @@
       ...mapActions([
         'addCoinToPortfolio',
         'getPortfolioCoins',
+        'getMarketPrice',
       ]),
+
+      test(value){
+        console.log(value)
+      },
+      getPrice: function () {
+        let coin = {
+          longName: this.requestData.longName
+        };
+        this.getMarketPrice(coin).then(() => {
+          this.requestData.priceBought = this.$store.state.currentMarketPrice
+        })
+      },
 
       addCoin() {
         if (this.$refs.form.validate()) {
@@ -112,7 +132,6 @@
           console.log('done')
         }
       },
-
     },
     selectExchange: function (value) {
       this.requestData.exchange = value;

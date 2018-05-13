@@ -90,5 +90,8 @@ export default {
 
   addCoinToPortfolio(state, payload) {
     state.coinData.push(payload)
+  },
+  getMarketPrice(state, payload) {
+    state.currentMarketPrice = payload;
   }
 }
