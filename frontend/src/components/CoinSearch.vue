@@ -128,10 +128,13 @@
       addCoin() {
         if (this.$refs.form.validate()) {
           this.requestData.portfolioId = this.$store.state.portfolioId;
-          this.addCoinToPortfolio(this.requestData)
-          console.log('done')
+          this.addCoinToPortfolio(this.requestData).then(() => {
+            location.reload();
+
+          })
         }
       },
+
     },
     selectExchange: function (value) {
       this.requestData.exchange = value;

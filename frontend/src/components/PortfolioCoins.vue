@@ -1,6 +1,6 @@
 <template>
   <v-expansion-panel>
-    <v-expansion-panel-content v-for="(value, key, index) in this.$store.state.coinData " :key="value">
+    <v-expansion-panel-content v-for="(value, key, index) in this.$store.state.coinData" :key="value">
       <div slot="header">
         <v-layout row wrap>
           <v-flex xs1 class="hidden-md-and-down">
@@ -42,43 +42,45 @@
       <v-card>
         <v-flex>
           <div>
-            <v-btn flat small color="primary" v-on:click="logData(value[0], value[2], value[3])">Sell</v-btn>
-            <v-btn flat small color="primary" v-on:click="logData(value[1], value[2], value[3])">Buy</v-btn>
+            <v-btn flat small color="primary" v-on:click="sellPressed()">Sell</v-btn>
+            <v-btn flat small color="primary" v-on:click="buyPressed()">Buy</v-btn>
           </div>
         </v-flex>
         <v-card-text>
           <div v-show="sellOption === true">
             <v-form v-model="valid">
               <v-text-field
-                @change="sellAmount"
+                v-model="sellAmount"
                 :rules="amountRules"
                 label="Sell Amount"
                 required
+                v-once
               ></v-text-field>
               <v-text-field
-                @change="sellPrice"
+                v-model="sellPrice"
                 :rules="priceRules"
                 label="Sell Price"
                 required
+                v-once
               ></v-text-field>
-              <v-btn color="success">Sell</v-btn>
+              <v-btn color="success" v-on:click="sell(value[0])">Sell</v-btn>
             </v-form>
           </div>
           <div v-show="buyOption === true">
             <v-form v-model="valid">
               <v-text-field
-                @change="buyAmount"
+                v-model="buyAmount"
                 :rules="amountRules"
                 label="Buy Amount"
                 required
               ></v-text-field>
               <v-text-field
-                @change="buyPrice"
+                v-model="buyPrice"
                 :rules="priceRules"
                 label="Buy Price"
                 required
               ></v-text-field>
-              <v-btn color="success">Buy</v-btn>
+              <v-btn color="success" v-on:click="buy(value[0])">Buy</v-btn>
             </v-form>
           </div>
         </v-card-text>
@@ -98,8 +100,6 @@
       return {
         sellOption: false,
         buyOption: false,
-        sellBtnClicked: false,
-        buyBtnClicked: false,
         coinName: '',
         shortName: '',
         price: '',
@@ -121,11 +121,8 @@
     },
 
     mounted: function () {
-
-      this.getPortfolioCoins(this.$store.state.portfolioId).then(() => {
-        this.coins = this.$store.state.coinData;
-
-      })
+      console.log(this.$store.state.portfolioId)
+      this.getPortfolioCoins(this.$store.state.portfolioId)
     },
 
     methods: {
@@ -133,33 +130,42 @@
         'loginValidation',
         'updatePortfolios',
         'getPortfolioCoins',
-        'getPortfolioId'
+        'getPortfolioId',
+        'sellCoin',
+        'buyCoin'
       ]),
-      formatPrice: function (x) {
-        x = x.toLowerCase()
-        if (Math.abs(x) < 1.0) {
-          var e = parseInt(x.toString().split('e-')[1]);
-          if (e) {
-            x *= Math.pow(10,e-1);
-            x = '0.' + (new Array(e)).join('0') + x.toString().substring(2);
-          }
-        } else {
-          var e = parseInt(x.toString().split('+')[1]);
-          if (e > 20) {
-            e -= 20;
-            x /= Math.pow(10,e);
-            x += (new Array(e+1)).join('0');
-          }
-        }
-        return x;
-      },
+
       sellPressed: function () {
-        this.sellOption = true
+        this.sellOption = true;
         this.buyOption = false
       },
       buyPressed: function () {
-        this.sellOption = false
+        this.sellOption = false;
         this.buyOption = true
+      },
+      sell: function (coinShortName) {
+        var requestData = {
+          portfolioId: this.$store.state.portfolioId,
+          shortName: coinShortName,
+          amount: this.sellAmount,
+          priceBought: this.sellPrice,
+        };
+
+        this.sellCoin(requestData).then(() => {
+          location.reload()
+        })
+      },
+      buy: function (coinShortName) {
+        var requestData = {
+          portfolioId: this.$store.state.portfolioId,
+          shortName: coinShortName,
+          amount: this.buyAmount,
+          priceBought: this.buyPrice,
+        };
+
+        this.buyCoin(requestData).then(() => {
+          location.reload()
+        })
       },
 
       findTotalAmmount: function (amount, price) {

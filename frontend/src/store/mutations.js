@@ -8,6 +8,8 @@ export default {
     state.username = null
     state.coinData = null
     state.portfolioId = null
+    state.totalPrice = ''
+    state.profit = ''
 
     document.cookie.split(";")
       .forEach(function (c) {
@@ -24,9 +26,9 @@ export default {
 
   updatePortfolios(state, portfolios) {
     for (var key in portfolios) {
-        if (!state.portfolioNames.includes(portfolios[key])) {
-          state.portfolioNames.push(portfolios[key])
-        }
+      if (!state.portfolioNames.includes(portfolios[key])) {
+        state.portfolioNames.push(portfolios[key])
+      }
     }
     if (state.selectedPortfolio === null && state.portfolioNames.length > 0) {
       state.selectedPortfolio = portfolios[0]
@@ -53,17 +55,26 @@ export default {
 
   },
 
-  addPortfolio(state, portfolio){
-
+  addPortfolio(state, portfolio) {
+    var props = Object.keys(state.coinData);
+    for (var i = 0; i < props.length; i++) {
+      console.log(state.coinData[props[i]])
+      delete state.coinData[props[i]];
+    }
   },
 
-  deletePortfolio(state, portfolioName){
-
+  deletePortfolio(state, portfolioName) {
+    var index = state.portfolioNames.indexOf(portfolioName);
+    if (index !== -1) {
+      state.portfolioNames.splice(index, 1);
+      state.selectedPortfolio = null;
+    }
   },
 
   setPortfolioId(state, portfolioName) {
-    state.portfolioId = Object.keys(state.portfolios).filter(function(key) {return state.portfolios[key][0] === portfolioName})[0];
-    console.log(state.portfolios)
+    state.portfolioId = Object.keys(state.portfolios).filter(function (key) {
+      return state.portfolios[key][0] === portfolioName
+    })[0];
   },
 
   getPortfolioId(state, name) {
@@ -93,5 +104,13 @@ export default {
   },
   getMarketPrice(state, payload) {
     state.currentMarketPrice = payload;
+  },
+
+  getTotalPrice(state, payload) {
+    state.totalPrice = payload
+  },
+
+  getProfit(state, payload) {
+    state.profit = payload
   }
 }
