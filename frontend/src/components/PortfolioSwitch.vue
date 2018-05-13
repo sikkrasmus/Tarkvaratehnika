@@ -52,6 +52,9 @@
             </v-layout>
           </v-toolbar>
           <br><br>
+          <v-container>
+            <h2>Total: 60505 USD -5%</h2>
+          </v-container>
           <usertotalchart></usertotalchart>
           <portfoliocoins></portfoliocoins>
         </v-card>

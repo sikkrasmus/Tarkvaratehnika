@@ -22,7 +22,7 @@
             {{ value[1] }} {{value[0]}} ({{ (value[2] * value[1]).toFixed(4) }} {{getCurrency(value[0])}})
           </v-flex>
           <v-flex xs2 text-xs-right class="hidden-md-and-down">
-            {{formatPrice(value[2])}}
+            {{value[2]}}
           </v-flex>
           <v-flex xs7 offset-xs3 text-xs-left class="hidden-lg-and-up">
             {{formatPrice(value[2])}}

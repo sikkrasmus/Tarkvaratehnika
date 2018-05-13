@@ -13,9 +13,6 @@
         <v-tab :href="'#tab-1'">
           Overview
         </v-tab>
-        <v-tab :href="'#tab-2'">
-          Watchlist
-        </v-tab>
       </v-tabs>
     </v-toolbar>
     <v-tabs-items v-model="model">

@@ -78,7 +78,7 @@
           for (var i = 0; i < response.data.length; i++) {
             this.coinList.push(Object.values(response.data[i])[2])
           }
-        }).error(error => {
+        }).catch(error => {
         this.errors.push(error)
 
       })
