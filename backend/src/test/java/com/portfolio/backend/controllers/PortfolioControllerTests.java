@@ -1,13 +1,10 @@
 package com.portfolio.backend.controllers;
 
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.portfolio.backend.DTO.CoinDTO;
 import com.portfolio.backend.DTO.PortfolioDTO;
 import com.portfolio.backend.DTO.UserDTO;
 import com.portfolio.backend.DTO.UserPortfolioDTO;
-import com.portfolio.backend.DTO.bittrex.BittrexTotalMarketFormat;
 import com.portfolio.backend.entities.*;
 import com.portfolio.backend.helper.FormatHelper;
 import com.portfolio.backend.repository.PortfolioRepository;
@@ -15,14 +12,13 @@ import com.portfolio.backend.service.CoinService;
 import com.portfolio.backend.service.PortfolioService;
 import com.portfolio.backend.service.RequestService;
 import com.portfolio.backend.service.UserService;
+import org.json.JSONException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.skyscreamer.jsonassert.JSONAssert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -30,8 +26,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
+import java.io.IOException;
 import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -90,9 +86,9 @@ public class PortfolioControllerTests {
     public void testGettingPortfolios() throws Exception {
         UserDTO userDTO = new UserDTO();
         userDTO.setEmail("test@test.com");
-        Map<Long, String> testPortfolios = new HashMap<>();
-        testPortfolios.put(1L, "test1");
-        testPortfolios.put(2L, "test2");
+        Map<Long, List<String>> testPortfolios = new HashMap<>();
+        testPortfolios.put(1L, Arrays.asList("name1", "desc1"));
+        testPortfolios.put(2L, Arrays.asList("name2", "desc2"));
         Mockito.when(portfolioService.getPortfoliosNamesByUsername(Mockito.anyString())).thenReturn(testPortfolios);
         RequestBuilder requestBuilder = MockMvcRequestBuilders.post(
                 "/getPortfolio").content(FormatHelper.asJsonString(userDTO))
@@ -100,7 +96,7 @@ public class PortfolioControllerTests {
                 .accept(MediaType.APPLICATION_JSON);
         MvcResult result = mockMvc.perform(requestBuilder).andReturn();
 
-        String expected = "{'1':'test1','2':'test2'}";
+        String expected = "{\"1\":[\"name1\",\"desc1\"],\"2\":[\"name2\",\"desc2\"]}";
         JSONAssert.assertEquals(expected, result.getResponse()
                 .getContentAsString(), false);
     }
@@ -202,6 +198,38 @@ public class PortfolioControllerTests {
         MvcResult result = mockMvc.perform(requestBuilder).andReturn();
         String expected = "[{\"id\":0,\"shortname\":\"BTC\",\"longname\":\"Bitcoin\"}," +
                 "{\"id\":0,\"shortname\":\"LTC\",\"longname\":\"Litecoin\"}]";
+        JSONAssert.assertEquals(expected, result.getResponse()
+                .getContentAsString(), false);
+    }
+
+    @Test
+    public void testCalculatingProfit() throws Exception {
+        PortfolioDTO p = new PortfolioDTO();
+        p.setPortfolioId(1L);
+        Mockito.when(requestService.getProfitForPortfolio(Mockito.anyLong())).thenReturn(145.6);
+        RequestBuilder requestBuilder = MockMvcRequestBuilders.post(
+                "/getProfit")
+                .content(FormatHelper.asJsonString(p)).contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON);
+        MvcResult result = mockMvc.perform(requestBuilder).andReturn();
+        System.out.println(result.getResponse().getContentAsString());
+        String expected = "145.6";
+        JSONAssert.assertEquals(expected, result.getResponse()
+                .getContentAsString(), false);
+    }
+
+    @Test
+    public void testCalculatingTotal() throws Exception {
+        PortfolioDTO p = new PortfolioDTO();
+        p.setPortfolioId(1L);
+        Mockito.when(requestService.getTotalPriceForPortfolio(Mockito.anyLong())).thenReturn(4500.5);
+        RequestBuilder requestBuilder = MockMvcRequestBuilders.post(
+                "/getTotal")
+                .content(FormatHelper.asJsonString(p)).contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON);
+        MvcResult result = mockMvc.perform(requestBuilder).andReturn();
+        System.out.println(result.getResponse().getContentAsString());
+        String expected = "4500.5";
         JSONAssert.assertEquals(expected, result.getResponse()
                 .getContentAsString(), false);
     }

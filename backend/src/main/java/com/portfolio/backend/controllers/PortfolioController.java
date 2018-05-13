@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.sql.Timestamp;
+import java.text.ParseException;
 import java.util.*;
 
 @CrossOrigin
@@ -76,16 +77,17 @@ public class PortfolioController {
 
     @PostMapping("/getPortfolioCoins")
     @ResponseStatus(HttpStatus.CREATED)
-    public Map<String, String[]> getPortfolioCoins(@RequestBody PortfolioDTO portfolioDTO) throws IOException, JSONException {
+    public Map<String, String[]> getPortfolioCoins(@RequestBody PortfolioDTO portfolioDTO) throws IOException, JSONException, ParseException {
 
         Map<String, String[]> coins = new HashMap<>();
         Portfolio portfolio = portfolioService.getPortfolioById(portfolioDTO.getPortfolioId());
 
-
         for (Coin coin : portfolio.getCoins()) {
             if (coin.getLongname() != null) {
+                String value = String.format("%8.10f",requestService.getPriceFor(coin)).substring(0, 11)
+                        .replace(",", ".");
                 coins.put(coin.getLongname(), new String[]{coin.getShortname(),
-                        String.valueOf(coin.getAmount()), String.valueOf(requestService.getPriceFor(coin)),
+                        String.valueOf(coin.getAmount()), value,
                         requestService.getValueChangeForCoin(coin)});
             }
         }
@@ -112,5 +114,15 @@ public class PortfolioController {
         return coinService.getAllCoins();
     }
 
+    @PostMapping("/getProfit")
+    @ResponseStatus(HttpStatus.CREATED)
+    public double getProfit(@RequestBody PortfolioDTO portfolioDTO) throws IOException, JSONException, ParseException {
+        return requestService.getProfitForPortfolio(portfolioDTO.getPortfolioId());
+    }
 
+    @PostMapping("/getTotal")
+    @ResponseStatus(HttpStatus.CREATED)
+    public double getTotalPrice(@RequestBody PortfolioDTO portfolioDTO) throws IOException, JSONException, ParseException {
+        return requestService.getTotalPriceForPortfolio(portfolioDTO.getPortfolioId());
+    }
 }

@@ -10,6 +10,7 @@ import com.portfolio.backend.DTO.bittrex.BittrexTotalMarketFormat;
 import com.portfolio.backend.DTO.bittrex.BittrexSingleMarketFormat;
 import com.portfolio.backend.entities.Coin;
 import com.portfolio.backend.entities.CoinNames;
+import com.portfolio.backend.entities.Portfolio;
 import com.portfolio.backend.repository.RequestRepository;
 import com.portfolio.backend.repository.CoinNamesRepository;
 import com.portfolio.backend.repository.CoinRepository;
@@ -19,11 +20,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -60,7 +65,6 @@ public class RequestService {
     }
 
     public BittrexSingleMarketFormat getMarketSummaryFromBittrexForOneCoin(String shortName) throws JSONException, IOException {
-        System.out.println(shortName);
         RestTemplate restTemplate = new RestTemplate();
         String url;
         if (shortName.equals("BTC")) {
@@ -133,7 +137,7 @@ public class RequestService {
         Map<String, String> urlMap = RequestRepository.getIconUrlMap();
         Iterator it = urlMap.entrySet().iterator();
         while (it.hasNext()) {
-            Map.Entry pair = (Map.Entry)it.next();
+            Map.Entry pair = (Map.Entry) it.next();
             BufferedImage image;
             try {
                 System.out.println("saving image for: " + pair.getKey());
@@ -153,5 +157,25 @@ public class RequestService {
     public String getValueChangeForCoin(Coin coin) throws IOException, JSONException {
         BittrexSingleMarketFormat market = getMarketSummaryFromBittrexForOneCoin(coin.getShortname());
         return String.format("%.2f", ((market.getLast() - market.getPrevDay()) / market.getLast()) * 100) + "%";
+    }
+
+    public double getProfitForPortfolio(Long portfolioId) throws IOException, JSONException, ParseException {
+        List<Coin> coins = coinRepository.findAllByPortfolioId(portfolioId);
+        double profit = 0;
+        for (Coin c : coins) {
+            double bought = c.getAmount() * c.getPricebought();
+            double current = c.getAmount() * getPriceFor(c);
+            profit += current - bought;
+        }
+        return profit;
+    }
+
+    public double getTotalPriceForPortfolio(Long portfolioId) throws IOException, JSONException, ParseException {
+        List<Coin> coins = coinRepository.findAllByPortfolioId(portfolioId);
+        double total = 0;
+        for (Coin c : coins) {
+            total += c.getAmount() * getPriceFor(c);
+        }
+        return total;
     }
 }
