@@ -44,8 +44,7 @@ export default {
       state.sessionId = payload.sessionid
   },
 
-  savePortfolios(state, portfolios) {
-    console.log("savePortfolios")
+  updatePortfolios(state, portfolios) {
     for (var key in portfolios){
       state.portfolioNames.push(portfolios[key])
     }
@@ -54,7 +53,6 @@ export default {
     }
 
     for (var k in state.portfolios) {
-      console.log(k + " " + state.selectedPortfolio)
       if (state.portfolios[k] === state.selectedPortfolio) {
         state.portfolioId = k;
       }
@@ -63,7 +61,7 @@ export default {
     var requestData = {
       portfolioId: state.portfolioId
     }
-    console.log(requestData)
+
     axios.post('http://localhost:8080/getPortfolioCoins', requestData)
       .then(response => {
         console.log("response data" + response.data)
@@ -73,6 +71,14 @@ export default {
         console.log(error)
       })
 
+  },
+
+  addPortfolio(){
+    this.$router.push('Home')
+  },
+
+  setPortfolioId(state, portfolioId) {
+    state.portfolioId = Object.keys(state.portfolios).find(key => state.portfolios[key] === portfolioId);
   },
 
   getPortfolioId(state, name) {
@@ -92,7 +98,6 @@ export default {
   },
 
   saveFullPortfolioData(state, payload){
-    console.log(payload)
     state.portfolios = payload;
   },
 

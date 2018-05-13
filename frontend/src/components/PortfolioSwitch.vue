@@ -38,11 +38,11 @@
               <v-icon>add</v-icon>
             </v-btn>
             <v-layout row justify-center>
-              <v-dialog v-model="dialog" max-width="100%" class="hidden-lg-and-up">
+              <v-dialog v-model="dialog" max-width="600px" class="hidden-lg-and-up">
                 <v-card>
-                  <v-card-title class="headline">Add new coin
+                  <v-card-title style="background-color: #3F51B5; color: white;" class="headline">Add coins
                     <v-spacer></v-spacer>
-                    <v-btn color="green darken-1" flat="flat" @click.native="cancel()">Cancel</v-btn>
+                    <v-btn color="white" flat="flat" @click.native="cancel()">Cancel</v-btn>
                   </v-card-title>
                   <v-card-actions>
                   </v-card-actions>

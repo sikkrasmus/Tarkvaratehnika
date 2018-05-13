@@ -30,6 +30,7 @@
           <v-flex xs1 text-xs-left class="hidden-md-and-down">
             {{getCurrency(value[0])}}
           </v-flex>
+
           <v-flex xs2 text-xs-right class="hidden-md-and-down" v-bind:style="{ color: getPercentColor(value[3]) }">
             {{value[3]}}
           </v-flex>
@@ -39,7 +40,48 @@
         </v-layout>
       </div>
       <v-card>
-        <v-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</v-card-text>
+        <v-flex>
+          <div>
+            <v-btn flat small color="primary" @click="sellPressed()">Sell</v-btn>
+            <v-btn flat small color="primary" @click="buyPressed()">Buy</v-btn>
+          </div>
+        </v-flex>
+        <v-card-text>
+          <div v-show="sellOption === true">
+            <v-form v-model="valid">
+              <v-text-field
+                @change="sellAmount"
+                :rules="amountRules"
+                label="Sell Amount"
+                required
+              ></v-text-field>
+              <v-text-field
+                @change="sellPrice"
+                :rules="priceRules"
+                label="Sell Price"
+                required
+              ></v-text-field>
+              <v-btn color="success">Sell</v-btn>
+            </v-form>
+          </div>
+          <div v-show="buyOption === true">
+            <v-form v-model="valid">
+              <v-text-field
+                @change="buyAmount"
+                :rules="amountRules"
+                label="Buy Amount"
+                required
+              ></v-text-field>
+              <v-text-field
+                @change="buyPrice"
+                :rules="priceRules"
+                label="Buy Price"
+                required
+              ></v-text-field>
+              <v-btn color="success">Buy</v-btn>
+            </v-form>
+          </div>
+        </v-card-text>
       </v-card>
     </v-expansion-panel-content>
   </v-expansion-panel>
@@ -49,55 +91,81 @@
   import axios from 'axios'
   import {mapActions} from 'vuex'
   import {mapGetters} from 'vuex'
-export default {
-  name: 'portfoliocoins',
-  data () {
-    return {
-      coinName: '',
-      shortName: '',
-      price: '',
-      currency: '',
-      change: '',
-      coins: {},
-    }
-  },
 
-  mounted: function() {
-    this.getPortfolioCoins(this.$store.state.portfolioId)
-    this.coins = this.$store.state.coinData;
-
-  },
-
-  methods: {
-    ...mapActions([
-      'loginValidation',
-      'updatePortfolios',
-      'getPortfolioCoins',
-      'getPortfolioId'
-    ]),
-
-    findTotalAmmount: function (amount, price) {
-      return amount * price
-    },
-
-    getCurrency: function (shortName) {
-      // console.log(shortName)
-      if (shortName === "BTC") {
-        return "USD"
-      } else {
-        return "BTC"
+  export default {
+    name: 'portfoliocoins',
+    data() {
+      return {
+        sellOption: false,
+        buyOption: false,
+        coinName: '',
+        shortName: '',
+        price: '',
+        currency: '',
+        change: '',
+        coins: {},
+        valid: false,
+        sellAmount: '',
+        sellPrice: '',
+        buyAmount: '',
+        buyPrice: '',
+        amountRules: [
+          v => !!v || 'Amount is required',
+        ],
+        priceRules: [
+          v => !!v || 'Price is required',
+        ]
       }
     },
 
-    getPercentColor(number) {
-      if (number.charAt(0) === "-") {
-        return "red"
-      } else {
-        return "green"
+    mounted: function () {
+      this.getPortfolioCoins(this.$store.state.portfolioId)
+      this.coins = this.$store.state.coinData;
+
+    },
+    methods: {
+      ...mapActions([
+        'loginValidation',
+        'updatePortfolios',
+        'getPortfolioCoins',
+        'getPortfolioId'
+      ]),
+
+      sellPressed: function () {
+        this.sellOption = true
+        this.buyOption = false
+      },
+      buyPressed: function () {
+        this.sellOption = false
+        this.buyOption = true
+      },
+
+      findTotalAmmount: function (amount, price) {
+        return amount * price
+      },
+
+      getCurrency: function (shortName) {
+        // console.log(shortName)
+        if (shortName === "BTC") {
+          return "USD"
+        } else {
+          return "BTC"
+        }
+      },
+
+      logData: function (value1, value2, value3) {
+        console.log(value1, value2, value3)
+      },
+
+      getPercentColor(number) {
+        if (number.charAt(0) === "-") {
+          return "red"
+        } else {
+          return "green"
+        }
       }
     }
   }
-}
 </script>
 
 <style>
