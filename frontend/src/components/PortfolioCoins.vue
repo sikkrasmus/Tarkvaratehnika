@@ -42,11 +42,46 @@
       <v-card>
         <v-flex>
           <div>
-            <v-btn flat small color="primary" v-on:click="logData(value[0], value[2], value[3])" v-model="sellBtnClicked">Sell</v-btn>
-            <v-btn flat small color="primary" v-on:click="logData(value[1], value[2], value[3])" v-model="buyBtnClicked">Buy</v-btn>
+            <v-btn flat small color="primary" v-on:click="logData(value[0], value[2], value[3])">Sell</v-btn>
+            <v-btn flat small color="primary" v-on:click="logData(value[1], value[2], value[3])">Buy</v-btn>
           </div>
         </v-flex>
-        <v-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</v-card-text>
+        <v-card-text>
+          <div v-show="sellOption === true">
+            <v-form v-model="valid">
+              <v-text-field
+                @change="sellAmount"
+                :rules="amountRules"
+                label="Sell Amount"
+                required
+              ></v-text-field>
+              <v-text-field
+                @change="sellPrice"
+                :rules="priceRules"
+                label="Sell Price"
+                required
+              ></v-text-field>
+              <v-btn color="success">Sell</v-btn>
+            </v-form>
+          </div>
+          <div v-show="buyOption === true">
+            <v-form v-model="valid">
+              <v-text-field
+                @change="buyAmount"
+                :rules="amountRules"
+                label="Buy Amount"
+                required
+              ></v-text-field>
+              <v-text-field
+                @change="buyPrice"
+                :rules="priceRules"
+                label="Buy Price"
+                required
+              ></v-text-field>
+              <v-btn color="success">Buy</v-btn>
+            </v-form>
+          </div>
+        </v-card-text>
       </v-card>
     </v-expansion-panel-content>
   </v-expansion-panel>
@@ -71,6 +106,32 @@ export default {
     }
   },
 
+  export default {
+    name: 'portfoliocoins',
+    data() {
+      return {
+        sellOption: false,
+        buyOption: false,
+        coinName: '',
+        shortName: '',
+        price: '',
+        currency: '',
+        change: '',
+        coins: {},
+        valid: false,
+        sellAmount: '',
+        sellPrice: '',
+        buyAmount: '',
+        buyPrice: '',
+        amountRules: [
+          v => !!v || 'Amount is required',
+        ],
+        priceRules: [
+          v => !!v || 'Price is required',
+        ]
+      }
+    },
+
   mounted: function() {
 
     this.getPortfolioCoins(this.$store.state.portfolioId).then( () => {
@@ -87,32 +148,41 @@ export default {
       'getPortfolioId'
     ]),
 
-    findTotalAmmount: function (amount, price) {
-      return amount * price
-    },
+      sellPressed: function () {
+        this.sellOption = true
+        this.buyOption = false
+      },
+      buyPressed: function () {
+        this.sellOption = false
+        this.buyOption = true
+      },
 
-    getCurrency: function (shortName) {
-      // console.log(shortName)
-      if (shortName === "BTC") {
-        return "USD"
-      } else {
-        return "BTC"
-      }
-    },
+      findTotalAmmount: function (amount, price) {
+        return amount * price
+      },
 
-    logData: function(value1, value2, value3) {
-      console.log(value1, value2, value3)
-    },
+      getCurrency: function (shortName) {
+        // console.log(shortName)
+        if (shortName === "BTC") {
+          return "USD"
+        } else {
+          return "BTC"
+        }
+      },
 
-    getPercentColor(number) {
-      if (number.charAt(0) === "-") {
-        return "red"
-      } else {
-        return "green"
+      logData: function (value1, value2, value3) {
+        console.log(value1, value2, value3)
+      },
+
+      getPercentColor(number) {
+        if (number.charAt(0) === "-") {
+          return "red"
+        } else {
+          return "green"
+        }
       }
     }
   }
-}
 </script>
 
 <style>

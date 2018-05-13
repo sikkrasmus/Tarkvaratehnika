@@ -38,7 +38,7 @@ public class PortfolioController {
     @ResponseStatus(HttpStatus.CREATED)
     public Map<String, String> savePortfolio(@RequestBody UserPortfolioDTO userPortfolioDTO) {
         PortfolioDTO portfolioDTO = new PortfolioDTO(userPortfolioDTO.getPortfolioName(), userPortfolioDTO.getDescription());
-
+        System.out.println("name" + userPortfolioDTO.getPortfolioName());
         User user = userService.findUser(userPortfolioDTO.getEmail());
         Portfolio portfolio = portfolioService.createAndSavePortfolio(portfolioDTO, user);
 
@@ -79,7 +79,7 @@ public class PortfolioController {
     public Map<String, String[]> getPortfolioCoins(@RequestBody PortfolioDTO portfolioDTO) throws IOException, JSONException {
 
         Map<String, String[]> coins = new HashMap<>();
-        System.out.println(portfolioDTO.getPortfolioId());
+        System.out.println("id:" + portfolioDTO.getPortfolioId());
         Portfolio portfolio = portfolioService.getPortfolioById(portfolioDTO.getPortfolioId());
 
 
