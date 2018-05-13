@@ -51,9 +51,10 @@ export default {
   addPortfolio(state, portfolio) {
     var props = Object.keys(state.coinData);
     for (var i = 0; i < props.length; i++) {
-      console.log(state.coinData[props[i]])
       delete state.coinData[props[i]];
     }
+    state.profit = 0;
+    state.totalPrice = 0;
   },
 
   deletePortfolio(state, portfolioName) {
