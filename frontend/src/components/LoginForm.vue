@@ -58,7 +58,9 @@
         'getPortfolioCoins',
         'getPortfolioId',
         'setPortfolioId',
-        'getGraphData'
+        'getGraphData',
+        'getTotalPrice',
+        'getProfit'
       ]),
       login() {
         this.loginValidation(this.user)
@@ -68,6 +70,8 @@
                 this.getPortfolioCoins(this.$store.state.portfolioId).then(() => {
                   this.$router.push('/home')
                   this.getGraphData(this.$store.state.portfolioId);
+                  this.getTotalPrice(this.$store.state.portfolioId);
+                  this.getProfit(this.$store.state.portfolioId)
                 });
               })
             });
