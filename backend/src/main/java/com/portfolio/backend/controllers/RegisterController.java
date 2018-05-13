@@ -19,7 +19,7 @@ public class RegisterController {
     @ResponseStatus(HttpStatus.CREATED)
     public UserDTO create(@RequestBody @Valid UserDTO userDTO) {
         if (!userService.isUserEmailExisting(userDTO)){
-            return this.userService.createAndSaveUser(userDTO);
+            return userService.createAndSaveUser(userDTO);
         }
         return null;
     }
