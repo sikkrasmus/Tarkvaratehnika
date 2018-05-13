@@ -8,6 +8,8 @@ export default {
     state.username = null
     state.coinData = null
     state.portfolioId = null
+    state.totalPrice = ''
+    state.profit = ''
 
     document.cookie.split(";")
       .forEach(function (c) {
@@ -90,5 +92,13 @@ export default {
 
   addCoinToPortfolio(state, payload) {
     state.coinData.push(payload)
+  },
+
+  getTotalPrice(state, payload) {
+    state.totalPrice = payload
+  },
+
+  getProfit(state, payload) {
+    state.profit = payload
   }
 }
