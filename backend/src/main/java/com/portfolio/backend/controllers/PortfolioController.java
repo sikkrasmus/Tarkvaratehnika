@@ -75,7 +75,9 @@ public class PortfolioController {
 
     @PostMapping("/getPortfolioCoins")
     @ResponseStatus(HttpStatus.CREATED)
-    public Map<String, String[]> getPortfolioCoins(@RequestBody PortfolioDTO portfolioDTO) throws IOException, JSONException {
+    public Map<String, String[]> getPortfolioCoins(@RequestBody PortfolioDTO portfolioDTO) throws IOException, JSONException, ParseException {
+
+        Map<String, String[]> coins = new HashMap<>();
         Portfolio portfolio = portfolioService.getPortfolioById(portfolioDTO.getPortfolioId());
         return portfolioService.getAllCoins(portfolio);
     }
@@ -86,6 +88,16 @@ public class PortfolioController {
         coinService.sellCoin(coinDTO);
         return true;
     }
+        for (Coin coin : portfolio.getCoins()) {
+            if (coin.getLongname() != null) {
+                String value = String.format("%8.10f",requestService.getPriceFor(coin)).substring(0, 11)
+                        .replace(",", ".");
+                coins.put(coin.getLongname(), new String[]{coin.getShortname(),
+                        String.valueOf(coin.getAmount()), value,
+                        requestService.getValueChangeForCoin(coin)});
+            }
+        }
+        return coins;
 
     @PostMapping("/buyCoin")
     @ResponseStatus(HttpStatus.CREATED)
@@ -114,5 +126,15 @@ public class PortfolioController {
         return coinService.getAllCoins();
     }
 
+    @PostMapping("/getProfit")
+    @ResponseStatus(HttpStatus.CREATED)
+    public double getProfit(@RequestBody PortfolioDTO portfolioDTO) throws IOException, JSONException, ParseException {
+        return requestService.getProfitForPortfolio(portfolioDTO.getPortfolioId());
+    }
 
+    @PostMapping("/getTotal")
+    @ResponseStatus(HttpStatus.CREATED)
+    public double getTotalPrice(@RequestBody PortfolioDTO portfolioDTO) throws IOException, JSONException, ParseException {
+        return requestService.getTotalPriceForPortfolio(portfolioDTO.getPortfolioId());
+    }
 }

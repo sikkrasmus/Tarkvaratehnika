@@ -52,6 +52,12 @@
             </v-layout>
           </v-toolbar>
           <br><br>
+          <v-container>
+            <!--<h2>Total: 60505 USD -5%</h2>-->
+            <h2>Total: {{this.$store.state.totalPrice}}</h2>
+            <h2>Profit: {{this.$store.state.profit}}</h2>
+
+          </v-container>
           <usertotalchart></usertotalchart>
           <portfoliocoins></portfoliocoins>
         </v-card>
@@ -76,7 +82,24 @@
     data() {
       return {
         dialog: false,
+        total: '',
+        profit: ''
       }
+    },
+
+    mounted: function () {
+      var dto = {
+        portfolioId: this.$store.state.portfolioId
+      };
+      this.getTotalPrice(dto).then(() => {
+        this.total = this.$store.state.totalPrice;
+
+      });
+
+      this.getProfit(dto).then(() => {
+        this.profit = this.$store.state.profit;
+
+      })
     },
 
     methods: {
@@ -85,8 +108,9 @@
         'getPortfolioCoins',
         'getPortfolioId',
         'setPortfolioId',
-        'updatePortfolios'
-
+        'updatePortfolios',
+        'getTotalPrice',
+        'getProfit'
       ]),
 
       cancel() {
@@ -98,6 +122,7 @@
         this.selectPortfolio(value).then(() => {
           this.updatePortfolios({email: this.$store.state.username}).then(() => {
             this.setPortfolioId(value).then(() => {
+              this.getTotalPrice(this.$store.state.getSelectedPortfolio());
               this.getPortfolioCoins(this.$store.state.portfolioId)
             })
           })

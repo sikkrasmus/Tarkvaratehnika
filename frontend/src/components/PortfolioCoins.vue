@@ -16,16 +16,16 @@
             {{ key }}
           </v-flex>
           <v-flex xs3 text-xs-left class="hidden-md-and-down">
-            {{ value[1] }} {{value[0]}} ({{ value[2] * value[1] }} {{getCurrency(value[0])}})
+            {{ value[1] }} {{value[0]}} ({{ (value[2] * value[1]).toFixed(4) }} {{getCurrency(value[0])}})
           </v-flex>
           <v-flex xs6 text-xs-left class="hidden-lg-and-up">
-            {{ value[1] }} {{value[0]}} ({{ (value[2] * value[1]).toFixed(2) }} {{getCurrency(value[0])}})
+            {{ value[1] }} {{value[0]}} ({{ (value[2] * value[1]).toFixed(4) }} {{getCurrency(value[0])}})
           </v-flex>
           <v-flex xs2 text-xs-right class="hidden-md-and-down">
             {{value[2]}}
           </v-flex>
           <v-flex xs7 offset-xs3 text-xs-left class="hidden-lg-and-up">
-            {{value[2]}}
+            {{formatPrice(value[2])}}
           </v-flex>
           <v-flex xs1 text-xs-left class="hidden-md-and-down">
             {{getCurrency(value[0])}}

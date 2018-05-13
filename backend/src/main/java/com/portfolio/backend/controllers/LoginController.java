@@ -22,12 +22,6 @@ public class LoginController {
     @Autowired
     private UserService userService;
 
-    @Autowired
-    private PortfolioService portfolioService;
-
-    @Autowired
-    private RequestService requestService;
-
 
 
     @PostMapping("/login")

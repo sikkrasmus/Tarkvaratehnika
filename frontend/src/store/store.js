@@ -20,7 +20,9 @@ export default new Vuex.Store({
     portfolios: {},
     selectedPortfolio: null,
     portfolioId: null,
-    coinData: {}
+    coinData: {},
+    totalPrice: '',
+    profit: ''
   },
 
   mutations,
