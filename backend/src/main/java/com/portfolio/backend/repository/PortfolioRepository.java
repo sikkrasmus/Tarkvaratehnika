@@ -10,4 +10,5 @@ public interface PortfolioRepository extends CrudRepository<Portfolio, Long> {
     Portfolio findByName(String name);
     Portfolio findByUserId(Long id);
     void deleteByName(String name);
+    void deleteById(Long id);
 }

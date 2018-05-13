@@ -1,10 +1,13 @@
 <template>
   <v-app>
     <navloggedwithouttabs></navloggedwithouttabs>
-    <v-container>
-      <v-layout row justify-center>
-        <v-btn color="primary" dark @click.native.stop="dialog = true">Add portfolio</v-btn>
-        <v-dialog v-model="dialog" max-width="290">
+    <v-container grid-list-md>
+      <v-flex 12>
+        <br>
+        <v-btn color="primary" dark @click.native.stop="dialog = true" style="width: 100%; margin: 0px">Add portfolio
+        </v-btn>
+        <br><br><br><br>
+        <v-dialog v-model="dialog" max-width="400">
           <v-card>
             <v-card-title class="headline">Add new portfolio</v-card-title>
             <v-container>
@@ -28,10 +31,27 @@
             </v-container>
           </v-card>
         </v-dialog>
+      </v-flex>
+      <v-layout row wrap>
+        <v-flex 12>
+          <v-card style="margin-top: 20px" color="blue-grey darken-2" class="white--text"
+                  v-for="(portfolio, id) in this.portfolios" :key="value">
+            <v-card-title primary-title>
+              <div class="headline">{{ portfolio[0] }}</div>
+            </v-card-title>
+            <v-card-text>
+              {{ portfolio[1] }}
+            </v-card-text>
+            <v-card-actions>
+              <v-btn flat dark v-on:click="delPortfolio(id)">Delete</v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-flex>
       </v-layout>
     </v-container>
   </v-app>
 </template>
+
 
 <script>
   import Navlogged from "./NavLogged.vue";
@@ -54,9 +74,16 @@
           description: '',
           email: ''
         },
+        portfolios: {},
         errors: [],
         dialog: false
       }
+    },
+
+    mounted() {
+      this.updatePortfolios({email: this.$store.state.username}).then(() => {
+        this.portfolios = this.$store.state.portfolios;
+      })
     },
 
     methods: {
@@ -64,15 +91,30 @@
         'selectPortfolio',
         'getPortfolioCoins',
         'updatePortfolios',
-        'addPortfolio'
+        'addPortfolio',
+        'setPortfolioId',
+        'deletePortfolio'
 
       ]),
 
-      addPortf () {
+      delPortfolio(portfolioId) {
+        this.deletePortfolio(portfolioId).then(() => {
+          this.updatePortfolios({email: this.$store.state.username})
+          location.reload()
+        })
+      },
+
+      addPortf() {
         this.info.email = this.$store.state.username;
-        this.addPortfolio(this.info)
-        this.updatePortfolios({email: this.$store.state.username})
-        this.$router.push("/home")
+        this.addPortfolio(this.info).then(() => {
+          this.updatePortfolios({email: this.$store.state.username}).then(() => {
+            this.selectPortfolio(this.info.portfolioName).then(() => {
+              this.setPortfolioId(this.$store.state.selectedPortfolio);
+              this.$router.push("/home")
+            })
+          })
+        })
+
       }
     }
   }

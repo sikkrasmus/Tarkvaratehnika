@@ -3,6 +3,7 @@ package com.portfolio.backend.service;
 import com.portfolio.backend.DTO.PortfolioDTO;
 import com.portfolio.backend.entities.PortfolioHistory;
 import com.portfolio.backend.entities.User;
+import com.portfolio.backend.repository.CoinRepository;
 import com.portfolio.backend.repository.PortfolioHistoryRepository;
 import com.portfolio.backend.repository.PortfolioRepository;
 import com.portfolio.backend.entities.Portfolio;
@@ -11,12 +12,10 @@ import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.io.IOException;
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class PortfolioService {
@@ -25,14 +24,17 @@ public class PortfolioService {
     private final UserRepository userRepository;
     private final PortfolioHistoryRepository portfolioHistoryRepository;
     private final RequestService requestService;
+    private final CoinRepository coinRepository;
 
     @Autowired
     public PortfolioService(PortfolioRepository portfolioRepository, UserRepository userRepository,
-                            PortfolioHistoryRepository portfolioHistoryRepository, RequestService requestService) {
+                            PortfolioHistoryRepository portfolioHistoryRepository, RequestService requestService,
+                            CoinRepository coinRepository) {
         this.portfolioRepository = portfolioRepository;
         this.userRepository = userRepository;
         this.portfolioHistoryRepository = portfolioHistoryRepository;
         this.requestService = requestService;
+        this.coinRepository = coinRepository;
     }
 
 
@@ -76,25 +78,31 @@ public class PortfolioService {
         }
     }
 
-    public Map<Long, String> getPortfoliosNamesByUsername(String email) {
+    public Map<Long, List<String>> getPortfoliosNamesByUsername(String email) {
 
         List<Portfolio> portfolios = (List<Portfolio>) portfolioRepository.findAll();
-        Map<Long, String> portfolioNames = new HashMap<>();
-
-        for (Portfolio portfolio : portfolios) {
-            if (portfolio.getUser().getEmail().equals(email)) {
-                portfolioNames.put(portfolio.getId(), portfolio.getName());
+        Map<Long, List<String>> portfolioNames = new HashMap<>();
+        try {
+            for (Portfolio portfolio : portfolios) {
+                if (portfolio.getUser().getEmail().equals(email)) {
+                    portfolioNames.put(portfolio.getId(), Arrays.asList(portfolio.getName(), portfolio.getDescription()));
+                }
             }
+            return portfolioNames;
+        } catch (NullPointerException e){
+            return null;
         }
-        return portfolioNames;
+
     }
 
     public Portfolio getPortfolioBy(String name) {
         return portfolioRepository.findByName(name);
     }
 
-    public void deletePortfolioWith(String name) {
-        portfolioRepository.deleteByName(name);
+    @Transactional
+    public void deletePortfolioById(Long id) {
+        System.out.println(id);
+        portfolioRepository.deleteById(id);
     }
 
     public Portfolio getPortfolioBy(Long id) {

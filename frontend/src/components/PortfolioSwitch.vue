@@ -15,7 +15,7 @@
                             :label="this.$store.state.portfolioNames[0]"
                             @input="switchPortfolio"
                             :items="this.$store.state.portfolioNames"
-                            :value="selectedPortfolio"
+                            :value="this.$store.state.selectedPortfolio"
                             overflow
                             target="#dropdown-example">
                           </v-select>
@@ -38,11 +38,11 @@
               <v-icon>add</v-icon>
             </v-btn>
             <v-layout row justify-center>
-              <v-dialog v-model="dialog" max-width="100%" class="hidden-lg-and-up">
+              <v-dialog v-model="dialog" max-width="600px" class="hidden-lg-and-up">
                 <v-card>
-                  <v-card-title class="headline">Add new coin
+                  <v-card-title style="background-color: #3F51B5; color: white;" class="headline">Add coins
                     <v-spacer></v-spacer>
-                    <v-btn color="green darken-1" flat="flat" @click.native="cancel()">Cancel</v-btn>
+                    <v-btn color="white" flat="flat" @click.native="cancel()">Cancel</v-btn>
                   </v-card-title>
                   <v-card-actions>
                   </v-card-actions>
@@ -84,7 +84,8 @@
         'selectPortfolio',
         'getPortfolioCoins',
         'getPortfolioId',
-        'setPortfolioId'
+        'setPortfolioId',
+        'updatePortfolios'
 
       ]),
 
@@ -94,10 +95,13 @@
       },
 
       switchPortfolio(value) {
-        console.log(value + "id: " + this.$store.state.portfolioId)
-        this.selectPortfolio(value)
-        this.setPortfolioId(value);
-        this.getPortfolioCoins(this.$store.state.portfolioId)
+        this.selectPortfolio(value).then(() => {
+          this.updatePortfolios({email: this.$store.state.username}).then(() => {
+            this.setPortfolioId(value).then(() => {
+              this.getPortfolioCoins(this.$store.state.portfolioId)
+            })
+          })
+        })
       }
     }
 

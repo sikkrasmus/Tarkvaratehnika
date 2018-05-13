@@ -28,7 +28,7 @@ public class LoginController {
     @ResponseStatus(HttpStatus.CREATED)
     public Map<String, String> login(@RequestBody UserDTO userDTO, HttpSession session) throws IOException, JSONException {
         if (userService.validateUser(userDTO)) {
-//            requestService.createAndUpdateCoinNames();
+         // requestService.createAndUpdateCoinNames();
             Map<String, String> data = new HashMap<>();
             session.setAttribute("name", userDTO.getEmail());
             data.put("username", userDTO.getEmail());
