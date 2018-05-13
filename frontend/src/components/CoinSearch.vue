@@ -73,7 +73,6 @@
     mounted() {
       axios.post('http://localhost:8080/getAllCoins')
         .then(response => {
-          console.log(response)
           this.coinData = response.data;
           for (var i = 0; i < response.data.length; i++) {
             this.coinList.push(Object.values(response.data[i])[2])
@@ -92,8 +91,10 @@
 
       addCoin() {
         this.requestData.portfolioId = this.$store.state.portfolioId;
-        this.addCoinToPortfolio(this.requestData)
-        console.log('done')
+        this.addCoinToPortfolio(this.requestData).then(() => {
+          alert('coin added');
+          location.reload();
+        })
       },
 
     },

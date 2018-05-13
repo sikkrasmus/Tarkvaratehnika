@@ -2,7 +2,9 @@ package com.portfolio.backend.entities;
 
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -26,7 +28,7 @@ public class Portfolio {
     private User user;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "portfolio", fetch = FetchType.LAZY)
-    private Set<Coin> coins = new HashSet<>();
+    private List<Coin> coins = new ArrayList<>();
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "portfolio", fetch = FetchType.LAZY)
     private Set<PortfolioHistory> histories = new HashSet<>();
@@ -39,11 +41,11 @@ public class Portfolio {
         this.histories = histories;
     }
 
-    public Set<Coin> getCoins() {
+    public List<Coin> getCoins() {
         return coins;
     }
 
-    public void setCoins(Set<Coin> coins) {
+    public void setCoins(List<Coin> coins) {
         this.coins = coins;
     }
 

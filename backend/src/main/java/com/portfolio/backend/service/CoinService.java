@@ -17,11 +17,15 @@ public class CoinService {
 
     private final CoinRepository coinRepository;
     private final CoinNamesRepository coinNamesRepository;
+    private final PortfolioService portfolioService;
+    private final CoinNamesService coinNamesService;
 
     @Autowired
-    public CoinService(CoinRepository coinRepository, CoinNamesRepository coinNamesRepository) {
+    public CoinService(CoinRepository coinRepository, CoinNamesRepository coinNamesRepository, PortfolioService portfolioService, CoinNamesService coinNamesService) {
         this.coinRepository = coinRepository;
         this.coinNamesRepository = coinNamesRepository;
+        this.portfolioService = portfolioService;
+        this.coinNamesService = coinNamesService;
     }
 
 
@@ -38,7 +42,7 @@ public class CoinService {
         return coin;
     }
 
-    private String getCoinShortName(String longname){
+    private String getCoinShortName(String longname) {
         CoinNames coinNames = coinNamesRepository.findByLongname(longname);
         return coinNames.getShortname();
     }
@@ -51,8 +55,27 @@ public class CoinService {
         coinRepository.deleteAll();
     }
 
-    public List<CoinNames> getAllCoins(){
+    public List<CoinNames> getAllCoins() {
         return (List<CoinNames>) coinNamesRepository.findAll();
     }
 
+    public void sellCoin(CoinDTO coinDTO) {
+        Coin coin = new Coin();
+        coin.setAmount(-coinDTO.getAmount());
+        coin.setPortfolio(portfolioService.getPortfolioById(coinDTO.getPortfolioId()));
+        coin.setPricebought(coinDTO.getPriceBought());
+        coin.setShortname(coinDTO.getShortName());
+        coin.setLongname(coinNamesService.getCoinNamesBy(coinDTO.getShortName()).getLongname());
+        coinRepository.save(coin);
+    }
+
+    public void buyCoin(CoinDTO coinDTO) {
+        Coin coin = new Coin();
+        coin.setAmount(coinDTO.getAmount());
+        coin.setPortfolio(portfolioService.getPortfolioById(coinDTO.getPortfolioId()));
+        coin.setPricebought(coinDTO.getPriceBought());
+        coin.setShortname(coinDTO.getShortName());
+        coin.setLongname(coinNamesService.getCoinNamesBy(coinDTO.getShortName()).getLongname());
+        coinRepository.save(coin);
+    }
 }

@@ -1,6 +1,7 @@
 package com.portfolio.backend.service;
 
 import com.portfolio.backend.DTO.PortfolioDTO;
+import com.portfolio.backend.entities.Coin;
 import com.portfolio.backend.entities.PortfolioHistory;
 import com.portfolio.backend.entities.User;
 import com.portfolio.backend.repository.CoinRepository;
@@ -89,7 +90,7 @@ public class PortfolioService {
                 }
             }
             return portfolioNames;
-        } catch (NullPointerException e){
+        } catch (NullPointerException e) {
             return null;
         }
 
@@ -99,9 +100,42 @@ public class PortfolioService {
         return portfolioRepository.findByName(name);
     }
 
+    public Map<String, String[]> getAllCoins(Portfolio portfolio) throws IOException, JSONException {
+
+        List<Coin> allCoins = portfolio.getCoins();
+        List<String> coinNames = new ArrayList<>();
+        Map<String, Double> coinData = new HashMap<>();
+
+        for (Coin coin : allCoins){
+            if (!coinNames.contains(coin.getShortname())){
+                coinNames.add(coin.getShortname());
+            }
+        }
+        for (String name : coinNames) {
+            for (Coin coin : allCoins) {
+                if (coin.getShortname().equals(name)){
+                    if (coinData.containsKey(name)){
+                        coinData.replace(name, coinData.get(name) + coin.getAmount());
+                    } else {
+                        coinData.put(name, (double) coin.getAmount());
+                    }
+                }
+            }
+        }
+
+        Map<String, String[]> coins = new HashMap<>();
+        for (Coin coin : portfolio.getCoins()) {
+            coins.put(coin.getLongname(),
+                    new String[]{coin.getShortname(),
+                            String.valueOf(coinData.get(coin.getShortname())),
+                            String.valueOf(requestService.getPriceFor(coin)),
+                            requestService.getValueChangeForCoin(coin)});
+        }
+        return coins;
+    }
+
     @Transactional
     public void deletePortfolioById(Long id) {
-        System.out.println(id);
         portfolioRepository.deleteById(id);
     }
 

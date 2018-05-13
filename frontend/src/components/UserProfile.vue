@@ -43,7 +43,7 @@
               {{ portfolio[1] }}
             </v-card-text>
             <v-card-actions>
-              <v-btn flat dark v-on:click="delPortfolio(id)">Delete</v-btn>
+              <v-btn flat dark v-on:click="delPortfolio(id, portfolio[0])">Delete</v-btn>
             </v-card-actions>
           </v-card>
         </v-flex>
@@ -97,9 +97,12 @@
 
       ]),
 
-      delPortfolio(portfolioId) {
-        this.deletePortfolio(portfolioId).then(() => {
-          this.updatePortfolios({email: this.$store.state.username})
+      delPortfolio(portfolioId, portfolioName) {
+        var reqData = {
+          portfolioId: portfolioId,
+          portfolioName: portfolioName
+        }
+        this.deletePortfolio(reqData).then(() => {
           location.reload()
         })
       },
@@ -109,8 +112,11 @@
         this.addPortfolio(this.info).then(() => {
           this.updatePortfolios({email: this.$store.state.username}).then(() => {
             this.selectPortfolio(this.info.portfolioName).then(() => {
-              this.setPortfolioId(this.$store.state.selectedPortfolio);
-              this.$router.push("/home")
+              this.setPortfolioId(this.$store.state.selectedPortfolio).then(() => {
+                this.getPortfolioCoins(this.$store.state.portfolioId).then(() => {
+                  this.$router.push("/home")
+                })
+              });
             })
           })
         })

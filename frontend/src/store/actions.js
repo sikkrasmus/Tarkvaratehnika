@@ -52,14 +52,14 @@ export default {
     })
   },
 
-  deletePortfolio: ({commit}, portfolioId) => {
+  deletePortfolio: ({commit}, payload) => {
     var requestData = {
-      portfolioId: portfolioId
-    }
+      portfolioId: payload.portfolioId
+    };
     return new Promise((resolve, reject) => {
       axios.post('http://localhost:8080/deletePortfolio', requestData)
         .then(response => {
-          commit('deletePortfolio');
+          commit('deletePortfolio', payload.portfolioName);
           resolve();
         })
         .catch(error => {
@@ -70,6 +70,33 @@ export default {
     })
   },
 
+  sellCoin: ({commit}, payload) => {
+    return new Promise((resolve, reject) => {
+      axios.post('http://localhost:8080/sellCoin', payload)
+        .then(response => {
+          resolve();
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    }).catch(error => {
+      reject(error)
+    })
+  },
+
+  buyCoin: ({commit}, payload) => {
+    return new Promise((resolve, reject) => {
+      axios.post('http://localhost:8080/buyCoin', payload)
+        .then(response => {
+          resolve();
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    }).catch(error => {
+      reject(error)
+    })
+  },
 
   addPortfolio: ({commit}, payload) => {
     return new Promise((resolve, reject) => {
@@ -120,7 +147,6 @@ export default {
         .catch(error => {
           console.log(error)
         })
-
     })
 
   },
