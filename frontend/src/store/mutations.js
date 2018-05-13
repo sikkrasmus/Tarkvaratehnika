@@ -30,6 +30,7 @@ export default {
         state.portfolioNames.push(portfolios[key])
       }
     }
+
     if (state.selectedPortfolio === null && state.portfolioNames.length > 0) {
       state.selectedPortfolio = portfolios[0]
     }
@@ -41,18 +42,10 @@ export default {
         }
       }
     }
-    var requestData = {
-      portfolioId: state.portfolioId
-    }
+  },
 
-    axios.post('http://localhost:8080/getPortfolioCoins', requestData)
-      .then(response => {
-        state.coinData = response.data
-      })
-      .catch(error => {
-        console.log(error)
-      })
-
+  getGraphData(state, data){
+    state.chartData = data;
   },
 
   addPortfolio(state, portfolio) {
@@ -101,6 +94,14 @@ export default {
 
   addCoinToPortfolio(state, payload) {
     state.coinData.push(payload)
+  },
+
+  getTotalPrice(state, payload) {
+    state.totalPrice = payload
+  },
+
+  getProfit(state, payload) {
+    state.profit = payload
   },
   getMarketPrice(state, payload) {
     state.currentMarketPrice = payload;

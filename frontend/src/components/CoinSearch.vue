@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-container>
-      <v-form ref="form" v-model="valid" @submit.prevent="addCoin">
+        <v-form ref="form" v-model="valid" @submit.prevent="addCoin">
         <v-layout row wrap>
           <v-flex xs12 sm12>
             <v-select
@@ -130,7 +130,6 @@
           this.requestData.portfolioId = this.$store.state.portfolioId;
           this.addCoinToPortfolio(this.requestData).then(() => {
             location.reload();
-
           })
         }
       },
