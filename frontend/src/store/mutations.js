@@ -65,9 +65,8 @@ export default {
   },
 
   setPortfolioId(state, portfolioName) {
-    state.portfolioId = Object.keys(state.portfolios).filter(function (key) {
-      return state.portfolios[key][0] === portfolioName
-    })[0];
+    state.portfolioId = Object.keys(state.portfolios).filter(function(key) {return state.portfolios[key][0] === portfolioName})[0];
+    console.log(state.portfolios)
   },
 
   getPortfolioId(state, name) {
@@ -94,6 +93,17 @@ export default {
 
   addCoinToPortfolio(state, payload) {
     state.coinData.push(payload)
+  },
+
+  getTotalPrice(state, payload) {
+    state.totalPrice = payload
+  },
+
+  getProfit(state, payload) {
+    state.profit = payload
+  },
+  getMarketPrice(state, payload) {
+    state.currentMarketPrice = payload;
   },
 
   getTotalPrice(state, payload) {

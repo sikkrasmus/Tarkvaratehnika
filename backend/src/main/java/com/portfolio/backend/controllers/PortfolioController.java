@@ -128,4 +128,13 @@ public class PortfolioController {
     public double getTotalPrice(@RequestBody PortfolioDTO portfolioDTO) throws IOException, JSONException, ParseException {
         return requestService.getTotalPriceForPortfolio(portfolioDTO.getPortfolioId());
     }
+
+    @PostMapping("/getMarketPrice")
+    @ResponseStatus(HttpStatus.CREATED)
+    public double getMarketPrice(@RequestBody CoinDTO coinDTO) throws IOException, JSONException, ParseException {
+        Coin coin = new Coin();
+        String shortName = coinService.getCoinShortName(coinDTO.getLongName());
+        coin.setShortname(shortName);
+        return requestService.getPriceFor(coin);
+    }
 }

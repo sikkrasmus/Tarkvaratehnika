@@ -247,6 +247,7 @@ export default {
         .catch(error => {
           console.log(error)
         })
+
     })
 
   },
@@ -286,5 +287,18 @@ export default {
         console.log(error)
       })
   },
-
+  getMarketPrice: ({commit}, payload) => {
+    return new Promise((resolve, reject) => {
+      axios.post('http://localhost:8080/getMarketPrice', payload)
+        .then(response => {
+          commit('getMarketPrice', response.data)
+          resolve()
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    }).catch(error => {
+      reject(error);
+    })
+  }
 }

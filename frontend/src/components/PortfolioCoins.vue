@@ -100,6 +100,8 @@
       return {
         sellOption: false,
         buyOption: false,
+        sellBtnClicked: false,
+        buyBtnClicked: false,
         coinName: '',
         shortName: '',
         price: '',

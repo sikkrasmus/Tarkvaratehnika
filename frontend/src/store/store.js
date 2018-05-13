@@ -14,6 +14,7 @@ export default new Vuex.Store({
   plugins: [createPersistedState()],
   strict: false,
   state: {
+    currentMarketPrice: null,
     sessionid:'',
     username: '',
     portfolioNames: [],
