@@ -16,16 +16,16 @@
             {{ key }}
           </v-flex>
           <v-flex xs3 text-xs-left class="hidden-md-and-down">
-            {{ value[1] }} {{value[0]}} ({{ value[2] * value[1] }} {{getCurrency(value[0])}})
+            {{ value[1] }} {{value[0]}} ({{ (value[2] * value[1]).toFixed(4) }} {{getCurrency(value[0])}})
           </v-flex>
           <v-flex xs6 text-xs-left class="hidden-lg-and-up">
-            {{ value[1] }} {{value[0]}} ({{ (value[2] * value[1]).toFixed(2) }} {{getCurrency(value[0])}})
+            {{ value[1] }} {{value[0]}} ({{ (value[2] * value[1]).toFixed(4) }} {{getCurrency(value[0])}})
           </v-flex>
           <v-flex xs2 text-xs-right class="hidden-md-and-down">
             {{value[2]}}
           </v-flex>
           <v-flex xs7 offset-xs3 text-xs-left class="hidden-lg-and-up">
-            {{value[2]}}
+            {{formatPrice(value[2])}}
           </v-flex>
           <v-flex xs1 text-xs-left class="hidden-md-and-down">
             {{getCurrency(value[0])}}
@@ -91,20 +91,6 @@
   import axios from 'axios'
   import {mapActions} from 'vuex'
   import {mapGetters} from 'vuex'
-export default {
-  name: 'portfoliocoins',
-  data () {
-    return {
-      sellBtnClicked: false,
-      buyBtnClicked: false,
-      coinName: '',
-      shortName: '',
-      price: '',
-      currency: '',
-      change: '',
-      coins: {},
-    }
-  },
 
   export default {
     name: 'portfoliocoins',
@@ -112,6 +98,8 @@ export default {
       return {
         sellOption: false,
         buyOption: false,
+        sellBtnClicked: false,
+        buyBtnClicked: false,
         coinName: '',
         shortName: '',
         price: '',
@@ -132,22 +120,39 @@ export default {
       }
     },
 
-  mounted: function() {
+    mounted: function () {
 
-    this.getPortfolioCoins(this.$store.state.portfolioId).then( () => {
-      this.coins = this.$store.state.coinData;
+      this.getPortfolioCoins(this.$store.state.portfolioId).then(() => {
+        this.coins = this.$store.state.coinData;
 
-    })
-  },
+      })
+    },
 
-  methods: {
-    ...mapActions([
-      'loginValidation',
-      'updatePortfolios',
-      'getPortfolioCoins',
-      'getPortfolioId'
-    ]),
-
+    methods: {
+      ...mapActions([
+        'loginValidation',
+        'updatePortfolios',
+        'getPortfolioCoins',
+        'getPortfolioId'
+      ]),
+      formatPrice: function (x) {
+        x = x.toLowerCase()
+        if (Math.abs(x) < 1.0) {
+          var e = parseInt(x.toString().split('e-')[1]);
+          if (e) {
+            x *= Math.pow(10,e-1);
+            x = '0.' + (new Array(e)).join('0') + x.toString().substring(2);
+          }
+        } else {
+          var e = parseInt(x.toString().split('+')[1]);
+          if (e > 20) {
+            e -= 20;
+            x /= Math.pow(10,e);
+            x += (new Array(e+1)).join('0');
+          }
+        }
+        return x;
+      },
       sellPressed: function () {
         this.sellOption = true
         this.buyOption = false
