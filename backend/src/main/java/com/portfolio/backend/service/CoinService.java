@@ -42,7 +42,7 @@ public class CoinService {
         return coin;
     }
 
-    public String getCoinShortName(String longname) {
+    private String getCoinShortName(String longname){
         CoinNames coinNames = coinNamesRepository.findByLongname(longname);
         return coinNames.getShortname();
     }
@@ -55,7 +55,7 @@ public class CoinService {
         coinRepository.deleteAll();
     }
 
-    public List<CoinNames> getAllCoins(){
+    public List<CoinNames> getAllCoins() {
         return (List<CoinNames>) coinNamesRepository.findAll();
     }
 

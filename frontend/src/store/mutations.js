@@ -65,9 +65,8 @@ export default {
   },
 
   setPortfolioId(state, portfolioName) {
-    state.portfolioId = Object.keys(state.portfolios).filter(function (key) {
-      return state.portfolios[key][0] === portfolioName
-    })[0];
+    state.portfolioId = Object.keys(state.portfolios).filter(function(key) {return state.portfolios[key][0] === portfolioName})[0];
+    console.log(state.portfolios)
   },
 
   getPortfolioId(state, name) {

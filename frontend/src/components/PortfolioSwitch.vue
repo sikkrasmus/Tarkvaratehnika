@@ -88,18 +88,7 @@
     },
 
     mounted: function () {
-      var dto = {
-        portfolioId: this.$store.state.portfolioId
-      };
-      this.getTotalPrice(dto).then(() => {
-        this.total = this.$store.state.totalPrice;
 
-      });
-
-      this.getProfit(dto).then(() => {
-        this.profit = this.$store.state.profit;
-
-      })
     },
 
     methods: {
@@ -110,7 +99,8 @@
         'setPortfolioId',
         'updatePortfolios',
         'getTotalPrice',
-        'getProfit'
+        'getProfit',
+        'getGraphData'
       ]),
 
       cancel() {
@@ -122,8 +112,11 @@
         this.selectPortfolio(value).then(() => {
           this.updatePortfolios({email: this.$store.state.username}).then(() => {
             this.setPortfolioId(value).then(() => {
-              this.getTotalPrice(this.$store.state.getSelectedPortfolio());
-              this.getPortfolioCoins(this.$store.state.portfolioId)
+              this.getPortfolioCoins(this.$store.state.portfolioId).then(() => {
+                this.getGraphData(this.$store.state.portfolioId);
+                this.getTotalPrice(this.$store.state.portfolioId);
+                this.getProfit(this.$store.state.portfolioId)
+              })
             })
           })
         })

@@ -11,18 +11,20 @@ public class CoinDTO {
     private Timestamp timeAdded;
     private double priceBought;
     private long portfolioId;
+    private long priceSold;
 
     public CoinDTO() {
     }
 
     public CoinDTO(String shortName, String longName, String exchange, long amount,
-                   Timestamp timeAdded, double priceBought, long portfolioId) {
+                   Timestamp timeAdded, double priceBought, long portfolioId, long priceSold) {
         this.shortName = shortName;
         this.longName = longName;
         this.exchange = exchange;
         this.amount = amount;
         this.timeAdded = timeAdded;
         this.priceBought = priceBought;
+        this.priceSold = priceSold;
         this.portfolioId = portfolioId;
     }
 
@@ -80,5 +82,9 @@ public class CoinDTO {
 
     public void setPortfolioId(long portfolioId) {
         this.portfolioId = portfolioId;
+    }
+
+    public long getPriceSold() {
+        return priceSold;
     }
 }

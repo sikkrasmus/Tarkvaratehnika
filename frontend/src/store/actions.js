@@ -287,28 +287,6 @@ export default {
         console.log(error)
       })
   },
-
-  getTotalPrice: ({commit}, payload) => {
-    axios.post('http://localhost:8080/getTotal', payload)
-      .then(response => {
-        commit('getTotalPrice', response.data)
-      })
-      .catch(error => {
-        console.log(error)
-      })
-  },
-
-  getProfit: ({commit}, payload) => {
-    axios.post('http://localhost:8080/getProfit', payload)
-      .then(response => {
-        console.log(response.data)
-        commit('getProfit', response.data)
-      })
-      .catch(error => {
-        console.log(error)
-      })
-  },
-
   getMarketPrice: ({commit}, payload) => {
     return new Promise((resolve, reject) => {
       axios.post('http://localhost:8080/getMarketPrice', payload)
@@ -322,6 +300,5 @@ export default {
     }).catch(error => {
       reject(error);
     })
-
   }
 }
