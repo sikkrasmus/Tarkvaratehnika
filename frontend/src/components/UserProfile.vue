@@ -3,39 +3,38 @@
     <navloggedwithouttabs></navloggedwithouttabs>
     <v-container grid-list-md>
       <v-flex 12>
-        <v-card style="margin-top: 20px; background: linear-gradient(to bottom, #396afc, #2948ff);"
-                color="blue-grey darken-2" class="white--text">
+        <br>
+        <v-card style="background-color: white;"
+                color="white" class="">
           <v-form ref="form" v-model="valid" lazy-validation>
             <v-card-title primary-title>
-              <div class="headline">
-                Add new portfolio
+              <div class="headline" style="color: #304FFE">
+                <strong>Add a new portfolio</strong>
                 <v-text-field
-                  color="white"
+                  color="indigo accent-4"
                   :rules="nameRules"
                   label="Portfolio Name"
                   v-model="info.portfolioName"
                   required
-                  dark
                 ></v-text-field>
               </div>
             </v-card-title>
             <v-card-text>
               <v-text-field
                 label="Portfolio Description"
-                color="white"
+                color="indigo accent-4"
                 v-model="info.description"
-                dark
               ></v-text-field>
             </v-card-text>
             <v-card-actions>
-              <v-btn flat dark large :disabled="!valid" v-on:click="addPortf">Add</v-btn>
+              <v-btn outline large :disabled="!valid" v-on:click="addPortf" style="color: #304FFE">Add</v-btn>
             </v-card-actions>
           </v-form>
         </v-card>
       </v-flex>
       <v-layout row wrap>
         <v-flex lg6 xs12 v-for="(portfolio, id) in this.portfolios" :key="value">
-          <v-card style="margin-top: 20px; background: linear-gradient(to bottom, #606c88, #3f4c6b);"
+          <v-card style="margin-top: 20px; background: linear-gradient(to top, #304FFE, #3b58f9);"
                   color="blue-grey darken-2" class="white--text">
             <v-card-title primary-title>
               <div class="headline">{{ portfolio[0] }}</div>

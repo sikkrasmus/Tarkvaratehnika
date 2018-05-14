@@ -45,6 +45,7 @@
             </p>
             <v-btn large dark round style="background-color: #3B58F9;" :to="'/register'">Join the revolution</v-btn>
             <div class="hidden-md-and-down"><br><br><br><br><br><br><br></div>
+
           </v-card-text>
         </v-card>
       </v-flex>

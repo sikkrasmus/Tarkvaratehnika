@@ -18,11 +18,9 @@
           <v-flex xs12 sm12>
             <v-select
               @input="selectExchange()"
-              :rules="[v => !!v || 'Exchange is required']"
               :items="exchanges"
               label="Exchange"
               target="#dropdown-example"
-              required
             ></v-select>
           </v-flex>
           <v-flex xs12>
@@ -42,9 +40,9 @@
             ></v-text-field>
           </v-flex>
           <v-flex xs4 lg3>
-            <v-btn color="info" @click="getPrice">Market</v-btn>
+            <v-btn flat style="color: #3b58f9; width: 100%; margin: 8px" @click="getPrice">Market</v-btn>
           </v-flex>
-          <v-btn color="green accent-3" type="submit" style="width: 100%; color: indigo; margin: 0 ">Add</v-btn>
+          <v-btn color="green accent-3" type="submit" style="width: 100%; color: white; margin: 0 "><strong>Add</strong></v-btn>
         </v-layout>
       </v-form>
     </v-container>
