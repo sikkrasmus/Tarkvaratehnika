@@ -54,8 +54,10 @@
           <br><br>
           <v-container>
             <!--<h2>Total: 60505 USD -5%</h2>-->
-            <h2>Total: {{this.$store.state.totalPrice}}</h2>
-            <h2>Profit: {{this.$store.state.profit}}</h2>
+            <h2>Total: {{Math.round(this.$store.state.totalPrice * 100)/100}}
+              Profit: {{Math.round(this.$store.state.profit * 100) / 100}}</h2>
+              <h2 v-bind:style="{ color: getPercentColor(this.$store.state.profit / this.$store.state.totalPrice)}">
+                Change: {{(this.$store.state.profit / this.$store.state.totalPrice * 100).toFixed(1)}}%</h2>
 
           </v-container>
           <usertotalchart></usertotalchart>
@@ -83,12 +85,13 @@
       return {
         dialog: false,
         total: '',
-        profit: ''
+        profit: '',
+        totalChange: ''
       }
     },
 
     mounted: function () {
-
+      // this.getTotalChangePercent();
     },
 
     methods: {
@@ -108,6 +111,17 @@
         this.getPortfolioCoins(this.$store.state.portfolioId)
       },
 
+      getPercentColor(number) {
+        console.log(number)
+        if (number.toString().charAt(0) === "-") {
+          return "red"
+        } else {
+          return "green"
+        }
+      },
+
+
+
       switchPortfolio(value) {
         this.selectPortfolio(value).then(() => {
           this.updatePortfolios({email: this.$store.state.username}).then(() => {
@@ -115,6 +129,8 @@
               this.getPortfolioCoins(this.$store.state.portfolioId).then(() => {
                 this.getGraphData(this.$store.state.portfolioId);
                 this.getTotalPrice(this.$store.state.portfolioId);
+                console.log(this.profit, this.total);
+                this.totalChange = parseFloat(this.profit);
                 this.getProfit(this.$store.state.portfolioId)
               })
             })
