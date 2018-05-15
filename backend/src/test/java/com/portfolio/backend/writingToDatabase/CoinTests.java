@@ -36,6 +36,7 @@ public class CoinTests {
 
     @Test
     public void TestSavingCoin() {
+        coinNamesService.deleteAll();
         coinNamesService.createAndSaveCoin(new CoinNamesDTO("ADA", "Cardano"));
         UserDTO userToSave = new UserDTO("testuser@gmail.com", "password", "test");
         userService.createAndSaveUser(userToSave);
@@ -43,13 +44,13 @@ public class CoinTests {
         PortfolioDTO toSave = new PortfolioDTO("test1", "portfolio for testing1");
         portfolioService.createAndSavePortfolio(toSave, user);
         Portfolio p = portfolioService.getPortfolioBy("test1");
-        CoinDTO coinDTO = new CoinDTO("ADA", "Cardano", "Bittrex", 300,
-                new Timestamp(System.currentTimeMillis()), 0.15, p.getId());
+        CoinDTO coinDTO = new CoinDTO("ADA", "Cardano", "Bittrex", 300.0,
+                new Timestamp(System.currentTimeMillis()), 0.15, p.getId(), 280);
         coinService.createAndSaveCoin(coinDTO, p);
         Assert.assertEquals(coinService.getCoinBy(1L).getShortname(), "ADA");
         coinService.deleteAll();
+        portfolioService.deletePortfolioByName("test1");
         userService.deleteAll();
-        portfolioService.deleteAll();
         coinNamesService.deleteAll();
     }
 }

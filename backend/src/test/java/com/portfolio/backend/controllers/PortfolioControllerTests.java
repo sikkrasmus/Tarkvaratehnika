@@ -128,24 +128,24 @@ public class PortfolioControllerTests {
         PortfolioDTO portfolioDTO = new PortfolioDTO();
         portfolioDTO.setPortfolioId(2L);
         Portfolio portfolio = new Portfolio();
-        Set<Coin> coins = new HashSet<>();
-        Coin coin1 = new Coin();
-        coin1.setShortname("XRP");
-        coin1.setLongname("Ripple");
-        coin1.setAmount(22);
-        coins.add(coin1);
-        portfolio.setCoins(coins);
-        Mockito.when(requestService.getPriceFor(any(Coin.class))).thenReturn(2.2);
-        Mockito.when(requestService.getValueChangeForCoin(any(Coin.class))).thenReturn("5%");
 
         Mockito.when(portfolioService.getPortfolioById(Mockito.anyLong())).thenReturn(portfolio);
+
+        Map<String, String[]> response = new HashMap<>();
+        response.put("Litecoin",
+                new String[]{"LTC",
+                        "215", "189", "4%"});
+        response.put("VeChain",
+                new String[]{"VEN",
+                        "4", "2", "25%"});
+        Mockito.when(portfolioService.getAllCoins(any(Portfolio.class))).thenReturn(response);
 
         RequestBuilder requestBuilder = MockMvcRequestBuilders.post(
                 "/getPortfolioCoins").content(FormatHelper.asJsonString(portfolioDTO))
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON);
         MvcResult result = mockMvc.perform(requestBuilder).andReturn();
-        String expected = "{\"Ripple\":[\"XRP\",\"22\",\"2.2\",\"5%\"]}";
+        String expected = "{\"VeChain\":[\"VEN\",\"4\",\"2\",\"25%\"],\"Litecoin\":[\"LTC\",\"215\",\"189\",\"4%\"]}";
         JSONAssert.assertEquals(expected, result.getResponse()
                 .getContentAsString(), false);
     }

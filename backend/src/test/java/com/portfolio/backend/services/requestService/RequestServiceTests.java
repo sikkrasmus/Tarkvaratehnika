@@ -33,13 +33,13 @@ import static org.mockito.Matchers.any;
 @Transactional
 public class RequestServiceTests {
 
-    @MockBean
+    @Autowired
     RequestService requestService;
 
     @Autowired
     CoinNamesService coinNamesService;
 
-    @MockBean
+    @Autowired
     private CoinRepository coinRepository;
 
     RequestHelper requestHelper = new RequestHelper();
@@ -62,10 +62,6 @@ public class RequestServiceTests {
         Assert.assertEquals("BTC-ETH", requestService.getMarketSummaryFromBittrexForOneCoin("ETH").getMarketName());
     }
 
-    @Test
-    public void testGettingPercentChange() {
-
-    }
 
     @Ignore
     @Test
