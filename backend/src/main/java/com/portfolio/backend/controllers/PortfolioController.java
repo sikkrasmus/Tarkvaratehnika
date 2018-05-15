@@ -78,7 +78,6 @@ public class PortfolioController {
     @ResponseStatus(HttpStatus.CREATED)
     public Map<String, String[]> getPortfolioCoins(@RequestBody PortfolioDTO portfolioDTO) throws IOException, JSONException, ParseException {
 
-        Map<String, String[]> coins = new HashMap<>();
         Portfolio portfolio = portfolioService.getPortfolioById(portfolioDTO.getPortfolioId());
         return portfolioService.getAllCoins(portfolio);
     }

@@ -24,7 +24,7 @@ public class CoinNamesService {
     }
 
     public CoinNames getCoinNamesBy(String shortName) {
-        return coinNamesRepository.findByShortname(shortName);
+        return coinNamesRepository.findTopByShortname(shortName);
     }
 
     public void deleteAll() {

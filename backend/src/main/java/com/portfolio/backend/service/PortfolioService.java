@@ -140,6 +140,11 @@ public class PortfolioService {
         portfolioRepository.deleteById(id);
     }
 
+    @Transactional
+    public void deletePortfolioByName(String name) {
+        portfolioRepository.deleteByName(name);
+    }
+
     public Portfolio getPortfolioBy(Long id) {
         return portfolioRepository.findById(id);
     }
