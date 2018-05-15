@@ -1,14 +1,12 @@
 <template>
   <div>
-    <v-toolbar color="primary" dark tabs>
-      <v-toolbar-side-icon :to="'/home'" class="hidden-md-and-down"><img src='../assets/cwlogo.png' style="width: 36px; height: 36px;" class="hidden-md-and-down">
-      </v-toolbar-side-icon>
-      <v-toolbar-title class="hidden-md-and-down">coin<strong>Watch</strong></v-toolbar-title>
+    <v-toolbar color="primary" tabs>
+      <v-toolbar-title class="hidden-md-and-down"><router-link :to="'home'"><div style="color: black">coin<strong>Watch</strong></div></router-link></v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
-        <v-btn class="white--text clipped-left" :to="'/home'" flat>Home</v-btn>
-        <v-btn class="white--text" :to="'/profile'" flat>{{username}}</v-btn>
-        <v-btn class="white--text" v-on:click="logOut" flat>Log out</v-btn>
+        <v-btn class="clipped-left" :to="'/home'" flat>Home</v-btn>
+        <v-btn :to="'/profile'" flat>{{username}}</v-btn>
+        <v-btn v-on:click="logOut" flat>Log out</v-btn>
       </v-toolbar-items>
     </v-toolbar>
   </div>

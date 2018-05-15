@@ -7,11 +7,12 @@
             <v-layout row wrap>
               <v-flex xs12 sm12 md12>
                 <div>
-                  <div class="headline">
+                  <div>
                     <v-container id="dropdown-example">
                       <v-layout row wrap>
                         <v-flex xs12 sm12 md12>
                           <v-select
+                            :hide-selected="this.hideSelected"
                             :label="this.$store.state.portfolioNames[0]"
                             @input="switchPortfolio"
                             :items="this.$store.state.portfolioNames"
@@ -27,7 +28,7 @@
               </v-flex>
             </v-layout>
             <v-btn
-              color="pink"
+              color="indigo accent-4"
               dark
               medium
               absolute
@@ -40,7 +41,7 @@
             <v-layout row justify-center>
               <v-dialog v-model="dialog" max-width="600px" class="hidden-lg-and-up">
                 <v-card>
-                  <v-card-title style="background-color: #3F51B5; color: white;" class="headline">Add coins
+                  <v-card-title style="background-color: #3b58f9; color: white;" class="headline">Add coins
                     <v-spacer></v-spacer>
                     <v-btn color="white" flat="flat" @click.native="cancel()">Cancel</v-btn>
                   </v-card-title>
@@ -53,12 +54,11 @@
           </v-toolbar>
           <br><br>
           <v-container>
-            <!--<h2>Total: 60505 USD -5%</h2>-->
-            <h2>Total: {{Math.round(this.$store.state.totalPrice * 100)/100}}
-              Profit: {{Math.round(this.$store.state.profit * 100) / 100}}</h2>
-              <h2 v-bind:style="{ color: getPercentColor(this.$store.state.profit / this.$store.state.totalPrice)}">
-                Change: {{(this.$store.state.profit / this.$store.state.totalPrice * 100).toFixed(1)}}%</h2>
-
+            <div class="text-xs-center">
+              <h1 v-bind:style="{ color: getPercentColor(calculatePercent().toString()) }">{{calculatePercent()}}%</h1>
+              <h2>Total: {{this.roundTotal()}} USD </h2>
+              <h2>Profit: {{this.roundProfit()}} USD</h2>
+            </div>
           </v-container>
           <usertotalchart></usertotalchart>
           <portfoliocoins></portfoliocoins>
@@ -83,15 +83,15 @@
 
     data() {
       return {
+        hideSelected: true,
         dialog: false,
         total: '',
-        profit: '',
-        totalChange: ''
+        profit: ''
       }
     },
 
     mounted: function () {
-      // this.getTotalChangePercent();
+
     },
 
     methods: {
@@ -105,23 +105,31 @@
         'getProfit',
         'getGraphData'
       ]),
-
+      roundTotal: function () {
+        return Math.round(this.$store.state.totalPrice * 100) / 100
+      },
+      roundProfit: function () {
+        return Math.round(this.$store.state.profit * 100) / 100
+      },
+      calculatePercent: function () {
+        let percent = (((this.$store.state.totalPrice) - (this.$store.state.totalPrice - this.$store.state.profit)) / (this.$store.state.totalPrice - this.$store.state.profit)) * 100;
+        if (isNaN(percent)) {
+          return 0
+        } else {
+          return Math.round(percent * 100) / 100
+        }
+      },
       cancel() {
         this.dialog = false;
         this.getPortfolioCoins(this.$store.state.portfolioId)
       },
-
       getPercentColor(number) {
-        console.log(number)
-        if (number.toString().charAt(0) === "-") {
-          return "red"
+        if (number.charAt(0) === "-") {
+          return "#D50000"
         } else {
-          return "green"
+          return "#00C853"
         }
       },
-
-
-
       switchPortfolio(value) {
         this.selectPortfolio(value).then(() => {
           this.updatePortfolios({email: this.$store.state.username}).then(() => {
@@ -129,8 +137,6 @@
               this.getPortfolioCoins(this.$store.state.portfolioId).then(() => {
                 this.getGraphData(this.$store.state.portfolioId);
                 this.getTotalPrice(this.$store.state.portfolioId);
-                console.log(this.profit, this.total);
-                this.totalChange = parseFloat(this.profit);
                 this.getProfit(this.$store.state.portfolioId)
               })
             })
@@ -143,5 +149,7 @@
 </script>
 
 <style>
-
+  .primary--text {
+    color: #304FFE !important;
+  }
 </style>

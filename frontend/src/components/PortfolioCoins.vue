@@ -1,6 +1,15 @@
 <template>
+  <div>
+    <br>
+    <v-layout class="guide"row wrap style="padding: 24px">
+      <v-flex xs1 class="hidden-md-and-down"></v-flex>
+      <v-flex xs2 text-xs-left class="hidden-md-and-down">Name</v-flex>
+      <v-flex xs3 text-xs-left class="hidden-md-and-down">Amount</v-flex>
+      <v-flex xs3 text-xs-center class="hidden-md-and-down">Price</v-flex>
+      <v-flex xs2 text-xs-right class="hidden-md-and-down">Change</v-flex>
+    </v-layout>
   <v-expansion-panel>
-    <v-expansion-panel-content v-for="(value, key, index) in this.$store.state.coinData" :key="value">
+    <v-expansion-panel-content v-for="(value, key, index) in this.$store.state.coinData " :key="value">
       <div slot="header">
         <v-layout row wrap>
           <v-flex xs1 class="hidden-md-and-down">
@@ -87,6 +96,7 @@
       </v-card>
     </v-expansion-panel-content>
   </v-expansion-panel>
+  </div>
 </template>
 
 <script>
@@ -190,7 +200,7 @@
         if (number.charAt(0) === "-") {
           return "red"
         } else {
-          return "green"
+          return "#00C853"
         }
       }
     }
@@ -198,4 +208,7 @@
 </script>
 
 <style>
+  .guide{
+    color: #304FFE;
+  }
 </style>

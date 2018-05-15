@@ -176,7 +176,7 @@ export default {
       "chartCursor": {
         "categoryBalloonDateFormat": "DD",
         "color": "#FFFFFF",
-        "cursorColor": "#E91E63",
+        "cursorColor": "#00C853",
         "cursorAlpha": 0,
         "valueLineEnabled": true,
         "valueLineBalloonEnabled": true,
