@@ -14,7 +14,7 @@ public class Coin {
     private String shortname;
     private String longname;
     private String exchange;
-    private long amount;
+    private double amount;
     private Timestamp timeadded;
     private double pricebought;
 
@@ -54,11 +54,11 @@ public class Coin {
         this.exchange = exchange;
     }
 
-    public long getAmount() {
+    public double getAmount() {
         return amount;
     }
 
-    public void setAmount(long amount) {
+    public void setAmount(double amount) {
         this.amount = amount;
     }
 
