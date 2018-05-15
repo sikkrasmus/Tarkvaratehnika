@@ -2,8 +2,6 @@
   <v-app>
     <div>
       <navunlogged class="white--text"></navunlogged>
-      <br>
-      <br>
       <v-container fluid grid-list-xs><landingtext></landingtext></v-container>
       <br><br>
       <materialfooter class="hidden-md-and-down"></materialfooter>
